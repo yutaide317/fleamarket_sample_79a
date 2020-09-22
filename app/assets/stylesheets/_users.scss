@@ -1,7 +1,35 @@
 .AccountPage {
-  height: 100%;
+  background-color: rgba(229, 226, 226, 0.377);
+  overflow: scroll;
+  height: 100vw;
   &__title {
     height: 128px;
+    &--logo {
+      height: 128px;     
+      margin: 40px 0 0;
+      padding: 0 590px;
+    }
+  }
+  &__main {
+    height: 1239px;
+    &--box {
+      height: 1239px;
+      width: 700px;
+      margin: auto;
+      background-color: #ffffff;
+    }
   }
 }
 
+.TopLogo {
+  height: 62px;
+  width: 213px;
+}
+
+h2 {
+  padding: 32px;
+  font-size: 22px;
+  text-align: center;
+  font-weight: bold;
+  border-bottom: 1px solid rgba(229, 226, 226, 0.377)
+}
