@@ -1,7 +1,7 @@
 .AccountPage {
   background-color: rgba(229, 226, 226, 0.377);
   overflow: scroll;
-  height: 100vw;
+  height: 100vh;
   &__title {
     height: 128px;
     &--logo {
@@ -11,12 +11,20 @@
     }
   }
   &__main {
-    height: 1239px;
-    &--box {
-      height: 1239px;
-      width: 700px;
-      margin: auto;
-      background-color: #ffffff;
+    width: 700px;
+    margin: auto;
+    background-color: #ffffff;
+  }
+  &__etc {
+    width: 456px;
+    height: 220px;
+    margin: 0 auto;
+    &--inc {
+      padding: 30px 30px 0 30px;
+    }
+    &--mark {
+      text-align: center;
+      font-size: 13px;
     }
   }
 }
@@ -32,4 +40,57 @@ h2 {
   text-align: center;
   font-weight: bold;
   border-bottom: 1px solid rgba(229, 226, 226, 0.377)
+}
+
+.FormField {
+  padding: 30px;
+  &__box {
+    margin: 0 150px;
+  }
+  &__contents {
+    height: 195px;
+    margin: 0 150px;
+    &--box {
+    width: 339px;
+    padding: 10px 16px 8px;
+    margin-top: 32px;
+    background: #ea352d;
+    border: 1px solid #ea352d;
+    color: #fff;
+    font-size: 16px;
+    border-radius: 4px;
+    }
+  }
+}
+
+.FormGroup {
+  height: 70px;
+  margin-top: 32px;
+  &__contents {
+    display: flex;
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: 5px;
+  }
+  &__input {
+    width: 305px;
+    padding: 10px 16px 8px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    border-radius: 4px;
+  }
+}
+
+span {
+  background-color: #ea352d;
+  color: #ffffff;
+  margin: 0 0 0 8px;
+  font-weight: lighter;
+  padding: 2px 4px;
+}
+
+.FooterLogo {
+  height: 62px;
+  width: 213px;
+  margin-left: 90px;
 }
