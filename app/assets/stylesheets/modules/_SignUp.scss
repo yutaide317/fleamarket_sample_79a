@@ -1,5 +1,8 @@
+$BackgroundColor: rgba(229, 226, 226, 0.377);
+$section_color: #ea352d;
+
 .AccountPage {
-  background-color: rgba(229, 226, 226, 0.377);
+  background-color: $BackgroundColor;
   overflow: scroll;
   height: 100vh;
   &__title {
@@ -39,7 +42,7 @@ h2 {
   font-size: 22px;
   text-align: center;
   font-weight: bold;
-  border-bottom: 1px solid rgba(229, 226, 226, 0.377)
+  border-bottom: 1px solid $BackgroundColor;
 }
 
 .FormField {
@@ -54,8 +57,8 @@ h2 {
     width: 339px;
     padding: 10px 16px 8px;
     margin-top: 32px;
-    background: #ea352d;
-    border: 1px solid #ea352d;
+    background: $section_color;
+    border: 1px solid $section_color;
     color: #fff;
     font-size: 16px;
     border-radius: 4px;
@@ -82,7 +85,7 @@ h2 {
 }
 
 span {
-  background-color: #ea352d;
+  background-color: $section_color;
   color: #ffffff;
   margin: 0 0 0 8px;
   font-weight: lighter;
