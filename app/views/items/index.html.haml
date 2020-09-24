@@ -1,2 +1,26 @@
-%h1 Items#index
-%p Find me in app/views/items/index.html.erb
+%header.pageHeader
+  .headerContainer
+    .topHeader
+      %h1.icon
+        %a{"href":'#', class: "icon__furima-logo"} 
+          = image_tag 'logo.png'
+      .searchBlock
+        %form
+          %input.searchBlock__input{placeholder: "キーワードから探す"}
+          %button{"type": "submit"}
+            .searchBlock__icon
+              = image_tag 'icon-search 1.png'
+    .nav
+      %ul.leftLists
+        %li.leftLists__item--first
+      %ul.rightLists
+
+.mainContainer
+  %section.topVisual
+  %section.serviseIntroduction
+  %section.appsDLarea
+  %section.serviceFeatures
+  %section.pickupField
+  %section.pickupField
+%aside.appBannersarea
+.footer
