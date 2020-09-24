@@ -1,0 +1,121 @@
+* {
+  box-sizing: border-box;
+}
+
+.pageHeader{
+  padding: 0 60px;
+
+  .headerContainer{
+    max-width: 1040px;
+    width: 100%;
+    min-height: 82px;
+    margin: 0 auto;
+    padding: 15px 0 0;
+    .topHeader{
+      display: flex;
+      align-items: center;
+      .icon{
+        padding-bottom: 10px;
+        margin-right: 30px;
+        border-radius: 4px;
+        &__furima-logo{
+          width: 140px;
+          display: block;
+          img{
+            width: 100%;
+            vertical-align: bottom;
+          }
+        }
+      }
+      .searchBlock{
+        margin-left: auto;
+        width: 100%;
+        form{
+          width: 100%;
+          display: flex;
+          margin-bottom: 5px;
+          .searchBlock__input{
+            width: calc(100% - 26px);
+            height: 36px;
+            padding: 0 0 0 5px;
+          }
+          button{
+            width: 36px;
+            border: 0;
+            cursor: pointer;
+            background-color: #3CCACE;
+            padding: 8px;
+            .searchBlock__icon{
+              img{
+                width: 100%;
+                vertical-align: bottom;
+              }
+            }
+
+          }
+        }
+      }
+    }
+    .nav{
+      font-size: 14px;
+      display: flex;
+      margin-bottom: 10px;
+      .leftLists{
+        position: relative;
+        display: flex;
+        &__cattab{
+          text-decoration: none;
+          a{
+            color: #333;
+            text-decoration: none;
+            line-height: 32px;
+            background-position: center right;
+            background-repeat: no-repeat;
+            background-size: 18px;
+            padding-right: 30px;
+          }
+        }
+        &__bratab{
+          list-style: none;
+          a{
+            color: #333;
+            text-decoration: none;
+            line-height: 32px;
+            background-position: center right;
+            background-repeat: no-repeat;
+            background-size: 18px;
+            padding-right: 30px;
+          }
+        }
+      }
+      .rightLists{
+        margin-left: auto;
+        display: flex;
+        &__login{
+          color: #333;
+          line-height: 38px;
+          padding: 0 0 0 16px;
+          a{
+            display: flex;
+            align-items: center;
+            color: #333;
+            text-decoration: none;
+            line-height: 32px;
+          }
+        }
+        &__signup{
+          color: #333;
+          line-height: 38px;
+          padding: 0 0 0 16px;
+          a{
+            display: flex;
+            align-items: center;
+            color: #333;
+            text-decoration: none;
+            line-height: 32px;
+          }
+        }
+      }
+    }
+  }
+}
