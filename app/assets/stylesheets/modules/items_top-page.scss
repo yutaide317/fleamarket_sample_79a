@@ -172,4 +172,76 @@
       }
     }
   }
+  .serviseIntroduction{
+    padding: 60px 20px;
+    .subtitle{
+      text-align: center;
+      font-size: 26px;
+      line-height: 1.4;
+      font-weight: bold;
+      margin-bottom: 25px;
+      padding-bottom: 15px;
+      position: relative;
+    }
+    .subtitle::after{
+      content: "";
+      width: 70px;
+      height: 4px;
+      background-color: #3CCACE;
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    .reasonsLists{
+      text-align: center;
+      display: flex;
+      max-width: 1020px;
+      width: 100%;
+      margin: 0 auto;
+    }
+    .list{
+      width: 30%;
+      margin: 16px 5% 0 0;
+      text-align: left;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      .list__image{
+        position: relative;
+        margin-bottom: 20px;
+        .number{
+          display: inline-block;
+          position: absolute;
+          top: 0;
+          left: 0;
+          border-radius: 4%;
+          font-size: 30px;
+          text-align: center;
+          margin: 0 5px 0 0;
+          padding: 10px 20px;
+          background-color: #3CCACE;
+          color: #fff;
+        }
+        img{
+          width: 100%;
+          vertical-align: bottom;
+        }
+      }
+      .list__text{
+        font-weight: bold;
+        font-size: 24px;
+        line-height: 50px;
+        margin: 0 0 0 2px;
+        span{
+          color: #3CCACE;
+        }
+      }
+      .list__description{
+        font-size: 18px;
+        line-height: 1.5;
+        margin: 16px 0 0;
+      }
+    }
+  }
 }
