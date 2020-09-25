@@ -244,4 +244,69 @@
       }
     }
   }
+  .appsDLarea{
+    background-image: url(/assets/bg-topMiddleDl-pict.jpg);
+    background-position: bottom right;
+    height: 400px;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    .contents{
+      color: #fff;
+      text-shadow: 0 0 5px rgba(0,0,0,0.4);
+      text-align: left;
+      max-width: 1040px;
+      width: 100%;
+      margin: 0 auto;
+      .subtitle{
+        font-size: 27px;
+        font-weight: bold;
+        line-height: 1.4;
+      }
+      .text{
+        font-size: 18px;
+        margin: 20px 0 30px;
+        line-height: 1.5;
+      }
+      .banners{
+        display: flex;
+        .appBtn{
+          margin-right: 10px;
+          img{
+            width: 180px;
+          }
+        }
+        .gooBtn{
+          margin-right: 10px;
+          img{
+            width: 180px;
+          }
+        }
+      }
+    }
+  }
+  .serviceFeatures{
+    padding: 60px 100px;
+    background-color: #fff;
+    .subtitle{
+      font-size: 27px;
+      text-align: center;
+      margin: 0 0 40px;
+      font-weight: bold;
+      margin-bottom: 25px;
+      padding-bottom: 15px;
+      position: relative;
+    }
+    .subtitle::after{
+      content: "";
+      width: 70px;
+      height: 4px;
+      background-color: #3CCACE;
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+  }
 }
