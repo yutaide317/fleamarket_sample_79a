@@ -82,8 +82,8 @@ Things you may want to cover:
 |user|references|null: false, foreign_key: true|
 |item|references|null: false, foreign_key: true|
 ### Association
-- has_many :users
-- has_many :items
+- belongs_to :users
+- belongs_to :items
 
 ## items テーブル		
 |Column|Type|Options|
@@ -102,7 +102,7 @@ Things you may want to cover:
 |buyer|references|foreign_key: true|
 ### Association
 - belongs to :user
-- has_many :categories, through: :items_categories
+- has_many :categories
 - has_many :item_images
 - belongs to :brand
 
@@ -110,7 +110,7 @@ Things you may want to cover:
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
-|ancestry|string|null:false|
+|ancestry|string||
 ### Association
 - has_many :items
 - has_ancestry
@@ -119,7 +119,6 @@ Things you may want to cover:
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
-|item_id|references|null: false, foreign_key: true|
 ### Association
 - has_many :items
 
