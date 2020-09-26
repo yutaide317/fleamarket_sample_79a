@@ -39,9 +39,33 @@
             ユーザーの本名
             %span
               必須
-          .FormGroup__contents--box
-            %input.FamiliyName{ type:"text", placeholder:"例）亀田"}
-            %input.FirstName{ type:"text", placeholder:"例）史郎"}
+        .FormGroupB
+          .FormGroupB__contentsb
+            %input.FormGroupB__contentsb--FamilyName{ type:"text", placeholder:"例）亀田"}
+          .FormGroupB__contentsb
+            %input.FormGroupB__contentsb--FirstName{ type:"text", placeholder:"例）史郎"}
+        .FormGroup
+          .FormGroup__contents
+            ユーザーの本名のふりがな
+            %span
+              必須
+        .FormGroupB
+          .FormGroupB__contentsb
+            %input.FormGroupB__contentsb--FamilyName{ type:"text", placeholder:"例）かめだ"}
+          .FormGroupB__contentsb
+            %input.FormGroupB__contentsb--FirstName{ type:"text", placeholder:"例）しろう"}
+        .FormGroup
+          .FormGroup__contents
+            生年月日
+            %span
+              必須
+        .FormGroupC
+          .FormGroupB__contentsb
+            %select.FormGroupB__contentsb--FamilyName{ type:"text", placeholder:"例）かめだ"}
+          .FormGroupB__contentsb
+            %input.FormGroupB__contentsb--FamilyName{ type:"text", placeholder:"例）かめだ"}
+          .FormGroupB__contentsb
+            %input.FormGroupB__contentsb--FirstName{ type:"text", placeholder:"例）しろう"}
       .FormField__contents
         %input.FormField__contents--box{ type:"submit", value:"登録する"}
   .AccountPage__etc
