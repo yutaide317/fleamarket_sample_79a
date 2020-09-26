@@ -100,10 +100,10 @@ Things you may want to cover:
 |prefecture|integer|null: false|
 |preparation_period|integer|null: false|
 |shipping_method|integer|	
-|seller|references|null: false, foreign_key: true|
+|used_id|references|null: false, foreign_key: true|
 |buyer|references|foreign_key: true|
 ### Association
-- belongs to :users
+- belongs to :user
 - has_many :categories, through: :items_categories
 - has_many :item_images
 
@@ -122,8 +122,8 @@ Things you may want to cover:
 |categories_id|integer|null: false, foreign_key: true|
 
 ### Association
-- belongs_to :group
-- belongs_to :user
+- belongs_to :item
+- belongs_to :category
 
 ## item_imagesテーブル
 |Column|Type|Options|
