@@ -30,6 +30,18 @@
             %span
               必須
           %input.FormGroup__input{ type:"text", placeholder:"７文字以上の半角英数字"}
+        .FormGroup
+          .FormGroup__contents--text
+            %h3 本人情報確認
+            %p 安心・安全にご利用いただくために、お客さまの本人情報の登録にご協力ください。他のお客さまに公開されることはありません。
+        .FormGroup
+          .FormGroup__contents
+            ユーザーの本名
+            %span
+              必須
+          .FormGroup__contents--box
+            %input.FamiliyName{ type:"text", placeholder:"例）亀田"}
+            %input.FirstName{ type:"text", placeholder:"例）史郎"}
       .FormField__contents
         %input.FormField__contents--box{ type:"submit", value:"登録する"}
   .AccountPage__etc

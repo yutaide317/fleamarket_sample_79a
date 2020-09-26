@@ -63,11 +63,21 @@ h2 {
     font-size: 16px;
     border-radius: 4px;
     }
+    &--text {
+      font-size: 16px;
+    }
   }
 }
 
+h3 {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+p {
+  color: #333;
+}
 .FormGroup {
-  height: 70px;
   margin-top: 32px;
   &__contents {
     display: flex;
