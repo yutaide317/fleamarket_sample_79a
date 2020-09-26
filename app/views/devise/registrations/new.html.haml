@@ -60,12 +60,30 @@
             %span
               必須
         .FormGroupC
-          .FormGroupB__contentsb
-            %select.FormGroupB__contentsb--FamilyName{ type:"text", placeholder:"例）かめだ"}
-          .FormGroupB__contentsb
-            %input.FormGroupB__contentsb--FamilyName{ type:"text", placeholder:"例）かめだ"}
-          .FormGroupB__contentsb
-            %input.FormGroupB__contentsb--FirstName{ type:"text", placeholder:"例）しろう"}
+          .FormGroupC__contentsc
+            %select.FormGroupC__contentsc--select
+              %option{ value: "--"}--
+              %option{ value: "2020"}2020
+              %option{ value: "2019"}2019
+          .FormGroupC__text
+            年
+          .FormGroupC__contentsc
+            %select.FormGroupC__contentsc--select
+              %option{ value: "--"}--
+              %option{ value: "1"}1
+              %option{ value: "2"}2
+          .FormGroupC__text
+            月
+          .FormGroupC__contentsc
+            %select.FormGroupC__contentsc--select
+              %option{ value: "--"}--
+              %option{ value: "1"}1
+              %option{ value: "2"}2
+          .FormGroupC__text
+            日
+        .FormText
+          %p.FormText__box
+            ※ 本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
       .FormField__contents
         %input.FormField__contents--box{ type:"submit", value:"登録する"}
   .AccountPage__etc

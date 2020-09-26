@@ -97,9 +97,7 @@ p {
 .FormGroupB {
   display: flex;
   &__contentsb {
-    font-size: 12px;
     font-weight: 600;
-    margin-bottom: 5px;
     &--FamilyName {
       width: 130px;
       padding: 10px 16px 8px;
@@ -117,6 +115,33 @@ p {
       margin-left: 11px;
       font-weight: lighter;
     }
+  }
+}
+
+.FormGroupC {
+  display: flex;
+  &__contentsc {
+    font-weight: 600;
+    &--select {
+      width: 90px;
+      padding: 12px 15px 12px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+      border-radius: 4px;
+      font-weight: lighter;
+      line-height: inherit;
+    }
+  }
+  &__text {
+    margin: 10px 4px;
+    font-weight: lighter;
+  }
+}
+
+.FormText {
+  margin-top: 5px;
+  &__box {
+    color: #888;
   }
 }
 
