@@ -92,7 +92,7 @@ Things you may want to cover:
 |price|integer|null: false|
 |introduction|text|null: false|
 |category|references|null: false, foreign_key: true|
-|brand|text|	
+|brand_id|references|null: false, foreign_key: true|
 |item_condition|integer|null: false|
 |postage_payer|integer|null: false|
 |prefecture|integer|null: false|
