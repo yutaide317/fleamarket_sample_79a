@@ -69,11 +69,9 @@ Things you may want to cover:
 ## credit_cards テーブル		
 |Column|Type|Options|
 |------|----|-------|
-|user_id|references|null: false, foreign_key:true|
-|card_number|integer|null: false, unique:true|
-|validity_year|integer|null: false|
-|validity_month|integer|null: false|
-|security_code|integer|null: false|
+|user|references|null: false, foreign_key:true|
+|customer_id|string|null: false,|
+|card_id|integer|null: false|
 ### Association
 - belongs_to :user
 
@@ -106,28 +104,29 @@ Things you may want to cover:
 - belongs to :user
 - has_many :categories, through: :items_categories
 - has_many :item_images
+- belongs to :brand
 
 ## categories テーブル		
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
+|ancestry|string|null:false|
 ### Association
-- has_many :items, through: :items_categories
+- has_many :items
+- has_ancestry
 
-
-## items_categoriesテーブル
+## brands テーブル		
 |Column|Type|Options|
 |------|----|-------|
-|items_id|integer|null: false, foreign_key: true|
-|categories_id|integer|null: false, foreign_key: true|
-
+|name|string|null: false|
+|item_id|references|null: false, foreign_key: true|
 ### Association
-- belongs_to :item
-- belongs_to :category
+- has_many :items
 
 ## item_imagesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|item|references|null: false, foreign_key: true|
+|item_id|references|null: false, foreign_key: true|
+|item_image_url|string|null: false|
 ### Association
 - belongs_to :item
