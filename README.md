@@ -23,7 +23,7 @@ Things you may want to cover:
 
 * ...
 
-# Free Market app DB設計
+# Flea Market app DB設計
 ## usersテーブル
 |Column|Type|Options|
 |------|----|-------|
