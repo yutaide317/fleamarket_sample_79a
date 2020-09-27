@@ -98,7 +98,7 @@ Things you may want to cover:
 |prefecture|integer|null: false|
 |preparation_period|integer|null: false|
 |shipping_method|integer|	
-|used_id|references|null: false, foreign_key: true|
+|user_id|references|null: false, foreign_key: true|
 |buyer|references|foreign_key: true|
 ### Association
 - belongs to :user
