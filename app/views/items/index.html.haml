@@ -1,34 +1,5 @@
 %body
-  %header.pageHeader
-    .headerContainer
-      .topHeader
-        %h1.icon
-          %a{"href":'#', class: "icon__furima-logo"} 
-            = image_tag 'logo.png'
-        .searchBlock
-          %form
-            %input.searchBlock__input{placeholder: "キーワードから探す"}
-            %button{"type": "submit"}
-              .searchBlock__icon
-                = image_tag 'icon-search 1.png'
-      .nav
-        %ul.leftLists
-          %li.leftLists__cattab
-            %a#catTab{"href": "#"}
-              カテゴリー
-          %li.leftLists__bratab
-            %a#branbTab{"href": "#"}
-              ブランド
-        %ul.rightLists
-          %li.rightLists__login
-            %a{"href": "#"}
-              ログイン
-          %li.rightLists__signup
-            .rightLists__item--signup
-              %a{"href": "#"}
-                新規会員登録
-
-
+  = render "header"
   .mainContainer
     %section.topVisual
       .content
@@ -43,8 +14,6 @@
             = image_tag 'app-store-logo.svg'
           %a.gooBtn{"href":'#'}
             = image_tag 'google-play-logo.svg'
-
-
     %section.serviseIntroduction
       %h2.subtitle
         FURIMAが選ばれる3つの理由
@@ -78,8 +47,6 @@
             %span 業界最安
           %p.list__description
             最大3%でお得に出品&購入！
-            
-          
     %section.appsDLarea
       .contents
         %h2.subtitle 会員数日本一位
@@ -116,8 +83,6 @@
           %h3.feature__subtitle 様々な支払いに対応
           %p.feature__detail
             お支払いは、クレジットカードだけでなく、ポイントや売上金など多彩な方法があります。
-
-
     %section.pickupField
       %h2.head ピックアップカテゴリー
       .itemBlock
@@ -262,54 +227,4 @@
                       %i.fa.fa-star.likeIcon
                       1
                   %p （税込）
-
-
-  %aside.appBannersArea
-    .contents
-      %h2.contents__title
-        だれでもかんたん、人生を変えるフリマアプリ
-      %p.contents__text
-        今すぐ無料ダウンロード！
-      .contents__banners
-        %a{"href":'#'}
-          = image_tag 'app-store-logo.svg'
-        %a{"href":'#'}
-          = image_tag 'google-play-logo.svg'
-  .footer
-    %ul.contents
-      %li.content
-        %h2.content__head FURIMAについて
-        %ul
-          %li
-            %a{"href":"#"} 会社概要（運営会社）
-          %li
-            %a{"href":"#"} プライバシーポリシー
-          %li
-            %a{"href":"#"} FURIMA利用規約
-          %li
-            %a{"href":"#"} ポイントに関する特約
-      %li.content
-        %h2.content__head FURIMAを見る
-        %ul
-          %li
-            %a{"href":"#"} カテゴリー一覧
-          %li
-            %a{"href":"#"} ブランド一覧
-      %li.content
-        %h2.content__head ヘルプ＆ガイド
-        %ul
-          %li
-            %a{"href":"#"} FURIMAガイド
-          %li
-            %a{"href":"#"} FURIMAロゴ利用ガイドライン
-          %li
-            %a{"href":"#"} お知らせ
-    .footer__logo
-      %a{"href":"#"}
-        = image_tag 'logo-white.png'
-    %p © FURIMA
-  %a{"href":"#"}
-    .sellBtn
-      %span.sellBtn__text 出品する
-      %img.sellBtn__icon{"src":"/assets/icon_camera.png"}
-
+  = render "footer"
