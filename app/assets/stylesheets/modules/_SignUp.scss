@@ -1,6 +1,11 @@
 $BackgroundColor: rgba(229, 226, 226, 0.377);
 $section_color: #ea352d;
 $border_color: #ccc;
+$input_main_color:#ffffff;
+@mixin input_border () {
+  outline: 0;
+  border: 1px solid #7dc6f0;
+}
 
 .AccountPage {
   background-color: $BackgroundColor;
@@ -17,7 +22,7 @@ $border_color: #ccc;
   &__main {
     width: 700px;
     margin: auto;
-    background-color: #ffffff;
+    background-color: $input_main_color;
   }
   &__etc {
     width: 456px;
@@ -80,13 +85,11 @@ p {
 }
 
 input:focus{
-  outline: 0;
-  border: 1px solid #7dc6f0;
+  @include input_border();
 }
 
 select:focus {
-  outline: 0;
-  border: 1px solid #7dc6f0;
+  @include input_border();
 }
 .FormGroup {
   margin-top: 32px;
@@ -168,7 +171,7 @@ select:focus {
 
 span {
   background-color: $section_color;
-  color: #ffffff;
+  color: $input_main_color;
   margin: 0 0 0 8px;
   font-weight: lighter;
   padding: 2px 4px;
