@@ -1,11 +1,10 @@
 .AccountPage
-  .AccountPage__title
-    .AccountPage__title--logo
-      = image_tag 'logo.png', alt: 'ロゴ', class: 'TopLogo'
+  = render "devise/registrations/head_logo"
   .AccountPage__SignInMain
     .SignInForm
       .SignInForm__title
-        %p アカウントをお持ちでない方はこちら
+        %p.SignInForm__title--text 
+          アカウントをお持ちでない方はこちら
         %input.SignInForm__title--button{ type: "submit", value: "新規会員登録"}
       .SignInForm__box
         .FormContents
@@ -15,7 +14,4 @@
         .FormContents
           %input.FormContents__button{ type: "submit", value: "ログイン"}
   .AccountPage__etc
-    .AccountPage__etc--inc
-      = image_tag 'logo-white.png', alt: 'ロゴ', class: 'FooterLogo'
-    .AccountPage__etc--mark
-      ©︎ FURIMA,Inc
+    = render "devise/registrations/foot_logo"
