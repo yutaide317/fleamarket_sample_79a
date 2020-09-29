@@ -2,10 +2,21 @@ $BackgroundColor: rgba(229, 226, 226, 0.377);
 $section_color: #ea352d;
 $border_color: #ccc;
 $input_main_color:#ffffff;
+
 @mixin input_border () {
   outline: 0;
   border: 1px solid #7dc6f0;
 }
+
+input:focus{
+  @include input_border();
+}
+
+select:focus {
+  @include input_border();
+}
+
+
 
 .AccountPage {
   background-color: $BackgroundColor;
@@ -17,17 +28,149 @@ $input_main_color:#ffffff;
       height: 128px;     
       margin: 40px 0 0;
       padding: 0 590px;
+      .TopLogo {
+      height: 62px;
+      width: 213px;
+      }
     }
   }
   &__main {
     width: 700px;
     margin: auto;
     background-color: $input_main_color;
+    h2 {
+      padding: 32px;
+      font-size: 22px;
+      text-align: center;
+      font-weight: bold;
+      border-bottom: 1px solid $BackgroundColor;
+    }
+    .FormField {
+      padding: 30px;
+      &__box {
+        margin: 0 150px;
+        .FormGroup {
+          margin-top: 32px;
+          &__contents {
+            display: flex;
+            font-size: 12px;
+            font-weight: 600;
+            margin-bottom: 5px;
+            span {
+              background-color: $section_color;
+              color: $input_main_color;
+              margin: 0 0 0 8px;
+              font-weight: lighter;
+              padding: 2px 4px;
+            }
+          }
+          &__input {
+            width: 305px;
+            padding: 10px 16px 8px;
+            border: 1px solid $border_color;
+            font-size: 16px;
+            border-radius: 4px;
+          }
+          &__text {
+            h3 {
+              font-weight: bold;
+              margin-bottom: 5px;
+            }
+            p {
+              color: #333;
+            }
+          }
+        }
+        
+        .FormGroupB {
+          display: flex;
+          &__contents {
+            font-weight: 600;
+            &--FamilyName {
+              width: 130px;
+              padding: 10px 16px 8px;
+              border: 1px solid $border_color;
+              font-size: 16px;
+              border-radius: 4px;
+              font-weight: lighter;
+            }
+            &--FirstName {
+              width: 130px;
+              padding: 10px 16px 8px;
+              border: 1px solid $border_color;
+              font-size: 16px;
+              border-radius: 4px;
+              margin-left: 11px;
+              font-weight: lighter;
+            }
+          }
+        }
+        
+        .FormGroupC {
+          display: flex;
+          &__contents {
+            font-weight: 600;
+            &--select {
+              width: 90px;
+              padding: 12px 15px 12px;
+              border: 1px solid $border_color;
+              font-size: 16px;
+              border-radius: 4px;
+              font-weight: lighter;
+              line-height: inherit;
+            }
+          }
+          &__text {
+            margin: 10px 4px;
+            font-weight: lighter;
+          }
+        }
+        
+        .FormText {
+          margin-top: 5px;
+          &__box {
+            color: #888;
+          }
+        }
+        
+        .FormGroupD {
+          width: 100%;
+          padding: 12px 15px 12px;
+          border: 1px solid $border_color;
+          font-size: 16px;
+          border-radius: 4px;
+          font-weight: lighter;
+          line-height: inherit;
+        }
+      }
+      &__contents {
+        height: 195px;
+        margin: 0 150px;
+        &--box {
+          width: 339px;
+          padding: 10px 16px 8px;
+          margin-top: 32px;
+          background: $section_color;
+          border: 1px solid $section_color;
+          color: #fff;
+          font-size: 16px;
+          border-radius: 4px;
+        }
+        &--text {
+          font-size: 16px;
+        }
+      }
+    }
   }
   &__etc {
     width: 456px;
     height: 220px;
     margin: 0 auto;
+    .FooterLogo {
+      height: 62px;
+      width: 213px;
+      margin-left: 90px;
+    }
     &--inc {
       padding: 30px 30px 0 30px;
     }
@@ -38,147 +181,4 @@ $input_main_color:#ffffff;
   }
 }
 
-.TopLogo {
-  height: 62px;
-  width: 213px;
-}
 
-h2 {
-  padding: 32px;
-  font-size: 22px;
-  text-align: center;
-  font-weight: bold;
-  border-bottom: 1px solid $BackgroundColor;
-}
-
-.FormField {
-  padding: 30px;
-  &__box {
-    margin: 0 150px;
-  }
-  &__contents {
-    height: 195px;
-    margin: 0 150px;
-    &--box {
-    width: 339px;
-    padding: 10px 16px 8px;
-    margin-top: 32px;
-    background: $section_color;
-    border: 1px solid $section_color;
-    color: #fff;
-    font-size: 16px;
-    border-radius: 4px;
-    }
-    &--text {
-      font-size: 16px;
-    }
-  }
-}
-
-h3 {
-  font-weight: bold;
-  margin-bottom: 5px;
-}
-
-p {
-  color: #333;
-}
-
-input:focus{
-  @include input_border();
-}
-
-select:focus {
-  @include input_border();
-}
-.FormGroup {
-  margin-top: 32px;
-  &__contents {
-    display: flex;
-    font-size: 12px;
-    font-weight: 600;
-    margin-bottom: 5px;
-  }
-  &__input {
-    width: 305px;
-    padding: 10px 16px 8px;
-    border: 1px solid $border_color;
-    font-size: 16px;
-    border-radius: 4px;
-  }
-}
-
-.FormGroupB {
-  display: flex;
-  &__contents {
-    font-weight: 600;
-    &--FamilyName {
-      width: 130px;
-      padding: 10px 16px 8px;
-      border: 1px solid $border_color;
-      font-size: 16px;
-      border-radius: 4px;
-      font-weight: lighter;
-    }
-    &--FirstName {
-      width: 130px;
-      padding: 10px 16px 8px;
-      border: 1px solid $border_color;
-      font-size: 16px;
-      border-radius: 4px;
-      margin-left: 11px;
-      font-weight: lighter;
-    }
-  }
-}
-
-.FormGroupC {
-  display: flex;
-  &__contents {
-    font-weight: 600;
-    &--select {
-      width: 90px;
-      padding: 12px 15px 12px;
-      border: 1px solid $border_color;
-      font-size: 16px;
-      border-radius: 4px;
-      font-weight: lighter;
-      line-height: inherit;
-    }
-  }
-  &__text {
-    margin: 10px 4px;
-    font-weight: lighter;
-  }
-}
-
-.FormText {
-  margin-top: 5px;
-  &__box {
-    color: #888;
-  }
-}
-
-.FormGroupD__contents--select {
-  width: 100%;
-  padding: 12px 15px 12px;
-  border: 1px solid $border_color;
-  font-size: 16px;
-  border-radius: 4px;
-  font-weight: lighter;
-  line-height: inherit;
-}
-
-span {
-  background-color: $section_color;
-  color: $input_main_color;
-  margin: 0 0 0 8px;
-  font-weight: lighter;
-  padding: 2px 4px;
-}
-
-.FooterLogo {
-  height: 62px;
-  width: 213px;
-  margin-left: 90px;
-}
