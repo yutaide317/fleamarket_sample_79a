@@ -2,7 +2,7 @@
   .headerContainer
     .topHeader
       %h1.icon
-        %a{"href":'#', class: "icon__furima-logo"} 
+        = link_to '#', class: 'icon__furima-logo' do
           = image_tag 'logo.png'
       .searchBlock
         %form
@@ -13,16 +13,16 @@
     .nav
       %ul.leftLists
         %li.leftLists__cattab
-          %a#catTab{"href": "#"}
+          = link_to '#', class:'tabA' do
             カテゴリー
         %li.leftLists__bratab
-          %a#branbTab{"href": "#"}
+          = link_to '#', class:'tabB' do
             ブランド
       %ul.rightLists
         %li.rightLists__login
-          %a{"href": "#"}
+          = link_to '#', class:'loginBtn' do
             ログイン
         %li.rightLists__signup
           .rightLists__item--signup
-            %a{"href": "#"}
+            = link_to '#', class:'signupBtn' do
               新規会員登録

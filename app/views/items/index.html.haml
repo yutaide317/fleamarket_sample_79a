@@ -10,9 +10,9 @@
           %br
           フリマアプリです
         .content__banners
-          %a.appBtn{"href":'#'}
+          = link_to '#', class: 'appBtn' do
             = image_tag 'app-store-logo.svg'
-          %a.gooBtn{"href":'#'}
+          = link_to '#', class: 'gooBtn' do
             = image_tag 'google-play-logo.svg'
     %section.serviseIntroduction
       %h2.subtitle
@@ -57,11 +57,10 @@
           %br/
           ほしかったあの商品に出会えるかもしれません。
         .banners
-          %a.appBtn{"href":'#'}
+          = link_to '#', class: 'appBtn' do
             = image_tag 'app-store-logo.svg'
-          %a.gooBtn{"href":'#'}
+          = link_to '#', class: 'gooBtn' do
             = image_tag 'google-play-logo.svg'
-
     %section.serviceFeatures
       %h2.title FURIMAの特徴
       .features
@@ -87,11 +86,11 @@
       %h2.head ピックアップカテゴリー
       .itemBlock
         .itemHead
-          %a{"href": "#"}
+          = link_to '#' do
             %h3.title 新規投稿商品
         .itemLists
           .itemList
-            %a{"href": "#"}
+            = link_to '#' do
               %figure.itemList--img
                 = image_tag 'beef.jpg'
               .itemList--body
@@ -104,7 +103,7 @@
                       1
                   %p （税込）
           .itemList
-            %a{"href": "#"}
+            = link_to '#' do
               %figure.itemList--img
                 = image_tag 'beef.jpg'
               .itemList--body
@@ -117,7 +116,7 @@
                       1
                   %p （税込）
           .itemList
-            %a{"href": "#"}
+            = link_to '#' do
               %figure.itemList--img
                 = image_tag 'beef.jpg'
               .itemList--body
@@ -130,7 +129,7 @@
                       1
                   %p （税込）
           .itemList
-            %a{"href": "#"}
+            = link_to '#' do
               %figure.itemList--img
                 = image_tag 'beef.jpg'
               .itemList--body
@@ -143,7 +142,7 @@
                       1
                   %p （税込）
           .itemList
-            %a{"href": "#"}
+            = link_to '#' do
               %figure.itemList--img
                 = image_tag 'beef.jpg'
               .itemList--body
@@ -159,11 +158,11 @@
       %h2.head ピックアップブランド
       .itemBlock
         .itemHead
-          %a{"href": "#"}
+          = link_to '#' do
             %h3.title アーカイバ
         .itemLists
           .itemList
-            %a{"href": "#"}
+            = link_to '#' do
               %figure.itemList--img
                 = image_tag 'beef.jpg'
               .itemList--body
@@ -176,7 +175,7 @@
                       1
                   %p （税込）
           .itemList
-            %a{"href": "#"}
+            = link_to '#' do
               %figure.itemList--img
                 = image_tag 'beef.jpg'
               .itemList--body
@@ -189,7 +188,7 @@
                       1
                   %p （税込）
           .itemList
-            %a{"href": "#"}
+            = link_to '#' do
               %figure.itemList--img
                 = image_tag 'beef.jpg'
               .itemList--body
@@ -202,7 +201,7 @@
                       1
                   %p （税込）
           .itemList
-            %a{"href": "#"}
+            = link_to '#' do
               %figure.itemList--img
                 = image_tag 'beef.jpg'
               .itemList--body
@@ -215,7 +214,7 @@
                       1
                   %p （税込）
           .itemList
-            %a{"href": "#"}
+            = link_to '#' do
               %figure.itemList--img
                 = image_tag 'beef.jpg'
               .itemList--body

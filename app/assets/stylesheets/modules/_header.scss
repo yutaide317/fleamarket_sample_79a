@@ -59,7 +59,7 @@
         display: flex;
         &__cattab{
           text-decoration: none;
-          a{
+          .tabA{
             color: #333;
             text-decoration: none;
             line-height: 32px;
@@ -71,7 +71,7 @@
         }
         &__bratab{
           list-style: none;
-          a{
+          .tabB{
             color: #333;
             text-decoration: none;
             line-height: 32px;
@@ -89,7 +89,7 @@
           color: #333;
           line-height: 38px;
           padding: 0 0 0 16px;
-          a{
+          .loginBtn{
             display: flex;
             align-items: center;
             color: #333;
@@ -101,7 +101,7 @@
           color: #333;
           line-height: 38px;
           padding: 0 0 0 16px;
-          a{
+          .signupBtn{
             display: flex;
             align-items: center;
             color: #333;
