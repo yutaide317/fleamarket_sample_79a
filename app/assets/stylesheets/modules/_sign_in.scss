@@ -1,0 +1,50 @@
+.SignInForm {
+  width: 456px;
+  margin: 0 auto;
+  background-color: #ffffff;
+  &__title {
+    padding: 40px 64px;
+    text-align: center;
+    border-bottom: 1px solid $BackgroundColor;
+    &--text {
+      font-size: 14px;
+    }
+    &--button {
+      margin: 8px 0 0;
+      border-radius: 4px;
+      border: 1px solid #0099e8;
+      background: #0099e8;
+      color: #fff;
+      line-height: 40px;
+      width: 100%;
+    }
+  }
+  &__box {
+    padding: 24px 64px 32px;
+    .FormContents {
+      margin: 24px 0 0;
+      &__box {
+        height: 40px;
+        width: 90%;
+        padding: 10px 16px 8px;
+        border-radius: 4px;
+        border: 1px solid #ccc;
+        background: #fff;
+        line-height: 1.5;
+        font-size: 16px;
+      }
+      &__button {
+        height: 48px;
+        width: 100%;
+        padding: 10px 16px 8px;
+        border-radius: 4px;
+        background: $section_color;
+        border: 1px solid $section_color;
+        color: #fff;
+        font-size: 14px;
+        text-align: center;
+      }
+    }
+  }
+}
+
