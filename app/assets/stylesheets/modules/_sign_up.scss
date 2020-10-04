@@ -65,7 +65,8 @@ $input_main_color:#ffffff;
             }
           }
           &__input {
-            width: 305px;
+            width: 100%;
+            height: 46px;
             padding: 10px 16px 8px;
             border: 1px solid $border_color;
             font-size: 16px;
@@ -84,7 +85,8 @@ $input_main_color:#ffffff;
           &__contents {
             font-weight: 600;
             &--FamilyName {
-              width: 130px;
+              width: 165px;
+              height: 46px;
               padding: 10px 16px 8px;
               border: 1px solid $border_color;
               font-size: 16px;
@@ -92,7 +94,8 @@ $input_main_color:#ffffff;
               font-weight: lighter;
             }
             &--FirstName {
-              width: 130px;
+              width: 165px;
+              height: 46px;
               padding: 10px 16px 8px;
               border: 1px solid $border_color;
               font-size: 16px;
