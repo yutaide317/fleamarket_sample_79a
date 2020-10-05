@@ -1,0 +1,334 @@
+* {
+  box-sizing: border-box;
+}
+
+.wrapper {
+  background-color: #FAFAFA;
+  color: #333;
+  padding: 0 0 40px;
+  margin: 24px auto 0;
+  display: flex;
+  justify-content: space-around;
+  position: relative;
+  width: 1020px;
+  height: 100%;
+}
+.right-content {
+  width: 700px;
+  // height: 1200px;
+  justify-content: space-between;
+  margin: 0;
+  padding: 0;
+}
+.mypage-user-area {
+  height: 200px;
+  width: 700px;
+  margin: 0;
+  padding: 20px;
+  background-image: url("/assets/icon_brand.png");
+  background: url(https://www.mercari.com/jp/assets/img/mypage/user-bg.jpg?26912428);
+  text-align: center;
+  position: relative;
+  background-repeat: no-repeat;
+  background-size: cover
+}
+  .user-info {
+  display: flex;
+  justify-content: center;
+}
+
+  .exihibited-item {
+    margin: 0 0 0 16px;
+  }
+
+.mypage-bord {
+  width: 700px;
+  // height: 600px;
+  background-color: #FAFAFA;
+  &__selectTab {
+    width: 100%;
+    height: 74px;
+    display: flex;
+  }
+    &__left {
+      width: 50%;
+      display: flex;
+    }
+    &__right {
+      width: 50%;
+      display: flex;
+    }
+}
+
+
+
+
+  a {
+    text-decoration: none;
+  }
+
+.sideBar {
+  width: 280px;
+  background-color: #FFFFFF;
+  border: solid 1px #eee;
+  text-decoration: none;
+  margin: 24px auto 0;
+  .myPage {
+    border-bottom: solid 1px #eee;
+    font-size: 14px;
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+    text-decoration: none;
+  }
+  .notice {
+    border-bottom: solid 1px #eee;
+    font-size: 14px;
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .todo-list {
+    border-bottom: solid 1px #eee;
+    font-size: 14px;
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .like-list {
+    border-bottom: solid 1px #eee;
+    font-size: 14px;
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .sell {
+    border-bottom: solid 1px #eee;
+    font-size: 14px;
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .draft-list {
+    border-bottom: solid 1px #eee;
+    font-size: 14px;
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .itemsListed__exhibiting {
+    border-bottom: solid 1px #eee;
+    font-size: 14px;
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .itemsListed__during-trading {
+    border-bottom: solid 1px #eee;
+    font-size: 14px;
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .itemsListed__sold {
+    border-bottom: solid 1px #eee;
+    font-size: 14px;
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .purchasedItem__during-trading {
+    border-bottom: solid 1px #eee;
+    font-size: 14px;
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .purchasedItem__past-transactions {
+    border-bottom: solid 1px #eee;
+    font-size: 14px;
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .news-list {
+    border-bottom: solid 1px #eee;
+    font-size: 14px;
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .evaluation-list {
+    border-bottom: solid 1px #eee;
+    font-size: 14px;
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .guide {
+    border-bottom: solid 1px #eee;
+    font-size: 14px;
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .contact {
+    border-bottom: solid 1px #eee;
+    font-size: 14px;
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  %h3.mypage-nav-head {
+    color: #333;
+    font-weight: bold;
+    margin: 8px 0 0;
+    list-style: none;
+    background-color: #FAFAFA;
+  }
+  %ul.mypage-nav-list {
+    margin: 8px 0 0 ;
+    list-style: none;
+  }
+  .sale-transfer-application {
+    border-bottom: solid 1px #eee;
+    font-size: 14px;
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .point {
+    border-bottom: solid 1px #eee;
+    font-size: 14px;
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+
+  .profile {
+    border-bottom: solid 1px #eee;
+    font-size: 14px;
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .shipmentSource-addressee-addressChange {
+    border-bottom: solid 1px #eee;
+    font-size: 14px;
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .method-of-payment {
+    border-bottom: solid 1px #eee;
+    font-size: 14px;
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .mail-password {
+    border-bottom: solid 1px #eee;
+    font-size: 14px;
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .identity-information {
+    border-bottom: solid 1px #eee;
+    font-size: 14px;
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .confirmation-phone-number {
+    border-bottom: solid 1px #eee;
+    font-size: 14px;
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .logout {
+    border-bottom: solid 1px #eee;
+    font-size: 14px;
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .account-deletion {
+    border-bottom: solid 1px #eee;
+    font-size: 14px;
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+// .wrapper {
+//   color: #000;
+//   background: #FAFAFA;
+//   width: 100%;
+//   height: 100%;
+// }
+// .contaier {
+//   display: flex;
+//   margin: 0 auto;
+//   padding-top: 40px;
+//   width: 1020px;
+//   justify-content: space-between;
+//   text-decoration: none;
+// }
+// .profile {
+//   width: 700px;
+//   height: 200px;
+//   position: relative;
+// }
+
+// .top-bord {
+//   width: 700px;
+//   height: 513px;
+//   background-color: #FAFAFA;
+//   &__header {
+//     height: 72px;
+//     width: 668px;
+//     line-height: 72px;
+//     padding: 0 16px;
+//     font-weight: bold;
+//   }
+//   &__select-tab {
+//     height: 72px;
+//     width: 100%;
+//     display: flex;
+//     &__right {
+//       width: 50%;
+//       display: flex;
+//       justify-content: center;
+//       line-height: 72px;
+//       font-weight: bold;
+//       background-color: #eee;
+//     }
+//     &__left {
+//       width: 50%;
+//       display: flex;
+//       justify-content: center;
+//       line-height: 72px;
+//       font-weight: bold;
+//       background-color: #eee;
+//     }
+//   }
+//   &__main-up {
+//     width: 700px;
+//     margin-top: 60px;
+//     display: flex;
+//     justify-content: center;
+//   }
+//   &__main-down {
+//     width: 700px;
+//     margin-top: 60px;
+//     display: flex;
+//     justify-content: center;
+//     font-weight: bold;
+//     color: #cccccc;
+//   }
+// }
