@@ -5,7 +5,8 @@
       .SignInForm__title
         %p.SignInForm__title--text 
           アカウントをお持ちでない方はこちら
-        %input.SignInForm__title--button{ type: "submit", value: "新規会員登録"}
+        -# %input.SignInForm__title--button{ type: "submit", placeholder: "新規会員登録"}
+        = link_to '新規会員登録', new_user_registration_path, class: "SignInForm__title--button"
       .SignInForm__box
         .FormContents
           %input.FormContents__box{ type: "text", placeholder: "メールアドレス"}
