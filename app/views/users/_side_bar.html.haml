@@ -66,8 +66,10 @@
     %span 設定
 
   .method-of-payment
-    支払い方法
-    <i class = "fas fa-angle-right fa-1.5x"></i>
+    = link_to new_credit_card_path do
+      支払い方法
+      <i class = "fas fa-angle-right fa-1.5x"></i>
+   
   -# .mail-password
   -#   メール/パスワード
   -#   <i class = "fas fa-angle-right fa-1.5x"></i>
