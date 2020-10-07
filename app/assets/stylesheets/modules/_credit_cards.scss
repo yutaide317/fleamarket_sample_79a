@@ -85,6 +85,16 @@
           font-size: 16px;
           border-radius: 4px;
         }
+        .backlinkArea{
+          display: flex;
+          justify-content: center;
+          .back_link{
+            color: #0095ee;
+            text-align: center;
+            margin-top: 35px;
+          }
+        }
+        
       }
 
     }

@@ -62,4 +62,6 @@
           %input.formBlock__input{ type:"integer", placeholder:"カード背面4桁もしくは3桁の番号"}
       .formArea__contents
         %input.formArea__contents--box{ type:"submit", value:"追加する"}
+        .backlinkArea
+          = link_to "もどる", users_path, class: "back_link"
 
