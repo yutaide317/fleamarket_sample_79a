@@ -1,1 +1,44 @@
-test
+.partContainer
+  .creditcardArea
+    %section.headerContainer
+      %h2.headerTitle
+        クレジットカード情報入力
+    .formArea
+      .container
+        .formBlock
+          .formBlock__contents
+            カード番号
+            %span
+              必須
+          %input.formBlock__input{ type:"integer", placeholder:"半角数字のみ"}
+        .formBlock
+          .formBlock__contents
+            有効期限
+            %span
+              必須
+        .formBlockB
+          .formBlockB__contents
+            %select.formBlockB__contents--select
+              %option{ value: "01"}01
+              %option{ value: "02"}02
+              %option{ value: "03"}03
+          .formBlockB__text
+            月
+          .formBlockB__contents
+            %select.formBlockB__contents--select
+              %option{ value: "20"}20
+              %option{ value: "21"}21
+              %option{ value: "22"}22
+          .formBlockB__text
+            年
+
+        .formBlock
+          .formBlock__contents
+            セキュリティコード
+            %span
+              必須
+          %input.formBlock__input{ type:"integer", placeholder:"カード背面4桁もしくは3桁の番号"}
+
+          %button.addCardBlock
+            追加する
+
