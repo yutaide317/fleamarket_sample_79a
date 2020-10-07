@@ -67,6 +67,20 @@
           }
         }
       }
+      &__contents{
+        height: 195px;
+        margin: 0 150px;
+        &--box{
+          width: 339px;
+          padding: 10px 16px 8px;
+          margin-top: 32px;
+          background: #ea352d;
+          border: 1px solid #ea352d;
+          color: #fff;
+          font-size: 16px;
+          border-radius: 4px;
+        }
+      }
 
     }
   }
