@@ -10,9 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_05_063847) do
+ActiveRecord::Schema.define(version: 2020_10_05_063802) do
 
-  create_table "destinations", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+  create_table "profiles", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+    t.string "family_name", null: false
+    t.string "first_name", null: false
+    t.string "family_name_kana", null: false
+    t.string "first_name_kana", null: false
+    t.date "birth_day", null: false
+    t.text "introduction"
+    t.string "profile_image"
     t.string "destination_family_name", null: false
     t.string "destination_first_name", null: false
     t.string "destination_family_name_kana", null: false
@@ -23,20 +30,6 @@ ActiveRecord::Schema.define(version: 2020_10_05_063847) do
     t.string "house_number", null: false
     t.string "building_name"
     t.integer "phone_number"
-    t.bigint "user_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["user_id"], name: "index_destinations_on_user_id"
-  end
-
-  create_table "profiles", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
-    t.string "family_name", null: false
-    t.string "first_name", null: false
-    t.string "family_name_kana", null: false
-    t.string "first_name_kana", null: false
-    t.date "birth_day", null: false
-    t.text "introduction"
-    t.string "profile_image"
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -57,6 +50,5 @@ ActiveRecord::Schema.define(version: 2020_10_05_063847) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "destinations", "users"
   add_foreign_key "profiles", "users"
 end
