@@ -36,6 +36,22 @@ $BackgroundColor: rgba(229, 226, 226, 0.377);
                 color: #4E4E4E;
               }
             }
+            .FormGroup{
+              margin-top: 32px;
+              &__content{
+                display: flex;
+                font-size: 12px;
+                font-weight: 600;
+                margin-bottom: 5px;
+                span{
+                  background-color: #ea352d;
+                  color: #ffffff;
+                  margin: 0 0 0 8px;
+                  font-weight: lighter;
+                  padding: 2px 4px;
+                }
+              }
+            }
             
 
           }
