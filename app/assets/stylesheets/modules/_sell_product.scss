@@ -1,0 +1,13 @@
+$BackgroundColor: rgba(229, 226, 226, 0.377);
+
+.SellProductPage{
+  background-color: $BackgroundColor;
+  height: 100vh;
+  overflow: scroll;
+  &__container{
+      width: 700px;
+      margin: auto;
+      background-color: #ffffff;
+      
+  }
+}
