@@ -51,6 +51,14 @@ $BackgroundColor: rgba(229, 226, 226, 0.377);
                   padding: 2px 4px;
                 }
               }
+              &__input{
+                width: 100%;
+                height: 46px;
+                padding: 10px 16px 8px;
+                border: 1px solid $border_color;
+                font-size: 16px;
+                border-radius: 4px;
+              }
             }
             
 
