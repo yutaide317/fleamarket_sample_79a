@@ -8,6 +8,38 @@ $BackgroundColor: rgba(229, 226, 226, 0.377);
       width: 700px;
       margin: auto;
       background-color: #ffffff;
-      
+      .FormArea{
+        padding: 5px;
+        &__content{
+          margin: 0 10px;
+          .FormBlock{
+            padding: 40px;
+            border-bottom: 1px solid #EFEFEF;
+            .imageUploadArea{
+              margin-top: 32px;
+              &__content{
+                display: flex;
+                font-size: 12px;
+                font-weight: 600;
+                margin-bottom: 5px;
+                span{
+                  background-color: #ea352d;
+                  color: #ffffff;
+                  margin: 0 0 0 8px;
+                  font-weight: lighter;
+                  padding: 2px 4px;
+                }
+              }
+              p{
+                margin-top: 16px;
+                font-size: 14px;
+                color: #4E4E4E;
+              }
+            }
+            
+
+          }
+        }
+      }
   }
 }
