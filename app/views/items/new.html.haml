@@ -23,7 +23,7 @@
               商品の説明
               %span
                 必須
-            = text_area :hoge, :huga, placeholder: '1行目, test'
+            %textarea{cols: "40", rows: "7", class: "textarea", placeholder: "商品の説明（必須1,000文字以内）（色、素材、重さ、定価、注意点など）"} 
 
         .FormBlock
           .FormBlock__title
