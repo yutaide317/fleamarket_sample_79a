@@ -2,15 +2,16 @@
   = render "header"
 
   .showMain
-    テスト
     .topContent
       .itemBox
         .itemBox__name
           商品名
-        .itemBox__mainImage
-          画像が入ります
-        .itemBox__subImage
-          小さい画像が入ります
+          .itemBox__itemImage
+            .itemBox__itemImage__mainImage
+              = image_tag 'beef.jpg', size: '500x300'
+            .itemBox__itemImage__subImage
+              = image_tag 'beef.jpg', size: '140x100'
+
         .itemBox__price
           10000円
         .itemBox__priceDetail

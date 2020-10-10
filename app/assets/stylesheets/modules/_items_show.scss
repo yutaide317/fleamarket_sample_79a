@@ -1,10 +1,39 @@
+$main-color: #f8f8f8;
+$sub-color: #3CCACE;
+
 .showMain{
-  background-color: #f8f8f8;
+  background-color: $main-color;
   padding: 40px 0;
 
   .topContent{
-  width: 700px;
-  margin:0 auto;
-  }
+    width: 700px;
+    margin:0 auto;
+    
+    .itemBox{
+      background-color: white;
+      &__name{
+        font-size: 24px ;
+        width: 100%;
+        font-weight: bold;
+        align-items: center;
+        line-height: 50px;
+        text-align: center;
+        
+      &__itemImage{
+        text-align: center;
+        margin: 0 auto;
+        list-style: none;
+        }
+      
+        
+        
+          
+
+        }
+
+        
+      
+      }
+      }
   
 }
