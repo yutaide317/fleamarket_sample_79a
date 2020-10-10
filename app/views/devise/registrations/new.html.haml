@@ -2,6 +2,7 @@
   = render "head_logo"
   .AccountPage__main
     = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+      = render "devise/shared/error_messages", model: f.object
       %h2.AccountPage__main--text 新規会員登録
       .FormField
         .FormField__box
@@ -95,7 +96,7 @@
                 郵便番号
                 %span.mandatory
                   必須 
-              = f.number_field :post_code, class: "FormGroup__input", placeholder:"例）〒120-0009"
+              = f.text_field :post_code, class: "FormGroup__input", placeholder:"例）〒120-0009"
             .FormGroup
               .FormGroup__contents
                 都道府県
@@ -125,7 +126,7 @@
                 電話番号
                 %span.any
                   任意
-              = f.number_field :phone_number, class: "FormGroup__input", placeholder:"例）09012123434"
+              = f.telephone_field :phone_number, class: "FormGroup__input", placeholder:"例）09012123434"
         .FormField__contents
           = f.submit "登録する", class: "FormField__contents--box"
     .AccountPage__etc
