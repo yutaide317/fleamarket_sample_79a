@@ -150,6 +150,22 @@ $BackgroundColor: rgba(229, 226, 226, 0.377);
           }
         }
       }
+      .FormArea__submitArea{ 
+        height: 195px;
+        display: flex;
+        justify-content: center;
+        &--btn{
+          width: 339px;
+          height: 50px;
+          padding: 10px 16px 8px;
+          margin-top: 32px;
+          background: $section_color;
+          border: 1px solid $section_color;
+          color: #fff;
+          font-size: 16px;
+          border-radius: 4px;
+        }
+      }
     }
   }
 }
