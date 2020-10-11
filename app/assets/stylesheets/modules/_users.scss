@@ -14,28 +14,22 @@
 .MainContents {
   width: 700px;
   margin-top: 50px;
-}
-
-.mypage__userArea {
-  height: 200px;
-  width: 700px;
-  padding: 20px;
-  background: #7fd9d2;
-  text-align: center;
-}
-
-  .userInfo {
-  display: flex;
-  justify-content: center;
-}
-
-  .exihibitedItem {
-    margin: 0 0 0 16px;
+  &__userArea {
+    height: 200px;
+    width: 700px;
+    padding: 20px;
+    background: #7fd9d2;
+    text-align: center;
+    &--userInfo {
+      display: flex;
+      justify-content: center;
+      .exihibitedItem {
+        margin: 0 0 0 16px;
+      }
+    }
   }
+}
 
-  a {
-    text-decoration: none;
-  }
 
 .SideBar {
   width: 280px;
@@ -43,37 +37,7 @@
   margin: 50px 50px 0 200px;
   text-decoration: none;
   height: 420px;
-
-  .sell {
-    border-bottom: solid 1px #eee;
-    font-size: 14px;
-    padding: 16px;
-    display: flex;
-    justify-content: space-between;
-  }
-  .itemsListed__exhibiting {
-    border-bottom: solid 1px #eee;
-    font-size: 14px;
-    padding: 16px;
-    display: flex;
-    justify-content: space-between;
-  }
-  .itemsListed__sold {
-    border-bottom: solid 1px #eee;
-    font-size: 14px;
-    padding: 16px;
-    display: flex;
-    justify-content: space-between;
-  }
-  .purchasedItem__pastTransactions {
-    border-bottom: solid 1px #eee;
-    font-size: 14px;
-    padding: 16px;
-    display: flex;
-    justify-content: space-between;
-  }
-
-  .sideBar__navHead {
+  &__navHead {
     background-color: rgba(229,226,226,0.377);
     color: #333;
     width: 280px;
@@ -81,26 +45,16 @@
     font-weight: bold;
     padding: 20px 0 20px 0;
   }
-  .payment__method {
+  .SideMenu {
     border-bottom: solid 1px #eee;
     font-size: 14px;
     padding: 16px;
     display: flex;
     justify-content: space-between;
-  }
-  .logout {
-    border-bottom: solid 1px #eee;
-    font-size: 14px;
-    padding: 16px;
-    display: flex;
-    justify-content: space-between;
-  }
-  .account__deletion {
-    border-bottom: solid 1px #eee;
-    font-size: 14px;
-    padding: 16px;
-    display: flex;
-    justify-content: space-between;
+    a {
+      text-decoration: none;
+      color: #333333;
+    }
   }
 }
 
@@ -113,7 +67,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  &--button {
+  &__button {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -123,6 +77,5 @@
     color: white;
     border-radius: 4px;
     cursor: pointer;
-    overflow: scroll;
   }
 }
