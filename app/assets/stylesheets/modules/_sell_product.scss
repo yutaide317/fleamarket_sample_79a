@@ -150,22 +150,35 @@ $BackgroundColor: rgba(229, 226, 226, 0.377);
           }
         }
       }
-      .FormArea__submitArea{ 
+      &__footer{
         height: 195px;
-        display: flex;
-        justify-content: center;
-        &--btn{
-          width: 339px;
-          height: 50px;
-          padding: 10px 16px 8px;
-          margin-top: 32px;
-          background: $section_color;
-          border: 1px solid $section_color;
-          color: #fff;
-          font-size: 16px;
-          border-radius: 4px;
+        .submitArea{ 
+          display: flex;
+          justify-content: center;
+          .sellbtn{
+            width: 339px;
+            height: 50px;
+            padding: 10px 16px 8px;
+            margin-top: 32px;
+            background: $section_color;
+            border: 1px solid $section_color;
+            color: #fff;
+            font-size: 16px;
+            border-radius: 4px;
+          }
+        }
+        .backlinkArea{
+          display: flex;
+          justify-content: center;
+          .backToIndex{
+            color: #0095ee;
+            text-align: center;
+            text-decoration: none;
+            margin-top: 35px;
+          }
         }
       }
+      
     }
   }
 }

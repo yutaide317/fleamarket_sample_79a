@@ -154,8 +154,13 @@
               %p.unit
                 ¥
               %input.FormGroupB__input{ type:"string", placeholder:"0"}
-      .FormArea__submitArea
-        %input.FormArea__submitArea--btn{ type:"submit", value:"出品する"}
+      .FormArea__footer
+        .submitArea
+          %input.sellbtn{ type:"submit", value:"出品する"}
+        .backlinkArea
+          = link_to "もどる", root_path, class: "backToIndex"
+          
+
   .AccountPage__etc
     = render "devise/registrations/foot_logo"
 
