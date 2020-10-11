@@ -29,6 +29,7 @@ $BackgroundColor: rgba(229, 226, 226, 0.377);
                 font-weight: lighter;
                 padding: 2px 4px;
               }
+              }
             }
             p{
               margin-top: 16px;
@@ -43,13 +44,19 @@ $BackgroundColor: rgba(229, 226, 226, 0.377);
               font-size: 12px;
               font-weight: 600;
               margin-bottom: 5px;
-              span{
+              .mustDescription{
                 background-color: #ea352d;
                 color: #ffffff;
                 margin: 0 0 0 8px;
                 font-weight: lighter;
                 padding: 2px 4px;
               }
+              .freeDescription{
+                background-color: #BFBFBF;
+                color: #ffffff;
+                margin: 0 0 0 8px;
+                font-weight: lighter;
+                padding: 2px 4px;
             }
             &__input{
               width: 100%;
