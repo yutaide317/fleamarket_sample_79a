@@ -3,18 +3,17 @@
 }
 
 .wrapper {
-  background-color: #FAFAFA;
+  background-color:rgba(229,226,226,0.377);
   color: #333;
   padding: 0 0 40px;
-  margin: 24px auto;
   display: flex;
-  justify-content: space-around;
   width: 100%;
-  height: 100%;
+  height: 100vh;
 }
 
-.mainContents {
+.MainContents {
   width: 700px;
+  margin-top: 50px;
 }
 
 .mypage__userArea {
@@ -38,12 +37,12 @@
     text-decoration: none;
   }
 
-.sideBar {
+.SideBar {
   width: 280px;
   background-color: #FFFFFF;
-  margin: 50px 0 0 200px;
+  margin: 50px 50px 0 200px;
   text-decoration: none;
-  overflow: scroll;
+  height: 420px;
 
   .sell {
     border-bottom: solid 1px #eee;
@@ -75,7 +74,7 @@
   }
 
   .sideBar__navHead {
-    background-color: #FAFAFA;
+    background-color: rgba(229,226,226,0.377);
     color: #333;
     width: 280px;
     height: 16px;
@@ -108,8 +107,9 @@
 .logoutBord {
   height: 179px;
   width: 700px;
-  background-color: #FAFAFA;
+  background-color: white;
   padding: 64px;
+  margin: 50px 50px 50px 0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -119,7 +119,6 @@
     align-items: center;
     width: 320px;
     height: 50px;
-    margin-right: auto;
     background-color: red;
     color: white;
     border-radius: 4px;
