@@ -1,0 +1,26 @@
+%header.pageHeader
+  .headerContainer
+    .topHeader
+      %h1.icon
+        = link_to '#', class: 'icon__furima-logo' do
+          = image_tag 'logo.png'
+      .searchBlock
+        %form
+          %input.searchBlock__input{placeholder: "キーワードから探す"}
+          %button{"type": "submit"}
+            .searchBlock__icon
+              = image_tag 'icon-search 1.png'
+    .nav
+      %ul.leftLists
+        %li.leftLists__cattab
+          = link_to '#', class:'tabA' do
+            カテゴリー
+        %li.leftLists__bratab
+          = link_to '#', class:'tabB' do
+            ブランド
+      %ul.rightLists
+        %li.rightLists__login
+          = link_to 'ログイン', new_user_session_path, class:'loginBtn'
+        %li.rightLists__signup
+          .rightLists__item--signup
+            = link_to '新規会員登録', new_user_registration_path, class:'signupBtn'
