@@ -106,6 +106,48 @@ $BackgroundColor: rgba(229, 226, 226, 0.377);
               margin-bottom: 30px;
             }
           }
+          .FormGroupB{
+            margin-top: 10px;
+            display: flex;
+            justify-content: space-between;
+            &__content{
+              display: flex;
+              align-items: center;
+              font-size: 12px;
+              font-weight: 600;
+              margin-bottom: 10px;
+              .mustDescription{
+                background-color: #ea352d;
+                color: #ffffff;
+                margin: 0 0 0 8px;
+                font-weight: lighter;
+                padding: 2px 4px;
+              }
+            }
+            &__inputArea{
+              display: flex;
+              align-items: center;
+              width: 300px;;
+              p{
+                font-size: 14px;
+                margin-right: 8px;
+              }
+              input{
+                text-align: right;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                box-sizing: border-box;
+                font-family: inherit;
+                font-size: inherit;
+                height: 48px;
+                margin: 0;
+                outline: none;
+                padding: 0 16px;
+                width: 100%;
+              }
+
+            }
+          }
         }
       }
     }
