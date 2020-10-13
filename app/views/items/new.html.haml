@@ -7,7 +7,7 @@
           .ImageUploadArea
             .ImageUploadArea__content
               出品画像
-              %span.mustDescription
+              %span.MustDescription
                 必須
             %p.description
               最大10枚までアップロードできます
@@ -23,13 +23,13 @@
           .FormGroup
             .FormGroup__content
               商品名
-              %span.mustDescription
+              %span.MustDescription
                 必須
             %input.FormGroup__input{ type:"text", placeholder:"40文字まで"}
           .FormGroup
             .FormGroup__content
               商品の説明
-              %span.mustDescription
+              %span.MustDescription
                 必須
             %textarea{cols: "40", rows: "7", class: "textarea", placeholder: "商品の説明（必須1,000文字以内）（色、素材、重さ、定価、注意点など）"} 
 
@@ -39,9 +39,9 @@
           .FormGroup
             .FormGroup__content
               カテゴリー
-              %span.mustDescription
+              %span.MustDescription
                 必須
-            %select.FormGroup__pullDownSelect
+            %select.FormGroup__PullDownSelect
               %option 選択してください
               %option{ value: "レディース"}レディース
               %option{ value: "メンズ"}メンズ
@@ -59,12 +59,12 @@
 
             .FormGroup__content
               ブランド
-              %span.freeDescription
+              %span.FreeDescription
                 任意
             %input.FormGroup__input{ type:"text", placeholder:"例）シャネル"}
             .FormGroup__content
               商品の状態
-              %span.mustDescription
+              %span.MustDescription
                 必須
             %select.FormGroup__pullDownSelect
               %option 選択してください
@@ -80,7 +80,7 @@
           .FormGroup
             .FormGroup__content
               配送料の負担
-              %span.mustDescription
+              %span.MustDescription
                 必須
             %select.FormGroup__pullDownSelect
               %option 選択してください
@@ -89,7 +89,7 @@
           .FormGroup
             .FormGroup__content
               発送元の地域
-              %span.mustDescription
+              %span.MustDescription
                 必須
             %select.FormGroup__pullDownSelect
               %option 選択してください
@@ -143,7 +143,7 @@
           .FormGroup
             .FormGroup__content
               発送までの日数
-              %span.mustDescription
+              %span.MustDescription
                 必須
             %select.FormGroup__pullDownSelect
               %option 選択してください
@@ -156,17 +156,17 @@
           .FormGroupB
             .FormGroupB__content
               販売価格
-              %span.mustDescription
+              %span.MustDescription
                 必須
             .FormGroupB__inputArea
               %p.unit
                 ¥
               %input.FormGroupB__input{ type:"string", placeholder:"0"}
       .FormArea__footer
-        .submitArea
-          %input.sellbtn{ type:"submit", value:"出品する"}
-        .backlinkArea
-          = link_to "もどる", root_path, class: "backToIndex"
+        .SubmitArea
+          %input.SellBtn{ type:"submit", value:"出品する"}
+        .BackLinkArea
+          = link_to "もどる", root_path, class: "BackToIndex"
           
 
   .AccountPage__etc
