@@ -1,13 +1,17 @@
 $main-color: #f8f8f8;
 $sub-color: #3CCACE;
+$table-border: solid 1px #dedede;
 
 .showMain{
   background-color: $main-color;
+  height: 2020px;
+  width: 100%;
   padding: 40px 0;
 
   .topContent{
+    height: 1840px;
     width: 700px;
-    margin:0 auto;
+    margin: 0 auto;
     
     .itemBox{
       background-color: white;
@@ -35,13 +39,69 @@ $sub-color: #3CCACE;
       }
       &__description{
         font-size: 18px;
-        height: 200px;
+        height: 100px;
         width: 600px;
-        margin: 0 auto;
+        margin: 0 50px 30px 50px;
     }
       &__itemTable{
-        
+        height: 100%;
+        width: 600px;
+        font-size: 13px;
+        margin: 0 auto;
+        th {
+          background-color: #eee;
+          width: 150px;
+          border: $table-border;
+          text-align: center;
+        }
+        td {
+          width: 450px;
+          border: $table-border;
+          padding: 15px;
+        }
+        .tableTypeA {
+          height: 35px;
+        }
+        .tableTypeB {
+          height: 65px;
+        }
+        .tableTypeC {
+          height: 10px;
+        }
+      }
+      &__optionArea {
+        height: 80px;
+        width: 600px;
+        padding-top: 20px;
+        display: flex;
+        justify-content: space-between;
+        margin: 0 auto;
+        &__likeBtn {
+          width: 160px;
+          .likeBtn {
+            width: 100%;
+            font-size: 16px;
+            margin-right: auto;
+            padding: 6px 10px;
+            border-radius: 40px;
+            color: $sub-color;
+            border: 1px solid #FFB340;
+            cursor: pointer;
+          }
+        &__reportBtn{
+          width: 160px;
+          .reportBtn{
+            width: 100%;
+            font-size: 14px;
+            padding: 6px 10px;
+            border-radius: 40px;
+            color: #333;
+            border: 1px solid #333;
+            text-decoration: none;
+          }
+        }
       }
   }
+}
 }
 }
