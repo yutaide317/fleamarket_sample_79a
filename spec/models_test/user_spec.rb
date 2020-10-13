@@ -9,7 +9,7 @@ describe User do
 
     # 2. nicknameが空では登録できないこと
     it "is invalid without a nickname" do
-      user = User.new(nickname: "", email: "kkk@gmail.com", password: "00000000", password_confirmation: "00000000")
+      user = build(:user, nickname: nil)
       user.valid?
       expect(user.errors[:nickname]).to include("を入力してください")
     end
@@ -37,7 +37,7 @@ describe User do
 
     # 6. passwordが6文字以下であれば登録できないこと
     it "is invalid with a password that has less than 6 characters " do
-      user = build(:user, password: "00000", password_confirmation: "00000")
+      user = build(:user, password: "000000", password_confirmation: "00000")
       user.valid?
       expect(user.errors[:password]).to include("は7文字以上で入力してください")
     end
