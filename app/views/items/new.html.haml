@@ -4,16 +4,16 @@
     .FormArea
       .FormArea__content
         .FormBlock
-          .imageUploadArea
-            .imageUploadArea__content
+          .ImageUploadArea
+            .ImageUploadArea__content
               出品画像
               %span.mustDescription
                 必須
             %p.description
               最大10枚までアップロードできます
-            .productFileContainer
-              .uploadArea
-                .imageDropSpot
+            .ProductFileContainer
+              %label{class: "UploadArea"}
+                %input{type: "file", class: "ImageDropSpot"}
                   = icon('fas', 'camera')
                   %p.description
                     ドラッグアンドドロップ
