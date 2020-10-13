@@ -1,7 +1,5 @@
-$BackgroundColor: rgba(229, 226, 226, 0.377);
-
 .SellProductPage{
-  background-color: $BackgroundColor;
+  background-color: rgba(229, 226, 226, 0.377);;
   height: 100vh;
   overflow: scroll;
   &__container{
@@ -9,7 +7,6 @@ $BackgroundColor: rgba(229, 226, 226, 0.377);
     margin: auto;
     background-color: #ffffff;
     .FormArea{
-      padding: 5px;
       &__content{
         margin: 0 10px;
         .FormBlock{
@@ -28,7 +25,6 @@ $BackgroundColor: rgba(229, 226, 226, 0.377);
               display: flex;
               font-size: 12px;
               font-weight: 600;
-              margin-bottom: 5px;
               span{
                 background-color: #ea352d;
                 color: #ffffff;
@@ -46,7 +42,6 @@ $BackgroundColor: rgba(229, 226, 226, 0.377);
               height: 150px;
               margin: 20px 0;
               .UploadArea{
-                width: 100%;
                 place-content: center;
                 background-color: whitesmoke;
                 border: 1px dashed #cccccc;
@@ -55,9 +50,6 @@ $BackgroundColor: rgba(229, 226, 226, 0.377);
                 height: 100%;
                 flex-wrap: wrap;
                 .ImageDropSpot{
-                  display: flex;
-                  flex-direction: column;
-                  align-items: center;
                   display: none;
                 }
                 .fa-camera{
@@ -109,8 +101,6 @@ $BackgroundColor: rgba(229, 226, 226, 0.377);
               width: 100%;
               border: 1px solid #ccc;
               border-radius: 4px;
-              -moz-box-sizing: border-box;
-              box-sizing: border-box;
               color: #222;
               font-size: 16px;
               margin: 0;
@@ -121,23 +111,18 @@ $BackgroundColor: rgba(229, 226, 226, 0.377);
             }
             select{
               width: 100%;
-              appearance: none;
               background-color: #fff;
               border: 1px solid #ccc;
               border-radius: 4px;
-              box-sizing: border-box;
               color: #222;
               font-size: 16px;
               height: 48px;
-              line-height: 1;
-              margin: 0;
               outline: none;
               padding: 0 56px 0 16px;
               margin-bottom: 30px;
             }
           }
           .FormGroupB{
-            margin-top: 10px;
             display: flex;
             justify-content: space-between;
             &__content{
@@ -166,16 +151,13 @@ $BackgroundColor: rgba(229, 226, 226, 0.377);
                 text-align: right;
                 border: 1px solid #ccc;
                 border-radius: 4px;
-                box-sizing: border-box;
                 font-family: inherit;
                 font-size: inherit;
                 height: 48px;
-                margin: 0;
                 outline: none;
                 padding: 0 16px;
                 width: 100%;
               }
-
             }
           }
         }
@@ -203,13 +185,11 @@ $BackgroundColor: rgba(229, 226, 226, 0.377);
           justify-content: center;
           .BackToIndex{
             color: #0095ee;
-            text-align: center;
             text-decoration: none;
             margin-top: 35px;
           }
         }
       }
-      
     }
   }
 }

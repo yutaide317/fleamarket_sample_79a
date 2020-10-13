@@ -32,7 +32,6 @@
               %span.MustDescription
                 必須
             %textarea{cols: "40", rows: "7", class: "textarea", placeholder: "商品の説明（必須1,000文字以内）（色、素材、重さ、定価、注意点など）"} 
-
         .FormBlock
           .FormBlock__title
             商品の詳細
@@ -56,7 +55,6 @@
               %option{ value: "チケット"}チケット
               %option{ value: "自動車・オートバイ"}自動車・オートバイ
               %option{ value: "その他"}その他
-
             .FormGroup__content
               ブランド
               %span.FreeDescription
@@ -167,8 +165,6 @@
           %input.SellBtn{ type:"submit", value:"出品する"}
         .BackLinkArea
           = link_to "もどる", root_path, class: "BackToIndex"
-          
-
   .AccountPage__etc
     = render "devise/registrations/foot_logo"
 
