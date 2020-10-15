@@ -1,3 +1,7 @@
+$border_color: #cccccc;
+$eyecatch_color: #ea352d;
+$base_color: #ffffff;
+
 .SellProductPage{
   background-color: rgba(229, 226, 226, 0.377);
   height: 100vh;
@@ -5,7 +9,7 @@
   &__container{
     width: 700px;
     margin: auto;
-    background-color: #ffffff;
+    background-color: $base_color;
     .FormArea{
       &__content{
         margin: 0 10px;
@@ -26,8 +30,8 @@
               font-size: 12px;
               font-weight: 600;
               span{
-                background-color: #ea352d;
-                color: #ffffff;
+                background-color: $eyecatch_color;
+                color: $base_color;
                 margin: 0 0 0 8px;
                 font-weight: lighter;
                 padding: 2px 4px;
@@ -44,7 +48,7 @@
               .UploadArea{
                 place-content: center;
                 background-color: whitesmoke;
-                border: 1px dashed #cccccc;
+                border: 1px dashed $border_color;
                 cursor: pointer;
                 display: flex;
                 height: 100%;
@@ -73,15 +77,15 @@
               font-weight: 600;
               margin-bottom: 10px;
               .MustDescription{
-                background-color: #ea352d;
-                color: #ffffff;
+                background-color: $eyecatch_color;
+                color: $base_color;
                 margin: 0 0 0 8px;
                 font-weight: lighter;
                 padding: 2px 4px;
               }
               .FreeDescription{
                 background-color: #BFBFBF;
-                color: #ffffff;
+                color: $base_color;
                 margin: 0 0 0 8px;
                 font-weight: lighter;
                 padding: 2px 4px;
@@ -98,7 +102,7 @@
             }
             .textarea{
               width: 100%;
-              border: 1px solid #ccc;
+              border: 1px solid $border_color;
               border-radius: 4px;
               color: #222;
               font-size: 16px;
@@ -111,7 +115,7 @@
             &__pullDownSelect{
               width: 100%;
               background-color: #fff;
-              border: 1px solid #ccc;
+              border: 1px solid $border_color;
               border-radius: 4px;
               color: #222;
               font-size: 16px;
@@ -131,8 +135,8 @@
               font-weight: 600;
               margin-bottom: 10px;
               .MustDescription{
-                background-color: #ea352d;
-                color: #ffffff;
+                background-color: $eyecatch_color;
+                color: $base_color;
                 margin: 0 0 0 8px;
                 font-weight: lighter;
                 padding: 2px 4px;
@@ -148,7 +152,7 @@
               }
               &--contents{
                 text-align: right;
-                border: 1px solid #ccc;
+                border: 1px solid $border_color;
                 border-radius: 4px;
                 font-family: inherit;
                 font-size: inherit;
@@ -171,9 +175,9 @@
             height: 50px;
             padding: 10px 16px 8px;
             margin-top: 32px;
-            background: $section_color;
-            border: 1px solid $section_color;
-            color: #fff;
+            background: $eyecatch_color;
+            border: 1px solid $eyecatch_color;
+            color: $base_color;
             font-size: 16px;
             border-radius: 4px;
             cursor: pointer;
