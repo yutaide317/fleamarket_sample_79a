@@ -100,7 +100,19 @@ $base_color: #ffffff;
               border-radius: 4px;
               margin-bottom: 30px;
             }
-            .textarea{
+            textarea{
+              width: 100%;
+              border: 1px solid $border_color;
+              border-radius: 4px;
+              color: #222;
+              font-size: 16px;
+              margin: 0;
+              outline: none;
+              padding: 13px 16px;
+              resize: vertical;
+              vertical-align: middle;
+            }
+            select{
               width: 100%;
               border: 1px solid $border_color;
               border-radius: 4px;
@@ -124,6 +136,7 @@ $base_color: #ffffff;
               padding: 0 56px 0 16px;
               margin-bottom: 30px;
             }
+
           }
           .FormGroupB{
             display: flex;
