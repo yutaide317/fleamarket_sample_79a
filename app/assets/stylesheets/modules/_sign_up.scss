@@ -56,9 +56,15 @@ $input_main_color:#ffffff;
             font-size: 12px;
             font-weight: 600;
             margin-bottom: 5px;
-            span {
+            .mandatory {
               background-color: $section_color;
               color: $input_main_color;
+              margin: 0 0 0 8px;
+              font-weight: lighter;
+              padding: 2px 4px;
+            }
+            .any {
+              background-color: rgb(212, 209, 209);
               margin: 0 0 0 8px;
               font-weight: lighter;
               padding: 2px 4px;
@@ -108,21 +114,17 @@ $input_main_color:#ffffff;
         
         .FormGroupC {
           display: flex;
-          &__contents {
-            font-weight: 600;
-            &--select {
-              width: 90px;
-              padding: 12px 15px 12px;
-              border: 1px solid $border_color;
-              font-size: 16px;
-              border-radius: 4px;
-              font-weight: lighter;
-              line-height: inherit;
-            }
+          .field_with_errors {
+            display: flex;
           }
-          &__text {
-            margin: 10px 4px;
+          .year,.month,.day {
+            width: 90px;
+            padding: 12px 15px 12px;
+            border: 1px solid $border_color;
+            font-size: 16px;
+            border-radius: 4px;
             font-weight: lighter;
+            height: 50px;
           }
         }
         

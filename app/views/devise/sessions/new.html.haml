@@ -5,13 +5,14 @@
       .SignInForm__title
         %p.SignInForm__title--text 
           アカウントをお持ちでない方はこちら
-        %input.SignInForm__title--button{ type: "submit", value: "新規会員登録"}
+        = link_to '新規会員登録', new_user_registration_path, class: "SignInForm__title--button"
       .SignInForm__box
-        .FormContents
-          %input.FormContents__box{ type: "text", placeholder: "メールアドレス"}
-        .FormContents
-          %input.FormContents__box{ type: "text", placeholder: "パスワード"}
-        .FormContents
-          %input.FormContents__button{ type: "submit", value: "ログイン"}
+        = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+          .FormContents
+            = f.email_field :email, class: "FormContents__box", placeholder:"メールアドレス"
+          .FormContents
+            = f.password_field :password, autocomplete: "off", class: "FormContents__box", placeholder:"パスワード"
+          .FormContents
+            = f.submit "ログイン", class: "FormContents__button"
   .AccountPage__etc
     = render "devise/registrations/foot_logo"

@@ -1,241 +1,132 @@
 .AccountPage
   = render "head_logo"
   .AccountPage__main
-    %h2.AccountPage__main--text 新規会員登録
-    .FormField
-      .FormField__box
-        .FormGroup
-          %h3.FormGroup__text
-            ユーザー情報
-        .FormGroup
-          .FormGroup__contents
-            ニックネーム
-            %span
-              必須 
-          %input.FormGroup__input{ type:"text", placeholder:"例）テック太郎"}
-        .FormGroup
-          .FormGroup__contents
-            メールアドレス
-            %span
-              必須 
-          %input.FormGroup__input{ type:"text", placeholder:"PC・携帯どちらでも可"}
-        .FormGroup
-          .FormGroup__contents
-            パスワード
-            %span
-              必須 
-          %input.FormGroup__input{ type:"text", placeholder:"７文字以上の半角英数字"}
-        .FormGroup
-          .FormGroup__contents
-            パスワード確認
-            %span
-              必須
-          %input.FormGroup__input{ type:"text", placeholder:"７文字以上の半角英数字"}
-        .FormGroup
-          %h3.FormGroup__text 本人情報確認
-          %p.FormGroup__text_box 安心・安全にご利用いただくために、お客さまの本人情報の登録にご協力ください。他のお客さまに公開されることはありません。
-        .FormGroup
-          .FormGroup__contents
-            ユーザーの本名
-            %span
-              必須
-        .FormGroupB
-          .FormGroupB__contents
-            %input.FormGroupB__contents--FamilyName{ type:"text", placeholder:"例）亀田"}
-          .FormGroupB__contents
-            %input.FormGroupB__contents--FirstName{ type:"text", placeholder:"例）史郎"}
-        .FormGroup
-          .FormGroup__contents
-            ユーザーの本名のふりがな
-            %span
-              必須
-        .FormGroupB
-          .FormGroupB__contents
-            %input.FormGroupB__contents--FamilyName{ type:"text", placeholder:"例）かめだ"}
-          .FormGroupB__contents
-            %input.FormGroupB__contents--FirstName{ type:"text", placeholder:"例）しろう"}
-        .FormGroup
-          .FormGroup__contents
-            生年月日
-            %span
-              必須
-        .FormGroupC
-          .FormGroupC__contents
-            %select.FormGroupC__contents--select
-              %option{ value: "--"}--
-              %option{ value: "2020"}2020
-              %option{ value: "2019"}2019
-              %option{ value: "2018"}2018
-              %option{ value: "2017"}2017
-              %option{ value: "2016"}2016
-              %option{ value: "2015"}2015
-              %option{ value: "2014"}2014
-              %option{ value: "2013"}2013
-          .FormGroupC__text
-            年
-          .FormGroupC__contents
-            %select.FormGroupC__contents--select
-              %option{ value: "--"}--
-              %option{ value: "1"}1
-              %option{ value: "2"}2
-              %option{ value: "3"}3
-              %option{ value: "4"}4
-              %option{ value: "5"}5
-              %option{ value: "6"}6
-              %option{ value: "7"}7
-              %option{ value: "8"}8
-              %option{ value: "9"}9
-              %option{ value: "10"}10
-              %option{ value: "11"}11
-              %option{ value: "12"}12
-          .FormGroupC__text
-            月
-          .FormGroupC__contents
-            %select.FormGroupC__contents--select
-              %option{ value: "--"}--
-              %option{ value: "1"}1
-              %option{ value: "2"}2
-              %option{ value: "3"}3
-              %option{ value: "4"}4
-              %option{ value: "5"}5
-              %option{ value: "6"}6
-              %option{ value: "7"}7
-              %option{ value: "8"}8
-              %option{ value: "9"}9
-              %option{ value: "10"}10
-              %option{ value: "11"}11
-              %option{ value: "12"}12
-              %option{ value: "13"}13
-              %option{ value: "14"}14
-              %option{ value: "15"}15
-              %option{ value: "16"}16
-              %option{ value: "17"}17
-              %option{ value: "18"}18
-              %option{ value: "19"}19
-              %option{ value: "20"}20
-              %option{ value: "21"}21
-              %option{ value: "22"}22
-              %option{ value: "23"}23
-              %option{ value: "24"}24
-              %option{ value: "25"}25
-              %option{ value: "26"}26
-              %option{ value: "27"}27
-              %option{ value: "28"}28
-              %option{ value: "29"}29
-              %option{ value: "30"}30
-              %option{ value: "31"}31
-          .FormGroupC__text
-            日
-        .FormText
-          %p.FormText__box
-            ※ 本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
-        .FormGroup
-          .FormGroup__text
-            %h3.FormGroup__text 本人送付先住所情報
-        .FormGroup
-          .FormGroup__contents
-            送付先氏名
-            %span
-              必須
-        .FormGroupB
-          .FormGroupB__contents
-            %input.FormGroupB__contents--FamilyName{ type:"text", placeholder:"例）マンモス"}
-          .FormGroupB__contentsb
-            %input.FormGroupB__contents--FirstName{ type:"text", placeholder:"例）西"}
-        .FormGroup
-          .FormGroup__contents
-            送付先氏名のふりがな
-            %span
-              必須
-        .FormGroupB
-          .FormGroupB__contentsb
-            %input.FormGroupB__contents--FamilyName{ type:"text", placeholder:"例）まんもす"}
-          .FormGroupB__contentsb
-            %input.FormGroupB__contents--FirstName{ type:"text", placeholder:"例）にし"}
-        .FormGroup
-          .FormGroup__contents
-            郵便番号
-            %span
-              必須 
-          %input.FormGroup__input{ type:"text", placeholder:"例）〒120-0009"}
-        .FormGroup
-          .FormGroup__contents
-            都道府県
-            %span
-              必須
-        %select.FormGroupD
-          %option{ value: "北海道"}北海道
-          %option{ value: "青森県"}青森県
-          %option{ value: "岩手県"}岩手県
-          %option{ value: "宮城県"}宮城県
-          %option{ value: "秋田県"}秋田県
-          %option{ value: "山形県"}山形県
-          %option{ value: "福島県"}福島県
-          %option{ value: "茨城県"}茨城県
-          %option{ value: "栃木県"}栃木県
-          %option{ value: "群馬県"}群馬県
-          %option{ value: "埼玉県"}埼玉県
-          %option{ value: "千葉県"}千葉県
-          %option{ value: "東京都", selected:"東京都"}東京都
-          %option{ value: "神奈川県"}神奈川県
-          %option{ value: "新潟県"}新潟県
-          %option{ value: "富山県"}富山県
-          %option{ value: "石川県"}石川県
-          %option{ value: "福井県"}福井県
-          %option{ value: "石川県"}石川県
-          %option{ value: "長野県"}長野県
-          %option{ value: "岐阜県"}岐阜県
-          %option{ value: "静岡県"}静岡県
-          %option{ value: "愛知県"}愛知県
-          %option{ value: "三重県"}三重県
-          %option{ value: "滋賀県"}滋賀県
-          %option{ value: "大阪府"}大阪府
-          %option{ value: "京都府"}京都府
-          %option{ value: "奈良県"}奈良県
-          %option{ value: "和歌山県"}和歌山県
-          %option{ value: "鳥取県"}鳥取県
-          %option{ value: "島根県"}島根県
-          %option{ value: "岡山県"}岡山県
-          %option{ value: "広島県"}広島県
-          %option{ value: "山口県"}山口県
-          %option{ value: "徳島県"}徳島県
-          %option{ value: "香川県"}香川県
-          %option{ value: "愛媛県"}愛媛県
-          %option{ value: "高知県"}高知県
-          %option{ value: "福岡県"}福岡県
-          %option{ value: "佐賀県"}佐賀県
-          %option{ value: "長崎県"}長崎県
-          %option{ value: "熊本県"}熊本県
-          %option{ value: "大分県"}大分県
-          %option{ value: "宮崎県"}宮崎県
-          %option{ value: "鹿児島県"}鹿児島県
-          %option{ value: "沖縄県"}沖縄県
-          %option{ value: "未定"}未定
-        .FormGroup
-          .FormGroup__contents
-            市区町村
-            %span
-              必須 
-          %input.FormGroup__input{ type:"text", placeholder:"例）葛飾区亀有"}
-        .FormGroup
-          .FormGroup__contents
-            番地
-            %span
-              必須 
-          %input.FormGroup__input{ type:"text", placeholder:"例）公園前派出所1-1-1"}
-        .FormGroup
-          .FormGroup__contents
-            建物名
-            %span
-              必須 
-          %input.FormGroup__input{ type:"text", placeholder:"例）ハイツ亀有103"}
-        .FormGroup
-          .FormGroup__contents
-            電話番号
-            %span
-              必須
-          %input.FormGroup__input{ type:"text", placeholder:"例）09012123434"}
-      .FormField__contents
-        %input.FormField__contents--box{ type:"submit", value:"登録する"}
-  .AccountPage__etc
-    = render "foot_logo"
+    = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+      = render "devise/shared/error_messages", model: f.object
+      %h2.AccountPage__main--text 新規会員登録
+      .FormField
+        .FormField__box
+          .FormGroup
+            %h3.FormGroup__text
+              ユーザー情報
+          .FormGroup
+            .FormGroup__contents
+              ニックネーム
+              %span.mandatory
+                必須 
+            = f.text_field :nickname, class: "FormGroup__input", placeholder:"例) テック太郎"
+          .FormGroup
+            .FormGroup__contents
+              メールアドレス
+              %span.mandatory
+                必須 
+            = f.email_field :email, class: "FormGroup__input", placeholder:"PC・携帯どちらでも可"
+          .FormGroup
+            .FormGroup__contents
+              パスワード
+              %span.mandatory
+                必須 
+            = f.password_field :password, autocomplete: "off", class: "FormGroup__input", placeholder:"７文字以上の半角英字"
+          .FormGroup
+            .FormGroup__contents
+              パスワード確認
+              %span.mandatory
+                必須
+            = f.password_field :password_confirmation, autocomplete: "off", class: "FormGroup__input", placeholder:"７文字以上の半角英字"
+          .FormGroup
+            %h3.FormGroup__text 本人情報確認
+            %p.FormGroup__text_box 安心・安全にご利用いただくために、お客さまの本人情報の登録にご協力ください。他のお客さまに公開されることはありません。
+          = f.fields_for :profile do |f|
+            .FormGroup
+              .FormGroup__contents
+                ユーザーの本名
+                %span.mandatory
+                  必須
+            .FormGroupB
+              .FormGroupB__contents
+                = f.text_field :family_name, class: "FormGroupB__contents--FamilyName", placeholder:"例）亀田"
+              .FormGroupB__contents
+                = f.text_field :first_name, class: "FormGroupB__contents--FirstName", placeholder:"例）史郎"
+            .FormGroup
+              .FormGroup__contents
+                ユーザーの本名のふりがな
+                %span.mandatory
+                  必須
+            .FormGroupB
+              .FormGroupB__contents
+                = f.text_field :family_name_kana, class: "FormGroupB__contents--FamilyName", placeholder: "例）かめだ"
+              .FormGroupB__contents
+                = f.text_field :first_name_kana, class: "FormGroupB__contents--FirstName", placeholder: "例）しろう"
+            .FormGroup
+              .FormGroup__contents
+                生年月日
+                %span.mandatory
+                  必須
+            .FormGroupC
+              = raw sprintf(f.date_select(:birth_day,with_css_classes:'FormGroupC__contents',use_month_numbers: true,prompt:'--',start_year: 1930,end_year: (Time.now.year - 5),date_separator: '%s'),"<p>年</p>", "<p>月</p> ") + "<p>日</p> " 
+            .FormText
+              %p.FormText__box
+                ※ 本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
+            .FormGroup
+              .FormGroup__text
+                %h3.FormGroup__text 本人送付先住所情報
+            .FormGroup
+              .FormGroup__contents
+                送付先氏名
+                %span.mandatory
+                  必須
+            .FormGroupB
+              .FormGroupB__contents
+                = f.text_field :destination_family_name, class: "FormGroupB__contents--FamilyName", placeholder: "例）マンモス"
+              .FormGroupB__contentsb
+                = f.text_field :destination_first_name, class: "FormGroupB__contents--FirstName", placeholder:"例）西"
+            .FormGroup
+              .FormGroup__contents
+                送付先氏名のふりがな
+                %span.mandatory
+                  必須
+            .FormGroupB
+              .FormGroupB__contentsb
+                = f.text_field :destination_family_name_kana, class: "FormGroupB__contents--FamilyName", placeholder:"例）まんもす"
+              .FormGroupB__contentsb
+                = f.text_field :destination_first_name_kana, class: "FormGroupB__contents--FirstName", placeholder:"例）にし"
+            .FormGroup
+              .FormGroup__contents
+                郵便番号
+                %span.mandatory
+                  必須 
+              = f.text_field :post_code, class: "FormGroup__input", placeholder:"例）1200009"
+            .FormGroup
+              .FormGroup__contents
+                都道府県
+                %span.mandatory
+                  必須
+            = f.select :city, [["北海道", "北海道"],["青森県", "青森県"],["岩手県", "岩手県"],["宮城県", "宮城県"],["秋田県", "秋田県"],["山形県", "山形県"],["福島県", "福島県"],["茨城県", "茨城県"],["栃木県", "栃木県"],["群馬県", "群馬県"],["埼玉県", "埼玉県"],["千葉県", "千葉県"],["東京都", "東京都"],["神奈川県", "神奈川県"],["新潟県", "新潟県"],["富山県", "富山県"],["石川県", "石川県"],["福井県", "福井県"],["山梨県", "山梨県"],["長野県", "長野県"],["岐阜県", "岐阜県"],["静岡県", "静岡県"],["愛知県", "愛知県"],["三重県", "三重県"],["滋賀県", "滋賀県"],["京都府", "京都府"],["大阪府", "大阪府"],["兵庫県", "兵庫県"],["奈良県", "奈良県"],["和歌山県", "和歌山県"],["鳥取県", "鳥取県"],["島根県", "島根県"],["岡山県", "岡山県"],["広島県", "広島県"],["山口県", "山口県"],["徳島県", "徳島県"],["香川県", "香川県"],["愛媛県", "愛媛県"],["高知県", "高知県"],["福岡県", "福岡県"],["佐賀県", "佐賀県"],["長崎県", "長崎県"],["熊本県", "熊本県"],["大分県", "大分県"],["宮崎県", "宮崎県"],["鹿児島県", "鹿児島県"],["沖縄県", "沖縄県"]], { include_blank: true, selected: "東京都"} , {class: "FormGroupD"}               
+            .FormGroup
+              .FormGroup__contents
+                市区町村
+                %span.mandatory
+                  必須 
+              = f.text_field :prefecture, class: "FormGroup__input", placeholder:"例）葛飾区亀有"
+            .FormGroup
+              .FormGroup__contents
+                番地
+                %span.mandatory
+                  必須 
+              = f.text_field :house_number, class: "FormGroup__input", placeholder:"例）公園前派出所1-1-1"
+            .FormGroup
+              .FormGroup__contents
+                建物名
+                %span.any
+                  任意 
+              = f.text_field :building_name, class: "FormGroup__input", placeholder:"例）ハイツ亀有103"
+            .FormGroup
+              .FormGroup__contents
+                電話番号
+                %span.any
+                  任意
+              = f.telephone_field :phone_number, class: "FormGroup__input", placeholder:"例）09012123434"
+        .FormField__contents
+          = f.submit "登録する", class: "FormField__contents--box"
+    .AccountPage__etc
+      = render "foot_logo"
