@@ -1,0 +1,81 @@
+* {
+  box-sizing: border-box;
+}
+
+.wrapper {
+  background-color:rgba(229,226,226,0.377);
+  color: #333;
+  padding: 0 0 40px;
+  display: flex;
+  width: 100%;
+  height: 100vh;
+}
+
+.MainContents {
+  width: 700px;
+  margin-top: 50px;
+  &__userArea {
+    height: 200px;
+    width: 700px;
+    padding: 20px;
+    background: #7fd9d2;
+    text-align: center;
+    &--userInfo {
+      display: flex;
+      justify-content: center;
+      .exihibitedItem {
+        margin: 0 0 0 16px;
+      }
+    }
+  }
+}
+
+
+.SideBar {
+  width: 280px;
+  background-color: #FFFFFF;
+  margin: 50px 50px 0 200px;
+  text-decoration: none;
+  height: 420px;
+  &__navHead {
+    background-color: rgba(229,226,226,0.377);
+    color: #333;
+    width: 280px;
+    height: 16px;
+    font-weight: bold;
+    padding: 20px 0 20px 0;
+  }
+  .SideMenu {
+    border-bottom: solid 1px #eee;
+    font-size: 14px;
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+    a {
+      text-decoration: none;
+      color: #333333;
+    }
+  }
+}
+
+.logoutBord {
+  height: 179px;
+  width: 700px;
+  background-color: white;
+  padding: 64px;
+  margin: 50px 50px 50px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 320px;
+    height: 50px;
+    background-color: red;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+}
