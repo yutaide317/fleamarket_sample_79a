@@ -46,23 +46,12 @@ Things you may want to cover:
 |introduction|text|	
 |profile_image|string|
 |user_id|references|null: false, foreign_key: true|
-### Association
-- belongs_to :user
-
-## destinations テーブル		
-|Column|Type|Options|
-|------|----|-------|
-|destination_family_name|string|null: false|
-|destination_first_name|string|null: false|
-|destination_family_name_kana|string|null: false|
-|destination_first_name_kana|string|null: false|
-|post_code|integer|null: false|
+|post_code|string|null: false|
 |prefecture|string|null: false|
 |city|string|null: false|
 |house_number|string|null: false|
 |building_name|string|
-|phone_number|integer|unique:true|
-|user_id|references|null: false, foreign_key: true|
+|phone_number|string|unique:true|
 ### Association
 - belongs_to :user
 
@@ -70,7 +59,7 @@ Things you may want to cover:
 |Column|Type|Options|
 |------|----|-------|
 |user|references|null: false, foreign_key:true|
-|customer_id|string|null: false,|
+|customer_id|string|null: false|
 |card_id|integer|null: false|
 ### Association
 - belongs_to :user
