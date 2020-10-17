@@ -112,6 +112,7 @@ $table-border: solid 1px #dedede;
         width: 700px;
         margin-top: 20px;
         align-items: center;
+        border-top: 10px solid $main-color;
         &__newComment {
           height: 100px;
           width: 100%;
@@ -152,7 +153,8 @@ $table-border: solid 1px #dedede;
       }
       .links {
         padding-top: 10px;
-        height:100px;
+        height:50px;
+        background-color: $main-color;
         .list{
           width: 100%;
           display: flex;
@@ -170,21 +172,23 @@ $table-border: solid 1px #dedede;
             }
           }
         }
-        .relatedItem {
-          height: 150px;
-          width: 100%;
-            .relatedItem {
-              color: $sub-color;
-              font-weight: bold;
-              font-size: 25px;
-              line-height: 75px;
-              text-decoration: none;
-            }
+      }
+      .relatedItem {
+        height: 300px;
+        width: 100%;
+        background-color: $main-color;
+          .relatedItem {
+            color: $sub-color;
+            font-weight: bold;
+            font-size: 25px;
+            line-height: 75px;
+            text-decoration: none;
+          }
           }
         }  
       }
     }  
-  }
+  
       
     
   
