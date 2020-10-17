@@ -1,56 +1,83 @@
 .header
   = render "header"
-.main
-  .showMain
-    .topContent
-      .itemBox
-        %h2.itemBox__name
-          商品名
-          .itemBox__itemImage
-            .itemBox__itemImage__mainImage
-              = image_tag 'beef.jpg', size: '500x300'
-            .itemBox__itemImage__subImage
-              = image_tag 'beef.jpg', size: '140x87'
-          .itemBox__price
-            ¥10,000
-          .itemBox__priceDetail
-            (税込)送料込み 
-          .itemBox__description
-            紹介文が入ります
-          .itemBox__itemTable
-            %table
-              %tr.tableTypeA
-                %th 出品者
-                %td 出品者名
-              %tr.tableTypeB
-                %th カテゴリー
-                %td カテゴリー名
-              %tr.tableTypeC
-                %th ブランド
-                %td ブランド名
-              %tr.tableTypeC
-                %th 商品のサイズ
-                %td S / M / L
-              %tr.tableTypeA
-                %th 商品の状態
-                %td 新品/未使用
-              %tr.tableTypeA
-                %th 配送料の負担
-                %td 送料込み（出品者の負担）
-              %tr.tableTypeA
-                %th 発送元の地域
-                %td 北海道
-              %tr.tableTypeA
-                %th 発送日の目安
-                %td 1-2日で発送
+  
+.showMain
+  .topContent
+    .itemBox
+      %h2.itemBox__itemName
+        商品名
+      .itemBox__itemImage
+        .itemBox__itemImage__mainImage
+          = image_tag 'beef.jpg', size: '560x346'
+        .itemBox__itemImage__subImage
+          = image_tag 'beef.jpg', size: '140x87'
+        .itemBox__price
+          ¥10,000
+        .itemBox__priceDetail
+          %span
+            (税込)
+          %span
+            送料込み 
+        .itemBox__description
+          あああああああああああああああああああああああああああああああああ
+      .itemBox__itemTable
+        %table
+          %tr.tableTypeA
+            %th 出品者
+            %td 出品者名
+          %tr.tableTypeB
+            %th カテゴリー
+            %td 
+              %span
+                カテゴリー名
+          %tr.tableTypeC
+            %th ブランド
+            %td ブランド名
+          %tr.tableTypeC
+            %th 商品のサイズ
+            %td S / M / L
+          %tr.tableTypeA
+            %th 商品の状態
+            %td 新品/未使用
+          %tr.tableTypeA
+            %th 配送料の負担
+            %td 送料込み（出品者の負担）
+          %tr.tableTypeA
+            %th 発送元の地域
+            %td 北海道
+          %tr.tableTypeA
+            %th 発送日の目安
+            %td 1-2日で発送
 
-          .itemBox__optionArea
-            .itemBox__optionArea__likeBtn
-              = button_tag type: 'button', class: "likeBtn" do
-                %i.fa.fa-star お気に入り 1            
-            .itemBox__optionArea__reportBtn
-              = button_tag type: 'button', class: "reportBtn" do
-                =link_to '#', class:"reportBtn" do
-                  %i.fas.fa-flag  不適切な商品を通報
+      .itemBox__optionalArea
+        .itemBox__optionalArea__likeBtn
+          = button_tag type: 'button', class: "likeBtn" do
+            %i.fa.fa-star お気に入り             
+        .itemBox__optionalArea__reportBtn
+          =link_to '#', class: "reportBtn" do
+            %i.fas.fa-flag  不適切な商品を通報
+
+      .commentBox
+        = form_for '#' do |f|
+          .commentBox__newComment
+            = f.text_area :comment, class: "newComment", placeholder: ""
+          .commentBox__explanation
+            %p 相手のことを考え丁寧なコメントを心がけましょう。
+            %p 不快な言葉遣いなどは利用制限や退会処分になることがあります。     
+          .commentBox__commentBtn
+            = button_tag type: 'button', class: "commentBtn" do
+              %i.fa.fa-comment コメントする
+
+      .links
+        .links__backItem
+          =link_to '#', class:"backBtn" do
+            < 前の商品
+          .links__nextItem
+            =link_to '#', class:"nextBtn" do
+              後の商品 >
+            .links__relatedItem
+              =link_to '#', class:"relatedItem" do
+                レディースをもっと見る       
+
 .footer
   = render "footer"
