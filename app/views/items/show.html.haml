@@ -69,15 +69,16 @@
               %i.fa.fa-comment コメントする
 
       .links
-        .links__backItem
-          =link_to '#', class:"backBtn" do
-            < 前の商品
-          .links__nextItem
-            =link_to '#', class:"nextBtn" do
+        .list
+          .backItem
+            = link_to '#', class:"backBtn" do
+              < 前の商品
+          .nextItem
+            = link_to '#', class:"nextBtn" do
               後の商品 >
-            .links__relatedItem
-              =link_to '#', class:"relatedItem" do
-                レディースをもっと見る       
+        .relatedItem
+        = link_to '#', class:"relatedItem" do
+          レディースをもっと見る       
 
 .footer
   = render "footer"
