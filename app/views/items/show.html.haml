@@ -19,7 +19,9 @@
             %span
               送料込み 
           .itemBox__description
-            あああああああああああああああああああああああああああああああああ
+            うどんが食べたい。うどんが食べたい。うどんが食べたい。うどんが食べたい。
+            うどんが食べたい。うどんが食べたい。うどんが食べたい。うどんが食べたい。
+            うどんが食べたい。うどんが食べたい。うどんが食べたい。うどんが食べたい。
         .itemBox__itemTable
           %table
             %tr.tableTypeA
@@ -44,7 +46,8 @@
               %td 送料込み（出品者の負担）
             %tr.tableTypeA
               %th 発送元の地域
-              %td 北海道
+              %td
+                %span 北海道
             %tr.tableTypeA
               %th 発送日の目安
               %td 1-2日で発送
@@ -78,6 +81,26 @@
                 後の商品 >
         .relatedItem
           = link_to '#', class:"relatedItem" do
-            レディースをもっと見る       
+            レディースをもっと見る  
+
+        .productLists
+          .productLists__productListA
+            .productLists__productListA__img
+              = image_tag 'beef.jpg', size: '220x150'
+            .productLists__productListA__body
+              %h3.name
+                テスト
+              .productLists__productListA__body__center
+                .productLists__productListA__body__center__price
+                  10,000円
+                .productLists__productListA__body__center__favorite
+                  %i.fa.fa-star
+                  １
+              %p.tax
+                (税込)
+
+          .productLists__productListB
+          .productLists__productListC
+              
   
-  = render "footer"
+  = render "footer" 

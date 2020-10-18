@@ -2,15 +2,21 @@ $main-color: #f8f8f8;
 $sub-color: #3CCACE;
 $table-border: solid 1px #dedede;
 
+@mixin productList() {
+  background-color: white;
+  height: 250px;
+  margin: 0 0 10px;
+  width: calc(100% / 3);
+  float: left;
+}
+
 .showMain{
   background-color: $main-color;
-  height: 200vh;
+  height: 2050px;
   width: 100%;
   padding: 40px 0;
-  overflow: scroll;
-
+  
   .topContent{  
-    height: 196vh;
     width: 700px;
     margin: 0 auto;
     
@@ -33,19 +39,20 @@ $table-border: solid 1px #dedede;
         font-size: 46px; 
         font-weight: bold;
         align-items: center;
-        margin-top:  10px ;
+        margin-top: 10px ;
       }  
       &__priceDetail{
         font-size: 16px; 
         margin-bottom: 10px;
-
       }
       &__description{
         font-size: 18px;
-        height: 100px;
+        height: 180px;
         width: 600px;
-        margin: 0 50px 30px 50px;
+        margin: 0 50px 30px;
         line-height: normal;
+        word-break: break-all;
+        text-align: start;
       }
       &__itemTable{
         height: 100%;
@@ -76,7 +83,7 @@ $table-border: solid 1px #dedede;
         .tableTypeC {
           height: 10px;
         }
-        }
+      }
       &__optionalArea {
         height: 80px;
         width: 600px;
@@ -116,7 +123,7 @@ $table-border: solid 1px #dedede;
         &__newComment {
           height: 100px;
           width: 100%;
-          padding: 20px 20px 10px 20px;
+          padding: 20px 20px 10px;
           .newComment {
             height: 100%;
             width: 100%;
@@ -153,20 +160,20 @@ $table-border: solid 1px #dedede;
       }
       .links {
         padding-top: 10px;
-        height:50px;
+        height: 50px;
         background-color: $main-color;
         .list{
           width: 100%;
           display: flex;
           justify-content: space-between;
           .backItem{
-            .backBtn {
+            .backBtn{
               color: $sub-color;
               text-decoration: none;
             }
           }
           .nextItem{
-            .nextBtn {
+            .nextBtn{
               color: $sub-color;
               text-decoration: none;
             }
@@ -174,7 +181,7 @@ $table-border: solid 1px #dedede;
         }
       }
       .relatedItem {
-        height: 300px;
+        height: 70px;
         width: 100%;
         background-color: $main-color;
           .relatedItem {
@@ -183,12 +190,49 @@ $table-border: solid 1px #dedede;
             font-size: 25px;
             line-height: 75px;
             text-decoration: none;
+            margin-bottom: 10px;
           }
-          }
-        }  
+      }     
+      .productLists{
+        background-color: white;
+        height: 250px;
+        overflow: hidden;
+        margin-bottom: 30px;
+        &__productListA{
+          @include productList;
+          &__body{
+            padding:10px;
+            h2{
+              overflow: hidden;
+              line-height: 1.5;
+              font-size: 16px;
+              text-align: left;
+            }
+            &__center{
+              display: flex;
+              justify-content: space-between;
+              &__price{
+                font-weight: bold;
+                text-align: left;
+              }
+              &__favorite{
+                text-align: right;
+              }
+            }
+            p{
+              font-size: 10px;
+              text-align: left;
+              padding-left: 1px;
+            }
+          }       
+        }
+        &__productListB{
+          @include productList;
+        }
+        &__productListC{
+          @include productList;
+        }
       }
-    }  
-  
-      
-    
-  
+    }          
+  }
+}  
