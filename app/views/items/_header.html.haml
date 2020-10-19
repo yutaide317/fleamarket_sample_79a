@@ -24,7 +24,7 @@
             = link_to 'ログアウト', destroy_user_session_path, method: :delete, class:'loginBtn'
           %li.rightLists__signup
             .rightLists__item--signup
-              = link_to 'マイページ', "#", class:'signupBtn'
+              = link_to 'マイページ', users_path, class:'signupBtn'
         - else
           %li.rightLists__login
             = link_to 'ログイン', new_user_session_path, class:'loginBtn'
