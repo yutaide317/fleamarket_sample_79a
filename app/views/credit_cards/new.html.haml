@@ -1,67 +1,69 @@
 .partContainer
   = render "users/side_bar"
   .creditcardArea
+  
     %section.headerContainer
       %h2.headerTitle
         クレジットカード情報入力
     .formArea
-      .container
-        .formBlock
-          .formBlock__contents
-            カード番号
-            %span
-              必須
-          %input.formBlock__input{ type:"integer", placeholder:"半角数字のみ"}
-          = image_tag 'visacard.svg'
-          = image_tag 'mastercard.svg'
-          = image_tag 'saisoncard.svg'
-          = image_tag 'jcbcard.svg'
-          = image_tag 'amexcard.svg'
-        .formBlock
-          .formBlock__contents
-            有効期限
-            %span
-              必須
-        .formBlockB
-          .formBlockB__contents
-            %select.formBlockB__contents--select
-              %option{ value: "01"}01
-              %option{ value: "02"}02
-              %option{ value: "03"}03
-              %option{ value: "04"}04
-              %option{ value: "05"}05
-              %option{ value: "06"}06
-              %option{ value: "07"}07
-              %option{ value: "08"}08
-              %option{ value: "09"}09
-              %option{ value: "10"}10
-              %option{ value: "11"}11
-              %option{ value: "12"}12
-          .formBlockB__text
-            月
-          .formBlockB__contents
-            %select.formBlockB__contents--select
-              %option{ value: "20"}20
-              %option{ value: "21"}21
-              %option{ value: "22"}22
-              %option{ value: "23"}23
-              %option{ value: "24"}24
-              %option{ value: "25"}25
-              %option{ value: "26"}26
-              %option{ value: "27"}27
-              %option{ value: "28"}28
-              %option{ value: "29"}29
-              %option{ value: "30"}30
-          .formBlockB__text
-            年
+      = form_tag(credit_cards_path, method: :post, id: "charge-form", class: "details", name: "inputForm") do
+        .container
+          .formBlock
+            .formBlock__contents
+              カード番号
+              %span
+                必須
+            = text_field_tag 'payment_card_no', "", class: 'formBlock__input', id: "payment_card_no", placeholder: '半角数字のみ', type: "text", maxlength: "16"
+            = image_tag 'visacard.svg'
+            = image_tag 'mastercard.svg'
+            = image_tag 'saisoncard.svg'
+            = image_tag 'jcbcard.svg'
+            = image_tag 'amexcard.svg'
+          .formBlock
+            .formBlock__contents
+              有効期限
+              %span
+                必須
+          .formBlockB
+            .formBlockB__contents
+              %select#payment_card_month.formBlockB__contents--select{name: "payment_card_month", type: "text"}
+                %option{ value: "01"}01
+                %option{ value: "02"}02
+                %option{ value: "03"}03
+                %option{ value: "04"}04
+                %option{ value: "05"}05
+                %option{ value: "06"}06
+                %option{ value: "07"}07
+                %option{ value: "08"}08
+                %option{ value: "09"}09
+                %option{ value: "10"}10
+                %option{ value: "11"}11
+                %option{ value: "12"}12
+            .formBlockB__text
+              月
+            .formBlockB__contents
+              %select#payment_card_year.formBlockB__contents--select{name: "payment_card_year", type: "text"}
+                %option{ value: "20"}20
+                %option{ value: "21"}21
+                %option{ value: "22"}22
+                %option{ value: "23"}23
+                %option{ value: "24"}24
+                %option{ value: "25"}25
+                %option{ value: "26"}26
+                %option{ value: "27"}27
+                %option{ value: "28"}28
+                %option{ value: "29"}29
+                %option{ value: "30"}30
+            .formBlockB__text
+              年
 
-        .formBlock
-          .formBlock__contents
-            セキュリティコード
-            %span
-              必須
-          %input.formBlock__input{ type:"integer", placeholder:"カード背面4桁もしくは3桁の番号"}
-      .formArea__contents
-        %input.formArea__contents--box{ type:"submit", value:"追加する"}
-        .backlinkArea
-          = link_to "もどる", users_path, class: "back_link"
+          .formBlock
+            .formBlock__contents
+              セキュリティコード
+              %span
+                必須
+            = text_field_tag  "payment_card_cvc", "", type: 'text', class: 'formBlock__input', id: "payment_card_cvc", maxlength: "4", placeholder: 'カード背面4桁もしくは3桁の番号'
+        .formArea__contents
+          = submit_tag "追加する", class: "formArea__contents--box", id: "payment_card_submit-button"
+          .backlinkArea
+            = link_to "もどる", users_path, class: "back_link"

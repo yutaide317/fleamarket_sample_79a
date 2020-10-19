@@ -7,4 +7,17 @@
 @import "modules/sign_in";
 @import "modules/items_toppage";
 @import "modules/sell_product";
-@import "modules/errors"
+@import "modules/errors";
+
+.notifications {
+  color: white;
+  text-align: center;  
+
+  .notice {
+    background-color: lightBlue;
+  }
+
+  .alert {
+    background-color: orange;
+  }
+}
