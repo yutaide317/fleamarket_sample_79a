@@ -55,10 +55,12 @@
         .itemBox__optionalArea
           .itemBox__optionalArea__likeBtn
             = button_tag type: 'button', class: "likeBtn" do
-              %i.fa.fa-star お気に入り             
+              %i.fa.fa-star 
+                %span お気に入り １            
           .itemBox__optionalArea__reportBtn
             =link_to '#', class: "reportBtn" do
-              %i.fas.fa-flag  不適切な商品を通報
+              %i.fas.fa-flag  
+                %span 不適切な商品を通報
 
         .commentBox
           = form_for '#' do |f|
