@@ -26,7 +26,6 @@ window.addEventListener('DOMContentLoaded', function(){
           $('<input type="hidden" name="payjp_token">').val(response.id)
         ); //取得したトークンを送信できる状態にします
         document.inputForm.submit();
-        alert("登録が完了しました"); //正常処理完了確認用。createビューがあればつけなくてもOKかな
       } else {
         alert("カード情報が正しくありません。"); //エラー確認用
       }
