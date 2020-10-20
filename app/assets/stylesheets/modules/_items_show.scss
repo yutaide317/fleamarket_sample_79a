@@ -104,6 +104,9 @@ $table-border: solid 1px #dedede;
             color: $sub-color;
             border: 1px solid #FFB340;
             cursor: pointer;
+            i{
+              margin-right: ２px;
+            }
           }
         }
           .reportBtn{
@@ -113,6 +116,9 @@ $table-border: solid 1px #dedede;
             border-radius: 5px;
             color: #333;
             border: 1px solid #333;
+          }
+          i{
+            margin-right: 2px;
           }
         }
       .commentBox {
