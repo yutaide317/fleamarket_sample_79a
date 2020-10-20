@@ -84,23 +84,53 @@
             レディースをもっと見る  
 
         .productLists
-          .productLists__productListA
-            .productLists__productListA__img
-              = image_tag 'beef.jpg', size: '220x150'
-            .productLists__productListA__body
-              %h3.name
-                テスト
-              .productLists__productListA__body__center
-                .productLists__productListA__body__center__price
-                  10,000円
-                .productLists__productListA__body__center__favorite
-                  %i.fa.fa-star
-                  １
-              %p.tax
-                (税込)
-
-          .productLists__productListB
-          .productLists__productListC
+          .productLists__productList
+            =link_to '#'do
+              .productLists__productList__img
+                = image_tag 'beef.jpg', size: '220x150'
+              .productLists__productList__body
+                %h3.name
+                  テスト
+                .productLists__productList__body__center
+                  .productLists__productList__body__center__price
+                    10,000円
+                  .productLists__productList__body__center__favorite
+                    %i.fa.fa-star
+                    １
+                %p.tax
+                  (税込)
+        
+          .productLists__productList
+            =link_to '#'do
+              .productLists__productList__img
+                = image_tag 'beef.jpg', size: '220x150'
+              .productLists__productList__body
+                %h3.name
+                  テスト
+                .productLists__productList__body__center
+                  .productLists__productList__body__center__price
+                    10,000円
+                  .productLists__productList__body__center__favorite
+                    %i.fa.fa-star
+                    １
+                %p.tax
+                  (税込) 
+          .productLists__productList
+            =link_to '#'do
+              .productLists__productList__img
+                = image_tag 'beef.jpg', size: '220x150'
+              .productLists__productList__body
+                %h3.name
+                  テスト
+                .productLists__productList__body__center
+                  .productLists__productList__body__center__price
+                    10,000円
+                  .productLists__productList__body__center__favorite
+                    %i.fa.fa-star
+                    １
+                %p.tax
+                  (税込) 
+         
               
   
   = render "footer" 

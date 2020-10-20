@@ -8,6 +8,9 @@ $table-border: solid 1px #dedede;
   margin: 0 0 10px;
   width: calc(100% / 3);
   float: left;
+  display: block;
+  position: relative;
+
 }
 
 .showMain{
@@ -196,14 +199,21 @@ $table-border: solid 1px #dedede;
       .productLists{
         background-color: white;
         height: 250px;
+        display: flex;
         overflow: hidden;
         margin-bottom: 30px;
-        &__productListA{
+        &__productList{
           @include productList;
+            position: absolute;
+            text-decoration: none;
+          }
+          a:hover{
+            filter: opacity(70%);
+            cursor: pointer;
+          }
           &__body{
             padding:10px;
-            h2{
-              overflow: hidden;
+            h3{
               line-height: 1.5;
               font-size: 16px;
               text-align: left;
@@ -225,13 +235,7 @@ $table-border: solid 1px #dedede;
               padding-left: 1px;
             }
           }       
-        }
-        &__productListB{
-          @include productList;
-        }
-        &__productListC{
-          @include productList;
-        }
+        }       
       }
     }          
   }
