@@ -204,6 +204,7 @@ $table-border: solid 1px #dedede;
         margin-bottom: 30px;
         &__productList{
           @include productList;
+          a{
             position: absolute;
             text-decoration: none;
           }
