@@ -1,0 +1,95 @@
+* {
+  box-sizing: border-box;
+}
+
+  .MainContainer {
+    margin: 0px auto;
+    max-width: 700px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+    .ConfirmPurchaseDetailsArea {
+      background-color: #ffffff;
+      max-width: 700px;
+      margin: auto;
+    }
+      .contents {
+        margin: 0px auto;
+        padding: 24px 16px;
+        max-width: 375px;
+        border-top: 1px solid rgb(245, 245, 245);
+        &__box {
+          background-color: red;
+          color: #fff;
+          width: 100%;
+          font-size: 17px;
+          min-height: 48px;
+          padding: 0 24px;
+          border-radius: 4px;
+          border: 1px solid transparent;
+          font-weight: 600;
+          cursor: pointer;
+          overflow: hidden;
+        }
+      }
+        .headerTitle {
+        text-align: center;
+        padding: 32px;
+        font-size: 24px;
+        font-weight: bold;
+        line-height: 34px;
+      }
+        .contents__item {
+        display: flex;
+        justify-content: space-between;
+        -webkit-box-pack: justify;
+        font: inherit;
+      }
+        .product {
+          font-size: 14px;
+          line-height: 1.4em;
+          margin-bottom: 8px;
+        }
+        .shippingTaxIncluded {
+          font-size: 12px;
+          text-align: right;
+        }
+        .total {
+          font-size: 15px;
+          font-weight: bold;
+          margin-left: 8px;
+          text-align: right;
+        }
+      .contents__payment {
+        display: flex;
+        font-weight: 600;
+        justify-content: space-between;
+      }
+        .money {
+          font-size: 24px;
+        }
+      .contents__paymentMethod {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+        .paymentmethod {
+          font-size: 14px;
+          font-weight: 600;
+        }
+        .change {
+          color: #0095ee;
+          cursor: pointer;
+          margin-left: 4px;
+          font-weight: normal;
+        }
+      .contents__shippingAddress {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+        .shippingAddress {
+          font-size: 14px;
+          font-weight: 600;
+        }

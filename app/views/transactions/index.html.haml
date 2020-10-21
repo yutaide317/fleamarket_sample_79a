@@ -1,0 +1,46 @@
+.MainContainer
+  .AccountPage
+    = render "devise/registrations/head_logo"
+    .ConfirmPurchaseDetailsArea
+      %section.contents
+        %h2.headerTitle
+          購入内容の確認
+      %section.contents
+        .contents__item
+          .image
+            %figure
+              = image_tag 'beef.jpg', size: "80x80"
+          .text
+            %p.product
+              ★高級ステーキ
+            %P.price
+              %span.shippingTaxIncluded
+                送料込み (税込み)
+              %span.total
+                ¥5,000
+      %section.contents
+        .contents__payment
+          %span.paymentAmount
+            支払い金額
+          %span.money
+            ¥5,000
+      %section.contents
+        .contents__paymentMethod
+          %h3.paymentmethod
+            支払い方法
+          %p.change
+            変更する
+            = link_to '#' do
+              = icon('fas', 'angle-right')
+      %section.contents
+        .contents__shippingAddress
+          %h3.shippingAddress
+            配送先
+          %p.change
+            変更する
+            = link_to '#' do
+              = icon('fas', 'angle-right')
+      %section.contents
+        %input.contents__box{ type:"submit", value:"購入する" }
+    .AccountPage__etc
+      = render "devise/registrations/foot_logo"
