@@ -1,0 +1,125 @@
+.SellProductPage
+  = render "devise/registrations/head_logo"
+  .SellProductPage__container
+    .FormArea
+      .FormArea__content
+        .FormBlock
+          .ImageUploadArea
+            .ImageUploadArea__content
+              出品画像
+              %span.MustDescription
+                必須
+            %p.description
+              最大10枚までアップロードできます
+            .ProductFileContainer
+              %label{class: "UploadArea"}
+                %input{type: "file", class: "ImageDropSpot"}
+                  = icon('fas', 'camera')
+                  %p.description
+                    ドラッグアンドドロップ
+                    %br
+                    またはクリックしてファイルをアップロード
+        .FormBlock
+          .FormGroup
+            .FormGroup__content
+              商品名
+              %span.MustDescription
+                必須
+            %input.FormGroup__input{ type:"text", placeholder:"40文字まで"}
+          .FormGroup
+            .FormGroup__content
+              商品の説明
+              %span.MustDescription
+                必須
+            %textarea{cols: "40", rows: "7", class: "textarea", placeholder: "商品の説明（必須1,000文字以内）（色、素材、重さ、定価、注意点など）"} 
+        .FormBlock
+          .FormBlock__title
+            商品の詳細
+          .FormGroup
+            .FormGroup__content
+              カテゴリー
+              %span.MustDescription
+                必須
+            %select.FormGroup__pullDownSelect
+              %option 選択してください
+              %option{ value: "レディース"}レディース
+              %option{ value: "メンズ"}メンズ
+              %option{ value: "ベビー・キッズ"}ベビー・キッズ
+              %option{ value: "インテリア・住まい・小物"}インテリア・住まい・小物
+              %option{ value: "本・音楽・ゲーム"}本・音楽・ゲーム
+              %option{ value: "おもちゃ・ホビー・グッズ"}おもちゃ・ホビー・グッズ
+              %option{ value: "コスメ・香水・美容"}コスメ・香水・美容
+              %option{ value: "家電・スマホ・カメラ"}家電・スマホ・カメラ
+              %option{ value: "スポーツ・レジャー"}スポーツ・レジャー
+              %option{ value: "ハンドメイド"}ハンドメイド
+              %option{ value: "チケット"}チケット
+              %option{ value: "自動車・オートバイ"}自動車・オートバイ
+              %option{ value: "その他"}その他
+            .FormGroup__content
+              ブランド
+              %span.FreeDescription
+                任意
+            %input.FormGroup__input{ type:"text", placeholder:"例）シャネル"}
+            .FormGroup__content
+              商品の状態
+              %span.MustDescription
+                必須
+            %select.FormGroup__pullDownSelect
+              %option 選択してください
+              %option{ value: "新品、未使用"}新品、未使用
+              %option{ value: "未使用に近い"}未使用に近い
+              %option{ value: "目立った傷や汚れなし"}目立った傷や汚れなし
+              %option{ value: "やや傷や汚れあり"}やや傷や汚れあり
+              %option{ value: "傷や汚れあり"}傷や汚れあり
+              %option{ value: "全体的に状態が悪い"}全体的に状態が悪い
+        .FormBlock
+          .FormBlock__title
+            配送について
+          .FormGroup
+            .FormGroup__content
+              配送料の負担
+              %span.MustDescription
+                必須
+            %select.FormGroup__pullDownSelect
+              %option 選択してください
+              %option{ value: "送料込み（出品者負担）"}送料込み（出品者負担）
+              %option{ value: "着払い（購入者負担）"}着払い（購入者負担）
+          .FormGroup
+            .FormGroup__content
+              発送元の地域
+              %span.MustDescription
+                必須
+            = form_for '', class: 'FormGroup__pullDownSelect' do |f|
+              = f.collection_select :prefecture_id, Prefecture.all, :id, :name, prompt: "--"
+
+          .FormGroup
+            .FormGroup__content
+              発送までの日数
+              %span.MustDescription
+                必須
+            %select.FormGroup__pullDownSelect
+              %option 選択してください
+              %option{ value: "1~2日で発送"}1~2日で発送
+              %option{ value: "2~3日で発送"}2~3日で発送
+              %option{ value: "4~7日で発送"}4~7日で発送
+        .FormBlock
+          .FormBlock__title
+            価格（¥300〜9,999,999）
+          .FormGroupB
+            .FormGroupB__content
+              販売価格
+              %span.MustDescription
+                必須
+            .FormGroupB__inputArea
+              %p.unit
+                ¥
+              %input.FormGroupB__inputArea--contents{ type:"string", placeholder:"0"}
+      .FormArea__footer
+        .SubmitArea
+          %input.SellBtn{ type:"submit", value:"出品する"}
+        .BackLinkArea
+          = link_to "もどる", root_path, class: "BackToIndex"
+  .AccountPage__etc
+    = render "devise/registrations/foot_logo"
+
+

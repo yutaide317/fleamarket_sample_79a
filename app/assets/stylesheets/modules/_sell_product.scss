@@ -1,0 +1,199 @@
+$border_color: #cccccc;
+$eyecatch_color: #ea352d;
+$base_color: #ffffff;
+
+.SellProductPage{
+  background-color: rgba(229, 226, 226, 0.377);
+  height: 100vh;
+  overflow: scroll;
+  &__container{
+    width: 700px;
+    margin: auto;
+    background-color: $base_color;
+    .FormArea{
+      &__content{
+        margin: 0 10px;
+        .FormBlock{
+          padding: 30px;
+          border-bottom: 1px solid #EFEFEF;
+          &__title{
+            color: rgb(136, 136, 136);
+            font-size: 14px;
+            font-weight: 600;
+            line-height: 1.4em;
+            margin-bottom: 24px;
+          }
+          .ImageUploadArea{
+            margin: 30px 0;
+            &__content{
+              display: flex;
+              font-size: 12px;
+              font-weight: 600;
+              span{
+                background-color: $eyecatch_color;
+                color: $base_color;
+                margin: 0 0 0 8px;
+                font-weight: lighter;
+                padding: 2px 4px;
+              }
+            }
+            p{
+              margin-top: 16px;
+              font-size: 14px;
+              color: #4E4E4E;
+            }
+            .ProductFileContainer{
+              height: 150px;
+              margin: 20px 0;
+              .UploadArea{
+                place-content: center;
+                background-color: whitesmoke;
+                border: 1px dashed $border_color;
+                cursor: pointer;
+                display: flex;
+                height: 100%;
+                flex-wrap: wrap;
+                .ImageDropSpot{
+                  display: none;
+                }
+                .fa-camera{
+                  height: 15px;
+                  font-size: 20px;
+                } 
+                .description{
+                  font-size: 12px;
+                  line-height: 1.4em;
+                  text-align: center;
+                  width: 100%;
+                }
+              }
+            }
+          }
+          .FormGroup{
+            margin-top: 10px;
+            &__content{
+              display: flex;
+              font-size: 12px;
+              font-weight: 600;
+              margin-bottom: 10px;
+              .MustDescription{
+                background-color: $eyecatch_color;
+                color: $base_color;
+                margin: 0 0 0 8px;
+                font-weight: lighter;
+                padding: 2px 4px;
+              }
+              .FreeDescription{
+                background-color: #BFBFBF;
+                color: $base_color;
+                margin: 0 0 0 8px;
+                font-weight: lighter;
+                padding: 2px 4px;
+              }
+            }
+            &__input{
+              width: 100%;
+              height: 46px;
+              padding: 10px 16px 8px;
+              border: 1px solid $border_color;
+              font-size: 16px;
+              border-radius: 4px;
+              margin-bottom: 30px;
+            }
+            textarea{
+              width: 100%;
+              border: 1px solid $border_color;
+              border-radius: 4px;
+              color: #222;
+              font-size: 16px;
+              margin: 0;
+              outline: none;
+              padding: 13px 16px;
+              resize: vertical;
+              vertical-align: middle;
+            }
+            select{
+              width: 100%;
+              border: 1px solid $border_color;
+              border-radius: 4px;
+              color: #222;
+              font-size: 16px;
+              margin: 0;
+              outline: none;
+              padding: 13px 16px;
+              resize: vertical;
+              vertical-align: middle;
+              margin-bottom: 30px;
+            }
+          }
+          .FormGroupB{
+            display: flex;
+            justify-content: space-between;
+            &__content{
+              display: flex;
+              align-items: center;
+              font-size: 12px;
+              font-weight: 600;
+              margin-bottom: 10px;
+              .MustDescription{
+                background-color: $eyecatch_color;
+                color: $base_color;
+                margin: 0 0 0 8px;
+                font-weight: lighter;
+                padding: 2px 4px;
+              }
+            }
+            &__inputArea{
+              display: flex;
+              align-items: center;
+              width: 300px;;
+              p{
+                font-size: 14px;
+                margin-right: 8px;
+              }
+              &--contents{
+                text-align: right;
+                border: 1px solid $border_color;
+                border-radius: 4px;
+                font-family: inherit;
+                font-size: inherit;
+                height: 48px;
+                outline: none;
+                padding: 0 16px;
+                width: 100%;
+              }
+            }
+          }
+        }
+      }
+      &__footer{
+        height: 195px;
+        .SubmitArea{ 
+          display: flex;
+          justify-content: center;
+          .SellBtn{
+            width: 339px;
+            height: 50px;
+            padding: 10px 16px 8px;
+            margin-top: 32px;
+            background: $eyecatch_color;
+            border: 1px solid $eyecatch_color;
+            color: $base_color;
+            font-size: 16px;
+            border-radius: 4px;
+            cursor: pointer;
+          }
+        }
+        .BackLinkArea{
+          display: flex;
+          justify-content: center;
+          .BackToIndex{
+            color: #0095ee;
+            text-decoration: none;
+            margin-top: 35px;
+          }
+        }
+      }
+    }
+  }
+}

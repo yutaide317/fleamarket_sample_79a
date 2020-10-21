@@ -1,0 +1,27 @@
+.SideBar
+  .SideMenu
+    出品する
+    = icon('fas', 'angle-right')
+  .SideMenu
+    出品した商品-出品中
+    = icon('fas', 'angle-right')
+  .SideMenu
+    出品した商品-売却済み
+    = icon('fas', 'angle-right')
+  .SideMenu
+    購入した商品-過去の取引
+    = icon('fas', 'angle-right')
+
+  .SideBar__navHead 設定
+
+  .SideMenu
+    = link_to '支払い方法', "/credit_cards/new", class: "payment-method-link"
+    = icon('fas', 'angle-right')
+  .SideMenu
+    = link_to 'ログアウト', "/users/get", class: "logout-link"
+    = icon('fas', 'angle-right')
+  .SideMenu
+    アカウント削除
+    = icon('fas', 'angle-right')
+    
+    
