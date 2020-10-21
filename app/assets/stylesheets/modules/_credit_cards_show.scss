@@ -1,0 +1,57 @@
+.show {
+  display: flex;
+  &__frame {
+    width: 700px;
+    margin: 50px 50px 50px 0;
+    background-color: #ffffff;
+    &--title{
+      padding: 32px;
+      font-size: 22px;
+      text-align: center;
+      font-weight: bold;
+      border-bottom: 1px solid rgba(229,226,226,0.377);
+    }
+  }
+}
+
+.credit_card__list {
+  padding: 30px;
+  &--title {
+    font-weight: bold;
+    margin-bottom: 10px;
+    padding-left: 150px;
+  }
+  &--frame {
+    height: 140px;
+    width: 343px;
+    padding: 32px 0;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid $BackgroundColor;
+    margin-left: 150px;
+    .credit_card_info {
+      &__brand--img {
+      margin-top: 8px;
+      max-height: 32px;
+      max-width: 48px;
+      }
+      &__numbers {
+        font-size: 12px;
+      }
+    }
+    .destroy__function {
+      padding: 20px;
+      &--link {
+        padding: 7px;
+        border: 1px solid $section_color;
+        border-radius: 4px;
+        .destroy_btn {
+          color: $section_color;
+          text-decoration: none;
+          font-weight: bold;
+          font-size: 13px;
+        }
+      }
+    }
+  }
+}
