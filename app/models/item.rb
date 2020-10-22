@@ -1,6 +1,6 @@
 class Item < ApplicationRecord
-  belongs to :user
+  belongs_to :user
   has_many :categories
   has_many :item_images
-  belongs to :brand
+  belongs_to :brand
 end
