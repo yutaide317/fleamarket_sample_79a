@@ -12,13 +12,8 @@
             %p.description
               最大10枚までアップロードできます
             .ProductFileContainer
-              %label{class: "UploadArea"}
-                %input{type: "file", class: "ImageDropSpot"}
-                  = icon('fas', 'camera')
-                  %p.description
-                    ドラッグアンドドロップ
-                    %br
-                    またはクリックしてファイルをアップロード
+              = f.fields_for :item_images, class: "" do |i|
+                = i.file_field :image_src
         .FormBlock
           .FormGroup
             .FormGroup__content
