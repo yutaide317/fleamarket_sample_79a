@@ -15,6 +15,7 @@
               = f.fields_for :item_images, class: "UploadArea" do |image|
                 .js-file_group{"data-index": "#{image.index}"}
                 = image.file_field :image_src, class: "js-file"
+                = link_to '編集', edit_item_path(item)
                 %span.js-remove 削除
 
 
