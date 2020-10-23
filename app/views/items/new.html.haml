@@ -1,8 +1,8 @@
 .SellProductPage
   = render "devise/registrations/head_logo"
   .SellProductPage__container
-    .FormArea
-      .FormArea__content
+    = form_with model: @item, class: "FormArea"  do |f|
+      .FormArea__content 
         .FormBlock
           .ImageUploadArea
             .ImageUploadArea__content
@@ -25,7 +25,7 @@
               商品名
               %span.MustDescription
                 必須
-            %input.FormGroup__input{ type:"text", placeholder:"40文字まで"}
+            = f.text_field :name, class: "FormGroup__input", placeholder:"40文字まで"
           .FormGroup
             .FormGroup__content
               商品の説明
@@ -121,5 +121,3 @@
           = link_to "もどる", root_path, class: "BackToIndex"
   .AccountPage__etc
     = render "devise/registrations/foot_logo"
-
-
