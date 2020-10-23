@@ -40,7 +40,7 @@
               ブランド
               %span.FreeDescription
                 任意
-            = f.text_field :name, class: "FormGroup__input", placeholder:"例）Supreme"
+            = f.text_field :brand_id, class: "FormGroup__input", placeholder:"例）Supreme"
             .FormGroup__content
               商品の状態
               %span.MustDescription
@@ -69,7 +69,7 @@
               発送までの日数
               %span.MustDescription
                 必須
-            = f.collection_select :preparation_period, Shipment.all, :id, :name, prompt: "--"
+            = f.collection_select :preparation_period, Preparation.all, :id, :name, prompt: "--"
         .FormBlock
           .FormBlock__title
             価格（¥300〜9,999,999）
