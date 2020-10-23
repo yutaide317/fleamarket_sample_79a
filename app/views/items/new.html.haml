@@ -15,8 +15,7 @@
               = f.fields_for :item_images, class: "UploadArea" do |image|
                 .js-file_group{"data-index": "#{image.index}"}
                 = image.file_field :image_src, class: "js-file"
-                = link_to '編集', edit_item_path(item)
-                %span.js-remove 削除
+
 
 
         .FormBlock
@@ -91,6 +90,6 @@
         .SubmitArea
           = f.submit '出品する', class: 'SellBtn'
         .BackLinkArea
-          = link_to "もどる", root_path, class: "BackToIndex"
+          = link_to "もどる", items_path, class: "BackToIndex"
   .AccountPage__etc
     = render "devise/registrations/foot_logo"
