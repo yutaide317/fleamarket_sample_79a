@@ -90,7 +90,7 @@
               = f.text_field :price, class: "FormGroupB__inputArea--contents", placeholder:"0", type:"string"
       .FormArea__footer
         .SubmitArea
-          %input.SellBtn{ type:"submit", value:"出品する"}
+          = f.submit '出品する', class: 'SellBtn'
         .BackLinkArea
           = link_to "もどる", root_path, class: "BackToIndex"
   .AccountPage__etc
