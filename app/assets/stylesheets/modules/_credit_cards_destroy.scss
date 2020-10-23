@@ -1,0 +1,44 @@
+.destroy {
+  height: 450px;
+  margin: 0 420px;
+  &__frame {
+    height: 300px;
+    background-color: #ffffff;
+    &--message {
+      padding: 32px;
+      font-size: 22px;
+      text-align: center;
+      font-weight: bold;
+      border-bottom: 1px solid rgba(229,226,226,0.377);
+    }
+    &--btns {
+      margin: 80px 50px 50px 50px;
+      display: flex;
+      justify-content: space-between;
+      .my_page_link {
+        height: 50px;
+        padding: 15px;
+        background-color: #ea352d;
+        border-radius: 4px;
+        font-size: 13px;
+        &__btn {
+          color: #ffffff;
+          text-decoration: none;
+          font-weight: bold;
+        }
+      }
+      .credit_card_new_link {
+        height: 50px;
+        padding: 15px;
+        background-color: #ea352d;
+        border-radius: 4px;
+        font-size: 13px;
+        &__btn {
+          color: #ffffff;
+          text-decoration: none;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}
