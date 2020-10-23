@@ -12,7 +12,7 @@
             %p.description
               最大10枚までアップロードできます
             .ProductFileContainer
-              = f.fields_for :item_images, class: "" do |i|
+              = f.fields_for :item_images, class: "UploadArea" do |i|
                 = i.file_field :image_src
         .FormBlock
           .FormGroup
@@ -36,12 +36,11 @@
               %span.MustDescription
                 必須
             = f.collection_select :category, Itemcategory.all, :id, :name, prompt: "--"
-
             .FormGroup__content
               ブランド
               %span.FreeDescription
                 任意
-            %input.FormGroup__input{ type:"text", placeholder:"例）シャネル"}
+            = f.text_field :name, class: "FormGroup__input", placeholder:"例）Supreme"
             .FormGroup__content
               商品の状態
               %span.MustDescription
