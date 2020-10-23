@@ -1,6 +1,5 @@
 %body
   = render "header"
-  = render @items
   .mainContainer
     %section.topVisual
       .content
@@ -82,7 +81,12 @@
             = image_tag 'icon-04.png'
           %h3.feature__subtitle 様々な支払いに対応
           %p.feature__detail
-            お支払いは、クレジットカードだけでなく、ポイントや売上金など多彩な方法があります。
+          お支払いは、クレジットカードだけでなく、ポイントや売上金など多彩な方法があります。
+    - if user_signed_in?
+      %section.pickupField
+        %h2.head 現在出品中の商品
+        = render @items
+        テスト
     %section.pickupField
       %h2.head ピックアップカテゴリー
       .itemBlock
