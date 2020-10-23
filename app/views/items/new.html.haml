@@ -87,7 +87,7 @@
             .FormGroupB__inputArea
               %p.unit
                 ¥
-              %input.FormGroupB__inputArea--contents{ type:"string", placeholder:"0"}
+              = f.text_field :price, class: "FormGroupB__inputArea--contents", placeholder:"0", type:"string"
       .FormArea__footer
         .SubmitArea
           %input.SellBtn{ type:"submit", value:"出品する"}
