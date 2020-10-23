@@ -2,12 +2,12 @@ class ItemsController < ApplicationController
   before_action :set_item, except: [:index, :new, :create]
 
   def index
-    @items = Item.includes(:item_images).order('created_at DESC')
+    @items = Item.includes(:images).order('created_at DESC')
   end
 
   def new
     @item = Item.new
-    @item.item_images.new
+    @item.images.new
   end
 
   def create
@@ -36,7 +36,7 @@ class ItemsController < ApplicationController
   private
 
   def item_params
-    params.require(:item).permit(:name, :introduction, :category, :brand_id, :item_condition, :postage_payer, :prefecture, :preparation_period, :price, item_images_attributes: [:image_src, :_destroy, :id])
+    params.require(:item).permit(:name, :introduction, :category, :brand_id, :item_condition, :postage_payer, :prefecture, :preparation_period, :price, images_attributes: [:src, :_destroy, :id])
   end
 
   def set_item

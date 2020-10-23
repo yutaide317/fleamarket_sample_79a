@@ -12,24 +12,24 @@
 
 ActiveRecord::Schema.define(version: 2020_10_22_043642) do
 
-  create_table "item_images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "image_src", null: false
+  create_table "images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "src", null: false
     t.bigint "item_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["item_id"], name: "index_item_images_on_item_id"
+    t.index ["item_id"], name: "index_images_on_item_id"
   end
 
   create_table "items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
     t.integer "price", null: false
     t.text "introduction", null: false
-    t.string "category", null: false
+    t.integer "category", null: false
     t.string "brand_id"
-    t.string "item_condition", null: false
-    t.string "postage_payer", null: false
-    t.string "prefecture", null: false
-    t.string "preparation_period", null: false
+    t.integer "item_condition", null: false
+    t.integer "postage_payer", null: false
+    t.integer "prefecture", null: false
+    t.integer "preparation_period", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -72,6 +72,6 @@ ActiveRecord::Schema.define(version: 2020_10_22_043642) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "item_images", "items"
+  add_foreign_key "images", "items"
   add_foreign_key "profiles", "users"
 end

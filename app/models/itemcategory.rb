@@ -14,4 +14,6 @@ class Itemcategory < ActiveHash::Base
       {id: 12, name: '自動車・オートバイ'},
       {id: 13, name: 'その他'}
   ]
+  include ActiveHash::Associations
+  has_many :items
 end
