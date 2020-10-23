@@ -11,9 +11,13 @@
                 必須
             %p.description
               最大10枚までアップロードできます
-            .ProductFileContainer
-              = f.fields_for :item_images, class: "UploadArea" do |i|
-                = i.file_field :image_src
+            #image-box.ProductFileContainer
+              = f.fields_for :item_images, class: "UploadArea" do |image|
+                .js-file_group{"data-index": "#{image.index}"}
+                = image.file_field :image_src, class: "js-file"
+                %span.js-remove 削除
+
+
         .FormBlock
           .FormGroup
             .FormGroup__content
