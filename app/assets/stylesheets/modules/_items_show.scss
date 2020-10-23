@@ -123,7 +123,7 @@ $table-border: solid 1px #dedede;
         }
       .commentBox {
         background-color: white;
-        height: 250px;
+        height: 270px;
         width: 700px;
         margin-top: 20px;
         align-items: center;
@@ -149,7 +149,10 @@ $table-border: solid 1px #dedede;
             font-size: 14px;
             padding-left: 10px;
             margin: 0 auto;
-            line-height: 25px;
+            line-height: 5px;
+          }
+          p{
+            padding-top: 10px;
           }
           &__commentBtn {
             text-align: center;
@@ -212,6 +215,7 @@ $table-border: solid 1px #dedede;
           a{
             position: absolute;
             text-decoration: none;
+            color: black;
           }
           a:hover{
             filter: opacity(70%);
