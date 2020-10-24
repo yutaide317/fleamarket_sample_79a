@@ -1,3 +1,7 @@
-
-= link_to '編集', edit_item_path(item)
-= link_to '削除', item_path(item), method: :delete
+.SellingItemArea
+  = item.name
+  = item.price
+  - item.images.each do |image|
+    = image_tag image.src.url
+  = link_to '編集', edit_item_path(item)
+  = link_to '削除', item_path(item), method: :delete
