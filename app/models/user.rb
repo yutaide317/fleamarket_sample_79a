@@ -8,4 +8,5 @@ class User < ApplicationRecord
   validates :password, length: { minimum: 7 }
   has_one :profile
   accepts_nested_attributes_for :profile
+  has_many :items
 end

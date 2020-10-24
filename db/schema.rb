@@ -30,8 +30,10 @@ ActiveRecord::Schema.define(version: 2020_10_22_043642) do
     t.integer "postage_payer", null: false
     t.integer "prefecture", null: false
     t.integer "preparation_period", null: false
+    t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_items_on_user_id"
   end
 
   create_table "profiles", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -73,5 +75,6 @@ ActiveRecord::Schema.define(version: 2020_10_22_043642) do
   end
 
   add_foreign_key "images", "items"
+  add_foreign_key "items", "users"
   add_foreign_key "profiles", "users"
 end
