@@ -1,0 +1,102 @@
+.SellProductPage
+  = render "devise/registrations/head_logo"
+  .SellProductPage__container
+    = form_with model: @item, class: "FormArea"  do |f|
+      .FormArea__content 
+        .FormBlock
+          .ImageUploadArea
+            .ImageUploadArea__content
+              出品画像
+              %span.MustDescription
+                必須
+            %p.description
+              最大10枚までアップロードできます
+            #image-box.ProductFileContainer
+              #previews
+                - if @item.persisted?
+                  = @item.images.each_with_index do |image, i|
+                    = image_tag image.src.url, data: { index: i }, width: "100", height: '100'
+              = f.fields_for :images, class: "UploadArea" do |image|
+                .js-file_group{"data-index": "#{image.index}"}
+                  = image.file_field :src, class: "js-file"
+                  %span.js-remove 削除
+                - if @item.persisted?
+                  = image.check_box :_destroy, data:{ index: image.index }, class: 'hidden-destroy'
+              - if @item.persisted?
+                .js-file_group{"data-index": "#{@item.images.count}"}
+                  = file_field_tag :src, name: "item[images_attributes][#{@item.images.count}][src]", class: 'js-file'
+        .FormBlock
+          .FormGroup
+            .FormGroup__content
+              商品名
+              %span.MustDescription
+                必須
+            = f.text_field :name, class: "FormGroup__input", placeholder:"40文字まで"
+          .FormGroup
+            .FormGroup__content
+              商品の説明
+              %span.MustDescription
+                必須
+            = f.text_area :introduction, class: "textarea", placeholder:"商品の説明（必須1,000文字以内）（色、素材、重さ、定価、注意点など）", cols: "40", rows: "7" 
+        .FormBlock
+          .FormBlock__title
+            商品の詳細
+          .FormGroup
+            .FormGroup__content
+              カテゴリー
+              %span.MustDescription
+                必須
+            = f.collection_select :category, Itemcategory.all, :id, :name, prompt: "--"
+            .FormGroup__content
+              ブランド
+              %span.FreeDescription
+                任意
+            = f.text_field :brand_id, class: "FormGroup__input", placeholder:"例）Supreme"
+            .FormGroup__content
+              商品の状態
+              %span.MustDescription
+                必須
+            = f.collection_select :item_condition, Itemcondition.all, :id, :name, prompt: "--"
+
+        .FormBlock
+          .FormBlock__title
+            配送について
+          .FormGroup
+            .FormGroup__content
+              配送料の負担
+              %span.MustDescription
+                必須
+            = f.collection_select :postage_payer, Postage.all, :id, :name, prompt: "--"
+
+          .FormGroup
+            .FormGroup__content
+              発送元の地域
+              %span.MustDescription
+                必須
+            = f.collection_select :prefecture, District.all, :id, :name, prompt: "--"
+
+          .FormGroup
+            .FormGroup__content
+              発送までの日数
+              %span.MustDescription
+                必須
+            = f.collection_select :preparation_period, Preparation.all, :id, :name, prompt: "--"
+        .FormBlock
+          .FormBlock__title
+            価格（¥300〜9,999,999）
+          .FormGroupB
+            .FormGroupB__content
+              販売価格
+              %span.MustDescription
+                必須
+            .FormGroupB__inputArea
+              %p.unit
+                ¥
+              = f.number_field :price, class: "FormGroupB__inputArea--contents"
+      .FormArea__footer
+        .SubmitArea
+          = f.submit '出品する', class: 'SellBtn'
+        .BackLinkArea
+          = link_to "もどる", items_path, class: "BackToIndex"
+  .AccountPage__etc
+    = render "devise/registrations/foot_logo"
