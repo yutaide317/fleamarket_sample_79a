@@ -14,7 +14,7 @@ $table-border: solid 1px #dedede;
 
 .showMain{
   background-color: $main-color;
-  height: 2050px;
+  height: 2200px;
   width: 100%;
   padding: 40px 0;
   
@@ -121,6 +121,38 @@ $table-border: solid 1px #dedede;
             margin-right: 2px;
           }
         }
+      &__buyArea{
+        height: 40px;
+        width: 100%;
+        background-color: red;
+        color:white;
+        text-align: center;
+        line-height: 40px;
+        font-weight: bold;
+      }
+      &__sellArea{
+        height: 40px;
+        width:100%;
+        display: flex;
+        color:white;
+        font-weight: bold;
+        &__edit{
+          background-color: cornflowerblue;
+          color:white;
+          text-align: center;
+          line-height: 40px;
+          width: 50%;
+        }
+        &__delete{
+          background-color: yellowgreen;
+          color:white;
+          text-align: center;
+          line-height: 40px;
+          width: 50%;
+        }
+      }
+
+
       .commentBox {
         background-color: white;
         height: 270px;
