@@ -28,6 +28,7 @@ $input_main_color:#ffffff;
       height: 128px;     
       margin: 40px 0 0;
       padding: 0 590px;
+      text-align: center;
       .TopLogo {
       height: 62px;
       width: 213px;
@@ -171,10 +172,10 @@ $input_main_color:#ffffff;
     .FooterLogo {
       height: 62px;
       width: 213px;
-      margin-left: 60px;
     }
     &--inc {
       padding: 30px 30px 0 30px;
+      text-align: center;
     }
     &--mark {
       text-align: center;

@@ -10,4 +10,5 @@ class User < ApplicationRecord
   accepts_nested_attributes_for :profile
   has_one :credit_card, dependent: :destroy
   has_many :items
+  
 end
