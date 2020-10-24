@@ -8,35 +8,34 @@
       %section.contents
         .contents__item
           .image
-            %figure
-              = image_tag 'beef.jpg', size: "80x80"
+            = image_tag 'beef.jpg', size: "80x80"
           .text
-            %p.product
+            %p.text__product
               ★高級ステーキ
-            %P.price
-              %span.shippingTaxIncluded
+            %P.text__price
+              %span.text__price--shippingTaxIncluded
                 送料込み (税込み)
-              %span.total
+              %span.text__price--total
                 ¥5,000
       %section.contents
         .contents__payment
-          %span.paymentAmount
+          %span.contents__payment--paymentAmount
             支払い金額
-          %span.money
+          %span.contents__payment--money
             ¥5,000
       %section.contents
         .contents__paymentMethod
-          %h3.paymentmethod
+          %h3.contents__paymentMethod--methodOfPayment
             支払い方法
-          %p.change
+          %p.contents__paymentMethod--change
             変更する
             = link_to '#' do
               = icon('fas', 'angle-right')
       %section.contents
         .contents__shippingAddress
-          %h3.shippingAddress
+          %h3.contents__shippingAddress--destination
             配送先
-          %p.change
+          %p.contents__shippingAddress--change
             変更する
             = link_to '#' do
               = icon('fas', 'angle-right')
