@@ -12,7 +12,8 @@ class CreditCardsController < ApplicationController
 
     # 後ほどトークン作成処理を行いますが、そちらの完了の有無でフラッシュメッセージを表示させます。
     if params["payjp_token"].blank?
-      redirect_to action: "new", alert: "クレジットカードを登録できませんでした。"
+      flash.now[:alert] = '必須事項を入力してください'
+      redirect_to action: "new"
     else
     # 無事トークン作成された場合のアクション(こっちが本命のアクション)
     # まずは生成したトークンから、顧客情報と紐付け、PAY.JP管理サイトに登録
@@ -25,7 +26,7 @@ class CreditCardsController < ApplicationController
       @card = CreditCard.new(user_id: current_user.id, customer_id: customer.id, card_id: customer.default_card)
       # 無事、トークン作成とともにcredit_cardsテーブルに登録された場合、createビューが表示されるように条件分岐
       if @card.save
-        redirect_to credit_card_path(current_user.id)
+        redirect_to credit_card_path(current_user.id), notice: 'クレジットカードの登録が完了しました'
       else
         redirect_to action: "create"
       end

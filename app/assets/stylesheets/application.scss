@@ -10,3 +10,16 @@
 @import "modules/errors";
 @import "modules/credit_cards_destroy";
 @import "modules/credit_cards_show";
+.Notification {
+  .notice {
+    background-color: #38AEF0;
+    color: #fff;
+    text-align: center;
+  }
+
+  .alert {
+    background-color: #F35500;
+    color: #fff;
+    text-align: center;
+  }
+}
