@@ -2,7 +2,7 @@ class ItemsController < ApplicationController
   before_action :set_item, except: [:index, :new, :create]
 
   def index
-    @items = Item.includes(:images).order('created_at DESC')
+    @items = Item.includes(:images).where(user_id: current_user).order('created_at DESC')
   end
 
   def new
