@@ -1,0 +1,252 @@
+$main-color: #f8f8f8;
+$sub-color: #3CCACE;
+$table-border: solid 1px #dedede;
+
+@mixin productList() {
+  background-color: white;
+  height: 250px;
+  margin: 0 0 10px;
+  width: calc(100% / 3);
+  float: left;
+  display: block;
+  position: relative;
+}
+
+.showMain{
+  background-color: $main-color;
+  height: 2050px;
+  width: 100%;
+  padding: 40px 0;
+  
+  .topContent{  
+    width: 700px;
+    margin: 0 auto;
+    
+    .itemBox{
+      background-color: white;
+      &__itemName{
+        font-size: 24px ;
+        width: 100%;
+        font-weight: bold;
+        align-items: center;
+        line-height: 50px;
+        text-align: center;
+        padding: 10px 0;
+      }
+      &__itemImage{
+        text-align: center;
+        margin: 0 auto;
+      }
+      &__price{
+        font-size: 46px; 
+        font-weight: bold;
+        align-items: center;
+        margin-top: 10px ;
+      }  
+      &__priceDetail{
+        font-size: 16px; 
+        margin-bottom: 10px;
+      }
+      &__description{
+        font-size: 18px;
+        height: 180px;
+        width: 600px;
+        margin: 0 50px 30px;
+        line-height: normal;
+        word-break: break-all;
+        text-align: start;
+      }
+      &__itemTable{
+        height: 100%;
+        width: 600px;
+        font-size: 13px;
+        margin: 0 auto;
+        th {
+          background-color: #eee;
+          width: 150px;
+          border: $table-border;
+          text-align: center;
+        }
+        td {
+          width: 450px;
+          border: $table-border;
+          padding: 15px;
+          text-align: left;
+        }
+        .tableTypeA {
+          height: 35px;
+        }
+        .tableTypeB {
+          height: 65px;
+        }
+        span{
+          color: $sub-color;
+        }
+        .tableTypeC {
+          height: 10px;
+        }
+      }
+      &__optionalArea {
+        height: 80px;
+        width: 600px;
+        padding-top: 20px;
+        display: flex;
+        justify-content: space-between;
+        margin: 0 auto;
+        &__likeBtn {
+          width: 160px;
+          .likeBtn {
+            width: 100%;
+            font-size: 16px;
+            margin-right: auto;
+            padding: 6px 10px;
+            border-radius: 40px;
+            color: $sub-color;
+            border: 1px solid #FFB340;
+            cursor: pointer;
+            i{
+              margin-right: ２px;
+            }
+          }
+        }
+          .reportBtn{
+            font-size: 13px;
+            display: inline-block;
+            padding: 6px 10px;
+            border-radius: 5px;
+            color: #333;
+            border: 1px solid #333;
+          }
+          i{
+            margin-right: 2px;
+          }
+        }
+      .commentBox {
+        background-color: white;
+        height: 270px;
+        width: 700px;
+        margin-top: 20px;
+        align-items: center;
+        border-top: 10px solid $main-color;
+        &__newComment {
+          height: 100px;
+          width: 100%;
+          padding: 20px 20px 10px;
+          .newComment {
+            height: 100%;
+            width: 100%;
+            padding: 10px;
+            border: solid 1px rgb(118, 118, 118);
+            text-align: start;
+            overflow-wrap: break-word;
+          }
+        }
+          &__explanation {
+            background-color: $main-color;
+            align-items: center;
+            height: 50px;
+            width: 650px;
+            font-size: 14px;
+            padding-left: 10px;
+            margin: 0 auto;
+            line-height: 5px;
+          }
+          p{
+            padding-top: 10px;
+          }
+          &__commentBtn {
+            text-align: center;
+            line-height: 48px;
+            padding-top: 30px;
+            .commentBtn {
+              height: 50px;
+              background: $sub-color;
+              border: 1px solid $sub-color;
+              color: white;
+              width: 60%;
+              font-size: 18px;
+              border-radius: 100px;
+            }
+          }
+      }
+      .links {
+        padding-top: 10px;
+        height: 50px;
+        background-color: $main-color;
+        .list{
+          width: 100%;
+          display: flex;
+          justify-content: space-between;
+          .backItem{
+            .backBtn{
+              color: $sub-color;
+              text-decoration: none;
+            }
+          }
+          .nextItem{
+            .nextBtn{
+              color: $sub-color;
+              text-decoration: none;
+            }
+          }
+        }
+      }
+      .relatedItem {
+        height: 70px;
+        width: 100%;
+        background-color: $main-color;
+          .relatedItem {
+            color: $sub-color;
+            font-weight: bold;
+            font-size: 25px;
+            line-height: 75px;
+            text-decoration: none;
+            margin-bottom: 10px;
+          }
+      }     
+      .productLists{
+        background-color: white;
+        height: 250px;
+        display: flex;
+        overflow: hidden;
+        margin-bottom: 30px;
+        &__productList{
+          @include productList;
+          a{
+            position: absolute;
+            text-decoration: none;
+            color: black;
+          }
+          a:hover{
+            filter: opacity(70%);
+            cursor: pointer;
+          }
+          &__body{
+            padding:10px;
+            h3{
+              line-height: 1.5;
+              font-size: 16px;
+              text-align: left;
+            }
+            &__center{
+              display: flex;
+              justify-content: space-between;
+              &__price{
+                font-weight: bold;
+                text-align: left;
+              }
+              &__favorite{
+                text-align: right;
+              }
+            }
+            p{
+              font-size: 10px;
+              text-align: left;
+              padding-left: 1px;
+            }
+          }       
+        }       
+      }
+    }          
+  }
+}  
