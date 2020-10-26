@@ -21,7 +21,9 @@ class Item < ApplicationRecord
     validates :preparation_period
     validates :name,                length: { maximum: 40 }
     validates :introduction,        length: { maximum: 1000 }
-    validates :price,               numericality: { only_integer: true, greater_than_or_equal_to: 300, less_than_or_equal_to: 9999999 }
+    validates :price,               numericality: { only_integer: true, greater_than_or_equal_to: 300, less_than_or_equal_to: 9999999,
+                                    message: 'は300〜9999999円の間で設定してください' }
+
   end
   validates :brand_id, length: { maximum: 20 }, allow_blank: true
 end
