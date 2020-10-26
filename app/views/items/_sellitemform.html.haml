@@ -3,6 +3,7 @@
   .SellProductPage__container
     = form_with model: @item, class: "FormArea"  do |f|
       = render "devise/shared/error_messages", model: f.object
+
       .FormArea__content 
         .FormBlock
           .ImageUploadArea

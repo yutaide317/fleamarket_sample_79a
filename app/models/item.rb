@@ -26,4 +26,15 @@ class Item < ApplicationRecord
 
   end
   validates :brand_id, length: { maximum: 20 }, allow_blank: true
+  
+  validate  :images_count
+  
+  private
+    def images_count
+      if images.images.count == 0
+        errors.add(images, "写真は１枚以上")
+      ifelse images.images.count > 10
+        errors.add(images, "写真は10枚以内")
+      end
+    end
 end

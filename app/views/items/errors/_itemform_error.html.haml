@@ -1,6 +1,6 @@
 - if model.errors.any?
   .Form_errors
-    %h2.Form_errors__box= "#{model.errors.full_messages.count}件のエラーが発生しました。"
+    %h2.Form_errors__box= "#{item.errors.full_messages.count}件のエラーが発生しました。"
     %ul.Form_errors__box
       - model.errors.full_messages.each do |message|
         %li.Form_errors__box--contents= message 
