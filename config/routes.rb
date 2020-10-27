@@ -3,8 +3,7 @@ Rails.application.routes.draw do
   resources :users, only: [:index, :show]
   resources :credit_cards, only: [:new]
   root 'items#index'
-  resources :items, only: [:index, :new, :create, :edit, :update, :destroy]
+  resources :items, only: [:index, :new, :create, :edit, :show, :update, :destroy]
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-
-  
+  resources :transactions, only: [:index]
 end
