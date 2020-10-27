@@ -96,5 +96,11 @@ describe Item do
       item.valid?
       expect(item.errors[:price]).to include("は300〜9999999円の間で設定してください")
     end
+    # 14. priceが数字以外の文字では登録できないこと
+    it "is valid only with number" do
+      item = build(:item, price: "テスト")
+      item.valid?
+      expect(item.errors[:price]).to include("は300〜9999999円の間で設定してください")
+    end
   end
 end
