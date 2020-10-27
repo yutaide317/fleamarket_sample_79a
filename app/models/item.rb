@@ -11,30 +11,16 @@ class Item < ApplicationRecord
   accepts_nested_attributes_for :images, allow_destroy: true
   has_one :purchase
 
-  
-  with_options presence: true do
-    validates :images
-    validates :category
-    validates :item_condition
-    validates :postage_payer
-    validates :prefecture
-    validates :preparation_period
-    validates :name,                length: { maximum: 40 }
-    validates :introduction,        length: { maximum: 1000 }
-    validates :price,               numericality: { only_integer: true, greater_than_or_equal_to: 300, less_than_or_equal_to: 9999999,
-                                    message: 'は300〜9999999円の間で設定してください' }
+  validates :images, presence: { message: 'を１枚以上アップロードしてください' }
+  validates :name, presence: true, length: { maximum: 40, message: 'を40文字以内で設定してください' }
+  validates :introduction, presence: true, length: { maximum: 1000, message: 'を1000文字以内で設定してください' }
+  validates :category, presence: { message: 'を選択してください' }
+  validates :item_condition, presence: { message: 'を選択してください' }
+  validates :postage_payer, presence: { message: 'を選択してください' }
+  validates :prefecture, presence: { message: 'を選択してください' }
+  validates :preparation_period, presence: { message: 'を選択してください' }
+  validates :price, presence: true, numericality: { only_integer: true, greater_than_or_equal_to: 300, less_than_or_equal_to: 9999999, message: 'は300〜9999999円の間で設定してください' } 
 
-  end
   validates :brand_id, length: { maximum: 20 }, allow_blank: true
   
-  validate  :images_count
-  
-  private
-    def images_count
-      if images.images.count == 0
-        errors.add(images, "写真は１枚以上")
-      ifelse images.images.count > 10
-        errors.add(images, "写真は10枚以内")
-      end
-    end
 end

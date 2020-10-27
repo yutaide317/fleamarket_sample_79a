@@ -1,7 +1,7 @@
 .SellProductPage
   = render "devise/registrations/head_logo"
   .SellProductPage__container
-    = form_with model: @item, class: "FormArea"  do |f|
+    = form_with model: @item, class: "FormArea", local: true  do |f|
       = render "devise/shared/error_messages", model: f.object
 
       .FormArea__content 
