@@ -7,7 +7,19 @@ describe Item do
       item = build(:item)
       expect(item).to be_valid
     end
-
+    # 2. imagesが空では登録できないこと
+    it "is invalid without images" do
+      item = Item.new(name: "ハンチョウ全巻",
+                      introduction: "漫画『ハンチョウ』全巻です",
+                      category: 5,
+                      item_condition: 2,
+                      postage_payer: 2,
+                      prefecture: 1,
+                      preparation_period: 1,
+                      price: 5000)
+      item.valid?
+      expect(item.errors[:images]).to include("を１枚以上アップロードしてください")
+    end
     # 3. nameが空では登録できないこと
     it "is invalid without a name" do
       item = build(:item, name: nil)
