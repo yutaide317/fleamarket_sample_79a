@@ -4,6 +4,7 @@ ja:
     models: 
       profile: プロフィール
       user: ユーザー
+      item: 出品商品
     attributes:
       profile:
         family_name: 苗字
@@ -26,7 +27,16 @@ ja:
       user:
         nickname: ニックネーム
         email: メールアドレス
-
+      item:
+        images: 出品画像
+        name: 商品名
+        introduction: 商品の説明
+        category: カテゴリー
+        item_condition: 商品の状態
+        postage_payer: 配送料の負担
+        prefecture: 発送元の地域
+        preparation_period: 発送までの日数
+        price: 販売価格
     errors:
       messages:
         record_invalid: 'バリデーションに失敗しました: %{errors}'
