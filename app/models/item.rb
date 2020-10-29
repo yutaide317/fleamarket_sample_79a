@@ -10,6 +10,7 @@ class Item < ApplicationRecord
   has_many :images, dependent: :destroy
   accepts_nested_attributes_for :images, allow_destroy: true
   has_one :purchase
+  belongs_to :category
 
   validates :images, presence: { message: 'を１枚以上アップロードしてください' }
   validates :name, presence: true, length: { maximum: 40, message: 'を40文字以内で設定してください' }
