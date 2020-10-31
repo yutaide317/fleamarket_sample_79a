@@ -66,11 +66,11 @@
               %i.fas.fa-flag  
                 %span 不適切な商品を通報
 
-        -# .buttonArea
-        -#   .buttonArea__buttonBox
-        -#     .buttonArea__buttonBox__deleteBtn
-        -#       = button_tag type: 'button', class: "deleteBtn" do
-        -#         商品の削除
+        .buttonArea
+          .buttonArea__buttonBox
+            .buttonArea__buttonBox__deleteBtn
+              = button_tag type: 'button', class: "deleteBtn" do
+                商品の削除
 
         .commentBox
           = form_for '#' do |f|
