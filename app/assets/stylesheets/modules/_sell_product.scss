@@ -45,6 +45,9 @@ $base_color: #ffffff;
             .ProductFileContainer{
               height: 150px;
               margin: 20px 0;
+              background-color: whitesmoke;
+              border: 1px dashed $border_color;
+              cursor: pointer;
               .UploadArea{
                 place-content: center;
                 background-color: whitesmoke;
