@@ -1,10 +1,11 @@
 .SellingItemArea
-  = item.name
-  = item.price
-  - if item.purchase != nil
-    = "売却済み"
-  - else
-    = "出品中"
+  = link_to item_path(item.id), method: :get do
+    = item.name
+    = item.price
+    - if item.purchase != nil
+      = "売却済み"
+    - else
+      = "出品中"
 
   - item.images.each do |image|
     = image_tag image.src.url
