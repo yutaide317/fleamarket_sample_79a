@@ -66,11 +66,14 @@
               %i.fas.fa-flag  
                 %span 不適切な商品を通報
 
+      - if user_signed_in? && current_user.id == item.user_id
         .buttonArea
           .buttonArea__buttonBox
-            .buttonArea__buttonBox__deleteBtn
-              = button_tag type: 'button', class: "deleteBtn" do
-                商品の削除
+            = button_tag type: 'button', class: "editBtn" do
+              商品の編集
+          .buttonArea__buttonBox
+            = button_tag type: 'button', class: "deleteBtn" do
+              商品の削除
 
         .commentBox
           = form_for '#' do |f|
