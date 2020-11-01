@@ -12,6 +12,11 @@ class ItemsController < ApplicationController
 
   def show
     @item = Item.find(params[:id])
+    @itemcategory = Itemcategory.find(@item.category)
+    @itemcondition = Itemcondition.find(@item.item_condition)
+    @postage = Postage.find(@item.postage_payer)
+    @preparation = Preparation.find(@item.preparation_period)
+    @district = District.find(@item.prefecture)
   end
 
   def create
