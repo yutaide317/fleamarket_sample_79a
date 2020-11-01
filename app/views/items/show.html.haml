@@ -66,7 +66,7 @@
               %i.fas.fa-flag  
                 %span 不適切な商品を通報
 
-      - if user_signed_in? && current_user.id == item.user_id
+      - if user_signed_in? && current_user.id == @item.user_id
         .buttonArea
           .buttonArea__buttonBox
             .buttonArea__buttonBox__btn
