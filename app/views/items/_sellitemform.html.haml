@@ -48,7 +48,7 @@
               カテゴリー
               %span.MustDescription
                 必須
-            = f.collection_select :category, Itemcategory.all, :id, :name, prompt: "--"
+            = f.collection_select :category_id, @parents, :id, :name, {prompt: "選択してください"}, {class: "categoryForm", id: "category_form"}
             .FormGroup__content
               ブランド
               %span.FreeDescription
