@@ -10,7 +10,7 @@
           .itemBox__itemImage__mainImage
             = image_tag (@item.images[0].src.url), size: '540x346'
           .itemBox__itemImage__subImage
-            = image_tag (@item.images[0].src.url), size: '140x87'
+            = image_tag (@item.images[1].src.url), size: '140x87'
           .itemBox__price
             ¥
             = @item.price
