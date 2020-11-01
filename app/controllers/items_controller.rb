@@ -11,6 +11,7 @@ class ItemsController < ApplicationController
   end
 
   def show
+    @item = Item.show
   end
 
   def create
