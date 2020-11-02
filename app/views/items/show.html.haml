@@ -8,7 +8,7 @@
           = @item.name
         .itemBox__itemImage
           .itemBox__itemImage__mainImage
-            = image_tag (@item.images[0].src.url), size: '540x346'
+            = image_tag (@item.images[0].src.url), class:"image-main"
           .itemBox__itemImage__subImage
             - @item.images.each do |image|
               = image_tag (image.src.url), size: '140x87'
@@ -27,7 +27,7 @@
             %tr.tableTypeA
               %th 出品者
               %td 
-                =@item.name
+                =@item.user.nickname
             %tr.tableTypeB
               %th カテゴリー
               %td 
@@ -41,9 +41,6 @@
               %th ブランド
               %td 
                 =@item.brand_id
-            %tr.tableTypeC
-              %th 商品のサイズ
-              %td S / M / L
             %tr.tableTypeA
               %th 商品の状態
               %td 

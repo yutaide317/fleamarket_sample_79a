@@ -35,6 +35,22 @@ $table-border: solid 1px #dedede;
       &__itemImage{
         text-align: center;
         margin: 0 auto;
+        &__mainImage {
+          display: flex;
+          flex-direction: column;
+          width: 560px;
+          align-items: center;
+          margin: 0 auto;
+          .image-main {
+            max-width: 560px;
+            min-width: 560px;
+            min-height: 346px;
+            object-fit: contain;
+          }
+        }
+        &__subImage {
+          margin-top: 10px;
+        }
       }
       &__price{
         font-size: 46px; 
