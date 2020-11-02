@@ -70,11 +70,13 @@
         .buttonArea
           .buttonArea__buttonBox
             .buttonArea__buttonBox__btn
-              = button_tag type: 'button', class: "editBtn" do
-                商品の編集
+              = link_to '商品の編集', edit_item_path(@item.id), method: :get
+              -# = button_tag type: 'button', class: "editBtn" do
+              -#   商品の編集
             .buttonArea__buttonBox__btn
-              = button_tag type: 'button', class: "deleteBtn" do
-                商品の削除
+              = link_to '商品の削除', item_path(@item.id), method: :delete
+              -# = button_tag type: 'button', class: "deleteBtn" do
+              -#   商品の削除
 
         .commentBox
           = form_for '#' do |f|
