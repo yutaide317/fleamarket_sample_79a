@@ -66,10 +66,12 @@
               %i.fas.fa-flag  
                 %span 不適切な商品を通報
 
-        .itemBox__selectBtn
-          - if user_signed_in? && current_user.id == @item.user_id
-            = link_to '#', class: "deleteBtn" do
-              商品の削除
+        - if user_signed_in? && current_user.id == @item.user_id
+          .buttonBox
+            .buttonBox__buttonArea
+              = button__tag type: 'button', class: "deleteBtn" do
+                商品の削除
+
         .commentBox
           = form_for '#' do |f|
             .commentBox__newComment
