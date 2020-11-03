@@ -68,8 +68,8 @@
 
         .itemBox__selectBtn
           - if user_signed_in? && current_user.id == @item.user_id
-            = link_to '商品の削除', '#', class: "item-destroy"
-
+            = link_to '#', class: "deleteBtn" do
+              商品の削除
         .commentBox
           = form_for '#' do |f|
             .commentBox__newComment
