@@ -1,0 +1,35 @@
+.AccountPage
+  = render "/devise/registrations/head_logo"
+  - if @user.credit_card.present?
+    .confirmation
+      .confirmation__frame
+        購入内容の確認
+      = render "item_info", item:@item, images:@images
+      .confirmation__total
+        .confirmation__total__price
+          .title
+            支払い金額
+          .item_price
+            ¥
+            = @item.price
+      .credit_card_text
+        .credit_card_text__box
+          登録クレジットカード情報
+      .credit_card__list
+        .credit_card__list--frame
+          .credit_card_info
+            .credit_card_info__brand
+              = image_tag "#{@card_src}", class: "credit_card_info__brand--img", alt: @card_brand
+            .credit_card_info__numbers
+              .number
+                = "**** **** **** " + @customer_card.last4
+              .expiration_date
+                .expiration_date__title
+                  有効期限
+                .expiration_date__info
+                  = @exp_month + " / " + @exp_year
+      .confirm_btn
+        .confirm_btn__box
+          = link_to "購入する", "#", class: "confirm_btn__box__buy"
+  .AccountPage__etc
+    = render "/devise/registrations/foot_logo"
