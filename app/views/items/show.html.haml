@@ -1,0 +1,151 @@
+.header
+  = render "header"
+  
+  .showMain
+    .topContent
+      .itemBox
+        %h2.itemBox__itemName
+          = @item.name
+        .itemBox__itemImage
+          .itemBox__itemImage__mainImage
+            = image_tag (@item.images[0].src.url), class:"image-main"
+          .itemBox__itemImage__subImage
+            - @item.images.each do |image|
+              = image_tag (image.src.url), size: '140x87'
+          .itemBox__price
+            ¥
+            = @item.price
+          .itemBox__priceDetail
+            %span
+              (税込)
+            %span
+              送料込み 
+          .itemBox__description
+            = @item.introduction
+        .itemBox__itemTable
+          %table
+            %tr.tableTypeA
+              %th 出品者
+              %td 
+                =@item.user.nickname
+            %tr.tableTypeB
+              %th カテゴリー
+              %td 
+                %span
+                  = @itemcategory.name
+                  %br 
+                    カテゴリー名2
+                    %br 
+                    カテゴリー名3
+            %tr.tableTypeC
+              %th ブランド
+              %td 
+                =@item.brand_id
+            %tr.tableTypeA
+              %th 商品の状態
+              %td 
+                = @itemcondition.name
+            %tr.tableTypeA
+              %th 配送料の負担
+              %td
+                = @postage.name
+            %tr.tableTypeA
+              %th 発送元の地域
+              %td
+                %span
+                  = @district.name
+            %tr.tableTypeA
+              %th 発送日の目安
+              %td
+                = @preparation.name
+
+        .itemBox__optionalArea
+          .itemBox__optionalArea__likeBtn
+            = button_tag type: 'button', class: "likeBtn" do
+              %i.fa.fa-star 
+                %span お気に入り １            
+          .itemBox__optionalArea__reportBtn
+            =link_to '#', class: "reportBtn" do
+              %i.fas.fa-flag  
+                %span 不適切な商品を通報
+        .itemBox__selectBtn
+          - if user_signed_in? && current_user.id == @item.user_id 
+            = link_to '商品の編集', '#', class: "item-red-btn"
+            = link_to '削除', '#', class:"item-destroy"
+          - elsif user_signed_in?
+            = link_to '購入画面に進む', '#', class:"item-red-btn"
+          - else
+        .commentBox
+          = form_for '#' do |f|
+            .commentBox__newComment
+              = f.text_area :comment, class: "newComment", placeholder: ""
+            .commentBox__explanation
+              %p 相手のことを考え丁寧なコメントを心がけましょう。
+              %br 不快な言葉遣いなどは利用制限や退会処分になることがあります。     
+            .commentBox__commentBtn
+              = button_tag type: 'button', class: "commentBtn" do
+                %i.fa.fa-comment コメントする
+
+        .links
+          .list
+            .backItem
+              = link_to '#', class:"backBtn" do
+                < 前の商品
+            .nextItem
+              = link_to '#', class:"nextBtn" do
+                後の商品 >
+        .relatedItem
+          = link_to '#', class:"relatedItem" do
+            レディースをもっと見る  
+
+        .productLists
+          .productLists__productList
+            =link_to '#'do
+              .productLists__productList__img
+                = image_tag 'beef.jpg', size: '220x150'
+              .productLists__productList__body
+                %h3.name
+                  テスト
+                .productLists__productList__body__center
+                  .productLists__productList__body__center__price
+                    10,000円
+                  .productLists__productList__body__center__favorite
+                    %i.fa.fa-star
+                    １
+                %p.tax
+                  (税込)
+        
+          .productLists__productList
+            =link_to '#'do
+              .productLists__productList__img
+                = image_tag 'beef.jpg', size: '220x150'
+              .productLists__productList__body
+                %h3.name
+                  テスト
+                .productLists__productList__body__center
+                  .productLists__productList__body__center__price
+                    10,000円
+                  .productLists__productList__body__center__favorite
+                    %i.fa.fa-star
+                    １
+                %p.tax
+                  (税込) 
+          .productLists__productList
+            =link_to '#'do
+              .productLists__productList__img
+                = image_tag 'beef.jpg', size: '220x150'
+              .productLists__productList__body
+                %h3.name
+                  テスト
+                .productLists__productList__body__center
+                  .productLists__productList__body__center__price
+                    10,000円
+                  .productLists__productList__body__center__favorite
+                    %i.fa.fa-star
+                    １
+                %p.tax
+                  (税込) 
+         
+              
+  
+  = render "footer" 
