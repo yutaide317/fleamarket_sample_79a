@@ -22,7 +22,7 @@ $(document).on('turbolinks:load', function(){
 
     // 孫カテゴリーの表示作成
     function appendGrandchildrenBox(insertHTML){
-      const grandchildSelectHtml = '';
+      var grandchildSelectHtml = '';
       grandchildSelectHtml = `<div class='FormGroup__content__category__added' id= 'grandchildren_wrapper'>
                                 <div class='FormGroup__content__category2'>
                                   <i class='fas fa-chevron-down FormGroup__content__category--arrow-down'></i>
