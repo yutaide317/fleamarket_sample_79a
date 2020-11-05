@@ -18,9 +18,7 @@ class ItemsController < ApplicationController
   # 親カテゴリーが選択された後に動くアクション
   def get_category_children
     #選択された親カテゴリーに紐付く子カテゴリーの配列を取得
-    # binding.pry
     @category_children = Category.find(params[:parent_id]).children
-   
   end
 
   # 子カテゴリーが選択された後に動くアクション
