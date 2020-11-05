@@ -46,6 +46,27 @@ $table-border: solid 1px #dedede;
             min-width: 560px;
             min-height: 346px;
             object-fit: contain;
+            
+          }
+          .items-box_photo__sold{
+            width: 0;
+            height: 0;
+            border-top: 100px solid #ea352d;
+            border-right: 100px solid transparent;
+            border-bottom: 100px solid transparent;
+            border-left: 106px solid #ea352d;
+            z-index: 100;
+            position: relative;
+            top: -420px;
+            left: -180px;
+            &__inner{
+              transform: rotate(-45deg);
+              font-size: 35px;
+              margin:-50px 0px 0px -85px;
+              color: #fff;
+              letter-spacing: 3px;
+              font-weight: 700;
+            }
           }
         }
         &__subImage {

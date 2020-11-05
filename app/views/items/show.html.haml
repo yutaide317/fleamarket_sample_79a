@@ -9,6 +9,10 @@
         .itemBox__itemImage
           .itemBox__itemImage__mainImage
             = image_tag (@item.images[0].src.url), class:"image-main"
+            - if @item.purchase.present?
+              .items-box_photo__sold
+                .items-box_photo__sold__inner
+                  SOLD
           .itemBox__itemImage__subImage
             - @item.images.each do |image|
               = image_tag (image.src.url), size: '140x87'
