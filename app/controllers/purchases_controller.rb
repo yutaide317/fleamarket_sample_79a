@@ -35,6 +35,7 @@ class PurchasesController < ApplicationController
         ## 有効期限'年'を定義
         @exp_year = @customer_card.exp_year.to_s.slice(2,3)
       else
+        redirect_to new_credit_card_path, alert: "クレジットカードを登録してください"
       end
   end
 
