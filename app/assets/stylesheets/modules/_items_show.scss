@@ -167,6 +167,19 @@ $table-border: solid 1px #dedede;
           transition: all ease-out .3s;
           border-radius: 4px;
         }
+        .sold_out_btn {
+          margin-top: 16px;
+          background: #888;
+          font-size: 20px;
+          text-decoration: none;
+          color: #fff;
+          line-height: 56px;
+          text-align: center;
+          font-weight: 600;
+          -webkit-transition: all ease-out .3s;
+          transition: all ease-out .3s;
+          border-radius: 4px;
+        }
       }
       .commentBox {
         background-color: white;

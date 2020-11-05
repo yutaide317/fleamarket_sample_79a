@@ -30,6 +30,6 @@
                   = @exp_month + " / " + @exp_year
       .confirm_btn
         .confirm_btn__box
-          = link_to "購入する", "#", class: "confirm_btn__box__buy"
+          = link_to "購入する", item_purchases_path(item_id: @item.id), class: "confirm_btn__box__buy", method: :post
   .AccountPage__etc
     = render "/devise/registrations/foot_logo"
