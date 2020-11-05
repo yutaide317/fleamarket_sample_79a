@@ -121,6 +121,19 @@ $table-border: solid 1px #dedede;
             margin-right: 2px;
           }
         }
+      &__selectBtn {
+        margin: 0 auto;
+        width: 700px;
+        .item-destroy {
+          height: 50px;
+          background: $sub-color;
+          border: 1px solid $sub-color;
+          color: white;
+          width: 60%;
+          font-size: 18px;
+          border-radius: 100px;
+        }
+      }
       .commentBox {
         background-color: white;
         height: 270px;
