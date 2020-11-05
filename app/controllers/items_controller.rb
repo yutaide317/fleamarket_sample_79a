@@ -1,6 +1,5 @@
 class ItemsController < ApplicationController
-  before_action :set_item, except: [:index, :new, :create, :show]
-  before_action :set_parents, only: [:new, :create]
+  before_action :set_item, except: [:index, :new, :create, :show, :get_category_children, :get_category_grandchildren]
 
   def index
     @items = Item.includes(:images).where(user_id: current_user).order('created_at DESC')
@@ -10,7 +9,27 @@ class ItemsController < ApplicationController
     @item = Item.new
     @item.images.new
 
+    #セレクトボックスの初期値設定
+    @category_parent_array = ["---"]
+    #データベースから、親カテゴリーのみ抽出し、配列化
+    @category_parent_array = Category.where(ancestry: nil)
   end
+
+  # 親カテゴリーが選択された後に動くアクション
+  def get_category_children
+    #選択された親カテゴリーに紐付く子カテゴリーの配列を取得
+    # binding.pry
+    @category_children = Category.find(params[:parent_id]).children
+   
+  end
+
+  # 子カテゴリーが選択された後に動くアクション
+  def get_category_grandchildren
+    #選択された子カテゴリーに紐付く孫カテゴリーの配列を取得
+    @category_grandchildren = Category.find(params[:child_id]).children
+  end
+
+
 
   def show
   end
@@ -64,25 +83,5 @@ class ItemsController < ApplicationController
   def set_item
     @item = Item.find(params[:id])
   end
-
-  def set_parents
-    @parents = Category.where(ancestry: nil).limit(13)
-  end
-
-  def get_category_children
-    @category_children = Category.find(params[:parent_id]).children
-  end
-
-  def get_category_grandchildren
-    @category_grandchildren = Category.find(params[:child_id]).children
-  end
-
-  def search
-    respond_to do |format|
-      format.html
-      format.json do
-          @childrens = Category.find(params[:parent_id]).children
-      end
-    end
-  end
+  
 end
