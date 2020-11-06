@@ -37,10 +37,10 @@ $table-border: solid 1px #dedede;
         margin: 0 auto;
         &__mainImage {
           display: flex;
-          flex-direction: column;
           width: 560px;
           align-items: center;
           margin: 0 auto;
+          position: relative;
           .image-main {
             max-width: 560px;
             min-width: 560px;
@@ -56,9 +56,9 @@ $table-border: solid 1px #dedede;
             border-bottom: 100px solid transparent;
             border-left: 106px solid #ea352d;
             z-index: 100;
-            position: relative;
-            top: -420px;
-            left: -180px;
+            position: absolute;
+            top: 0;
+            
             &__inner{
               transform: rotate(-45deg);
               font-size: 35px;
