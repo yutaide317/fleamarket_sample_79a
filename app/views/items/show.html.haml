@@ -68,7 +68,7 @@
 
         .itemBox__selectBtn
           .itemBox__selectBtn__deleteBtn
-            = link_to '商品を削除', item_path(item), method: :delete, class: "item-destroy"
+            = link_to '商品を削除', item_path(@item.id), method: :delete, class: "item-destroy" do
 
         .commentBox
           = form_for '#' do |f|
