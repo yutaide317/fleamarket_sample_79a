@@ -10,8 +10,8 @@
           .itemBox__itemImage__mainImage
             = image_tag (@item.images[0].src.url), class:"image-main"
             - if @item.purchase.present?
-              .items-box_photo__sold
-                .items-box_photo__sold__inner
+              .itemBox__itemImage__mainImage__photo_sold
+                .itemBox__itemImage__mainImage__photo_sold__inner
                   SOLD
           .itemBox__itemImage__subImage
             - @item.images.each do |image|

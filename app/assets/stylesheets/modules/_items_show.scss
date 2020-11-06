@@ -48,7 +48,7 @@ $table-border: solid 1px #dedede;
             object-fit: contain;
             
           }
-          .items-box_photo__sold{
+          &__photo_sold{
             width: 0;
             height: 0;
             border-top: 100px solid #ea352d;
