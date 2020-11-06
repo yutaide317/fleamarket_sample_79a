@@ -1,2 +1,15 @@
-%h1 Purchases#create
-%p Find me in app/views/purchases/create.html.haml
+.AccountPage
+  = render "/devise/registrations/head_logo"
+  .buy
+    .buy__flame
+      購入が完了しました
+    .buy__confirmation
+      購入商品
+    = render "item_info", item:@item, images:@images
+    %ul.link_byn_flame
+      %li.top_page_link
+        = link_to "トップページに戻る", root_path, class: "top_page_link__btn"
+      %li.buy_list
+        = link_to "購入商品一覧", "#", class: "buy_list__btn"
+  .AccountPage__etc
+    = render "/devise/registrations/foot_logo"

@@ -1,0 +1,50 @@
+.buy {
+  width: 700px;
+  margin: 0 auto;
+  background-color: #ffffff;
+  &__flame {
+    padding: 32px;
+    font-size: 32px;
+    text-align: center;
+    font-weight: bold;
+  }
+  &__confirmation {
+    padding: 32px;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    border-bottom: 1px solid rgba(229,226,226,0.377);
+  }
+  .link_byn_flame {
+    margin: 0 170px;
+    padding: 30px 30px 50px 30px;
+    .top_page_link {
+      height: 50px;
+      padding: 15px;
+      background-color: #ea352d;
+      border-radius: 4px;
+      font-size: 15px;
+      text-align: center;
+      margin-bottom: 10px;
+      &__btn {
+        color: #ffffff;
+        text-decoration: none;
+        font-weight: bold;
+      }
+    }
+    .buy_list {
+      height: 50px;
+      padding: 15px;
+      background-color: #fff;
+      border-radius: 4px;
+      font-size: 15px;
+      border: 1px solid #ea352d;
+      text-align: center;
+      &__btn {
+        color: #ea352d;
+        text-decoration: none;
+        font-weight: bold;
+      }
+    }
+  }
+}
