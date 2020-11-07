@@ -25,7 +25,7 @@ window.addEventListener('DOMContentLoaded', function(){
         );
         document.inputForm.submit();
       } else {
-        alert("カード情報が正しくありません。");
+        // alert("カード情報が正しくありません。");
       }
     });
   });

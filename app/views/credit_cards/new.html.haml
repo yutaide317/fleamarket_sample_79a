@@ -7,7 +7,7 @@
         %h2.headerTitle
           クレジットカード情報入力
       .formArea
-        = form_tag(credit_cards_path, method: :post, id: "charge-form", class: "details", name: "inputForm") do
+        = form_tag(credit_cards_path, method: :post, id: "charge-form", class: "details", name: "inputForm") do |f|
           .container
             .formBlock
               .formBlock__contents
