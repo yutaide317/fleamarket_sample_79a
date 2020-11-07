@@ -14,7 +14,6 @@ $table-border: solid 1px #dedede;
 
 .showMain{
   background-color: $main-color;
-  height: 2050px;
   width: 100%;
   padding: 40px 0;
   
@@ -36,6 +35,22 @@ $table-border: solid 1px #dedede;
       &__itemImage{
         text-align: center;
         margin: 0 auto;
+        &__mainImage {
+          display: flex;
+          flex-direction: column;
+          width: 560px;
+          align-items: center;
+          margin: 0 auto;
+          .image-main {
+            max-width: 560px;
+            min-width: 560px;
+            min-height: 346px;
+            object-fit: contain;
+          }
+        }
+        &__subImage {
+          margin-top: 10px;
+        }
       }
       &__price{
         font-size: 46px; 
@@ -105,7 +120,7 @@ $table-border: solid 1px #dedede;
             border: 1px solid #FFB340;
             cursor: pointer;
             i{
-              margin-right: ２px;
+              margin-right: 2px;
             }
           }
         }
@@ -132,6 +147,19 @@ $table-border: solid 1px #dedede;
           width: 60%;
           font-size: 18px;
           border-radius: 100px;
+        .item-red-btn {
+          display: block;
+          margin-top: 16px;
+          background: #ea352d;
+          font-size: 20px;
+          text-decoration: none;
+          color: #fff;
+          line-height: 56px;
+          text-align: center;
+          font-weight: 600;
+          -webkit-transition: all ease-out .3s;
+          transition: all ease-out .3s;
+          border-radius: 4px;
         }
       }
       .commentBox {
