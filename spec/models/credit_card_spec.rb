@@ -1,5 +1,12 @@
 require 'rails_helper'
 
-RSpec.describe CreditCard, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+describe CreditCard do
+  describe '#create' do
+
+    it "is invalid without a card_id" do
+      # credit_card = build(:credit_card, card_id: nil)
+      # credit_card.valid?
+      # expect(credit_card.errors[:card_id]).to include("を入力してください")
+    end
+  end
 end
