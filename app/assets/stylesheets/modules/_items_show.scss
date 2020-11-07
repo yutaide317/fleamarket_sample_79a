@@ -139,6 +139,19 @@ $table-border: solid 1px #dedede;
       &__selectBtn {
         margin: 0 auto;
         width: 600px;
+        .item-destroy {
+          display: block;
+          background: $sub-color;
+          border: 1px solid $sub-color;
+          color: white;
+          font-size: 20px;
+          border-radius: 4px;
+          font-weight: 600;
+          text-align: center;
+          text-decoration: none;
+          margin-top: 16px;
+          line-height: 56px;
+        }
         .item-red-btn {
           display: block;
           margin-top: 16px;
@@ -146,20 +159,6 @@ $table-border: solid 1px #dedede;
           font-size: 20px;
           text-decoration: none;
           color: #fff;
-          line-height: 56px;
-          text-align: center;
-          font-weight: 600;
-          -webkit-transition: all ease-out .3s;
-          transition: all ease-out .3s;
-          border-radius: 4px;
-        }
-        .item-destroy {
-          display: block;
-          margin-top: 16px;
-          border: 1px solid #ea352d;
-          font-size: 20px;
-          text-decoration: none;
-          color: #ea352d;
           line-height: 56px;
           text-align: center;
           font-weight: 600;
@@ -296,4 +295,4 @@ $table-border: solid 1px #dedede;
       }
     }          
   }
-}  
+ }
