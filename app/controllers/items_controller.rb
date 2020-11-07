@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  before_action :set_item, except: [:index, :new, :create, :show, :destroy]
+  before_action :set_item, except: [:index, :new, :create, :show]
 
   def index
     @items = Item.includes(:images).order('created_at DESC')
