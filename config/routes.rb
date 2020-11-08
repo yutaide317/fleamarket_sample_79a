@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-  get 'purchases/new'
-  get 'purchases/create'
   devise_for :users, controllers: { registrations: 'users/registrations' }
   resources :users, only: [:index, :show]
   resources :credit_cards, only: [:new, :create, :show, :destroy]
