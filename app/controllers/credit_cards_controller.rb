@@ -1,5 +1,6 @@
 class CreditCardsController < ApplicationController
   require "payjp"
+  before_action :set_card, except: [:new, :create]
 
   def new
     @card = CreditCard.where(user_id: current_user.id)
@@ -26,7 +27,7 @@ class CreditCardsController < ApplicationController
   end
 
   def show
-    @card = CreditCard.find_by(user_id: current_user.id)
+    
     if @card.blank?
       redirect_to action: "new" 
     else
@@ -52,7 +53,7 @@ class CreditCardsController < ApplicationController
   end
 
   def destroy
-    @card = CreditCard.find_by(user_id: current_user.id)
+    
     if @card.blank?
       redirect_to action: "new"
     else
@@ -60,12 +61,16 @@ class CreditCardsController < ApplicationController
       customer = Payjp::Customer.retrieve(@card.customer_id)
       customer.delete
       @card.delete
-      if @card.destroy
-        
-      else
+      unless @card.destroy
         redirect_to credit_card_path(current_user.id)
       end
     end
+  end
+  
+  private
+
+  def set_card
+    @card = CreditCard.find_by(user_id: current_user.id)
   end
 
 end

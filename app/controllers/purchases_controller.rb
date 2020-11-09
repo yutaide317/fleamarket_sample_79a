@@ -1,9 +1,9 @@
 class PurchasesController < ApplicationController
   require "payjp"
+  before_action :set_purchase, only: [:new, :create]
   def new
-    @item = Item.find(params[:item_id])
-    @user = current_user
-    if @user.credit_card.present?
+    
+    if current_user.credit_card.present?
       Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
       @card = CreditCard.find_by(user_id: current_user.id)
       customer = Payjp::Customer.retrieve(@card.customer_id)
@@ -29,7 +29,7 @@ class PurchasesController < ApplicationController
   end
 
   def create
-    @item = Item.find(params[:item_id])
+    
     if @item.purchase.present?
       redirect_to item_path(@item.id), alert: "売り切れています。"
     else
@@ -49,4 +49,11 @@ class PurchasesController < ApplicationController
       end
     end
   end
+
+  private
+
+  def set_purchase
+    @item = Item.find(params[:item_id])
+  end
+
 end

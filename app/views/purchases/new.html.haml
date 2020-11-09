@@ -1,6 +1,6 @@
 .AccountPage
   = render "/devise/registrations/head_logo"
-  - if @user.credit_card.present?
+  - if current_user.credit_card.present?
     .confirmation
       .confirmation__frame
         購入内容の確認
