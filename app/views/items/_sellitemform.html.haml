@@ -49,7 +49,7 @@
               %span.MustDescription
                 必須
             .FormGroup__content__category
-              = f.collection_select :category_id, Category.where(ancestry: nil), :id, :name, {prompt: '---'}, {id: 'parent_category'}
+              = f.collection_select :category, Category.where(ancestry: nil), :id, :name, {prompt: '---'}, {id: 'parent_category'}
             .FormGroup__content
               ブランド
               %span.FreeDescription
