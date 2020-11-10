@@ -74,9 +74,13 @@ gem 'devise'
 
 gem 'active_hash'
 
-gem 'carrierwave'
-gem 'mini_magick'
+gem 'payjp'
+
+gem 'dotenv-rails'
 
 gem 'jquery-rails'
+
+gem 'carrierwave'
+gem 'mini_magick'
 
 gem 'fog-aws'

@@ -1,5 +1,5 @@
-require 'rails_helper'
+# require 'rails_helper'
 
-RSpec.describe "Transactions", type: :request do
+# RSpec.describe "Transactions", type: :request do
 
-end
+# end

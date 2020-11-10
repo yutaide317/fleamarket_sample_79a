@@ -37,15 +37,36 @@ $table-border: solid 1px #dedede;
         margin: 0 auto;
         &__mainImage {
           display: flex;
-          flex-direction: column;
           width: 560px;
           align-items: center;
           margin: 0 auto;
+          position: relative;
           .image-main {
             max-width: 560px;
             min-width: 560px;
             min-height: 346px;
             object-fit: contain;
+            
+          }
+          &__photo_sold{
+            width: 0;
+            height: 0;
+            border-top: 100px solid #ea352d;
+            border-right: 100px solid transparent;
+            border-bottom: 100px solid transparent;
+            border-left: 106px solid #ea352d;
+            z-index: 100;
+            position: absolute;
+            top: 0;
+            
+            &__inner{
+              transform: rotate(-45deg);
+              font-size: 35px;
+              margin:-50px 0px 0px -85px;
+              color: #fff;
+              letter-spacing: 3px;
+              font-weight: 700;
+            }
           }
         }
         &__subImage {
@@ -156,6 +177,19 @@ $table-border: solid 1px #dedede;
           display: block;
           margin-top: 16px;
           background: #ea352d;
+          font-size: 20px;
+          text-decoration: none;
+          color: #fff;
+          line-height: 56px;
+          text-align: center;
+          font-weight: 600;
+          -webkit-transition: all ease-out .3s;
+          transition: all ease-out .3s;
+          border-radius: 4px;
+        }
+        .sold_out_btn {
+          margin-top: 16px;
+          background: #888;
           font-size: 20px;
           text-decoration: none;
           color: #fff;

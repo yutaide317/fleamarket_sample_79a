@@ -1,0 +1,57 @@
+.confirmation {
+  width: 700px;
+  margin: 0 auto;
+  background-color: #ffffff;
+  &__frame {
+    padding: 32px;
+    font-size: 22px;
+    text-align: center;
+    font-weight: bold;
+    border-bottom: 1px solid rgba(229,226,226,0.377);
+  }
+  &__total {
+    padding: 30px;
+    &__price {
+      display: flex;
+      width: 343px;
+      padding: 20px 0;
+      border-bottom: 1px solid rgba(229, 226, 226, 0.377);
+      margin-left: 150px;
+      font-size: 22px;
+      font-weight: 600;
+      -webkit-box-pack: justify;
+      justify-content: space-between;
+      -webkit-box-align: center;
+      align-items: center;
+    }
+  }
+  .credit_card_text {
+    padding: 0 30px;
+    &__box {
+      margin: 0 150px;
+      font-size: 15px;
+    }
+  }
+  .confirm_btn {
+    padding: 0 30px;
+    height: 80px;
+    &__box {
+      margin: 0 auto;
+      width: 343px;
+      &__buy {
+        background: #ea352d;
+        border: 1px solid #ea352d;
+        color: #fff;
+        border-radius: 4px;
+        text-decoration: none;
+        font-size: 17px;
+        min-height: 48px;
+        padding: 10px 16px 8px;
+        display: block;
+        text-align: center;
+        font-weight: bold;
+      }
+    }
+    
+  }
+}
