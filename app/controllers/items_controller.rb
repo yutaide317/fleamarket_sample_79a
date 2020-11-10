@@ -2,7 +2,7 @@ class ItemsController < ApplicationController
   before_action :set_item, except: [:index, :new, :create, :show, :get_category_children, :get_category_grandchildren]
 
   def index
-    @items = Item.includes(:images).where(user_id: current_user).order('created_at DESC')
+    @items = Item.includes(:images).order('created_at DESC')
   end
 
   def new
@@ -28,6 +28,12 @@ class ItemsController < ApplicationController
   end
 
   def show
+    @item = Item.find(params[:id])
+    @itemcategory = Itemcategory.find(@item.category)
+    @itemcondition = Itemcondition.find(@item.item_condition)
+    @postage = Postage.find(@item.postage_payer)
+    @preparation = Preparation.find(@item.preparation_period)
+    @district = District.find(@item.prefecture)
   end
 
   def create
@@ -35,6 +41,7 @@ class ItemsController < ApplicationController
     if @item.save
       redirect_to root_path
     else
+      @item.images.new
       render :new
     end
   end

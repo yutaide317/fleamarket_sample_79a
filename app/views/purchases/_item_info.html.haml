@@ -1,0 +1,13 @@
+.item_info_box
+  .item_info
+    .item_info__image
+      = image_tag (@item.images[0].src.url), class: "image-src"
+    .item_info__status
+      .item_info__status__name
+        = @item.name
+      .item_info__status__price
+        %span.tax
+          送料込み（税込）
+        %span.price
+          ¥
+          = @item.price

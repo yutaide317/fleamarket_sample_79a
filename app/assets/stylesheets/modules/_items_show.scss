@@ -14,7 +14,6 @@ $table-border: solid 1px #dedede;
 
 .showMain{
   background-color: $main-color;
-  height: 2050px;
   width: 100%;
   padding: 40px 0;
   
@@ -36,6 +35,43 @@ $table-border: solid 1px #dedede;
       &__itemImage{
         text-align: center;
         margin: 0 auto;
+        &__mainImage {
+          display: flex;
+          width: 560px;
+          align-items: center;
+          margin: 0 auto;
+          position: relative;
+          .image-main {
+            max-width: 560px;
+            min-width: 560px;
+            min-height: 346px;
+            object-fit: contain;
+            
+          }
+          &__photo_sold{
+            width: 0;
+            height: 0;
+            border-top: 100px solid #ea352d;
+            border-right: 100px solid transparent;
+            border-bottom: 100px solid transparent;
+            border-left: 106px solid #ea352d;
+            z-index: 100;
+            position: absolute;
+            top: 0;
+            
+            &__inner{
+              transform: rotate(-45deg);
+              font-size: 35px;
+              margin:-50px 0px 0px -85px;
+              color: #fff;
+              letter-spacing: 3px;
+              font-weight: 700;
+            }
+          }
+        }
+        &__subImage {
+          margin-top: 10px;
+        }
       }
       &__price{
         font-size: 46px; 
@@ -105,7 +141,7 @@ $table-border: solid 1px #dedede;
             border: 1px solid #FFB340;
             cursor: pointer;
             i{
-              margin-right: ２px;
+              margin-right: 2px;
             }
           }
         }
@@ -121,6 +157,50 @@ $table-border: solid 1px #dedede;
             margin-right: 2px;
           }
         }
+      &__selectBtn {
+        margin: 0 auto;
+        width: 600px;
+        .item-destroy {
+          display: block;
+          background: $sub-color;
+          border: 1px solid $sub-color;
+          color: white;
+          font-size: 20px;
+          border-radius: 4px;
+          font-weight: 600;
+          text-align: center;
+          text-decoration: none;
+          margin-top: 16px;
+          line-height: 56px;
+        }
+        .item-red-btn {
+          display: block;
+          margin-top: 16px;
+          background: #ea352d;
+          font-size: 20px;
+          text-decoration: none;
+          color: #fff;
+          line-height: 56px;
+          text-align: center;
+          font-weight: 600;
+          -webkit-transition: all ease-out .3s;
+          transition: all ease-out .3s;
+          border-radius: 4px;
+        }
+        .sold_out_btn {
+          margin-top: 16px;
+          background: #888;
+          font-size: 20px;
+          text-decoration: none;
+          color: #fff;
+          line-height: 56px;
+          text-align: center;
+          font-weight: 600;
+          -webkit-transition: all ease-out .3s;
+          transition: all ease-out .3s;
+          border-radius: 4px;
+        }
+      }
       .commentBox {
         background-color: white;
         height: 270px;
@@ -249,4 +329,4 @@ $table-border: solid 1px #dedede;
       }
     }          
   }
-}  
+ }
