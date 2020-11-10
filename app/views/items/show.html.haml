@@ -74,11 +74,11 @@
                 %span 不適切な商品を通報
 
         .itemBox__selectBtn
-          - if user_signed_in? && current_user.id == @item.user_id 
+          - if user_signed_in? && @item.purchase.present?
+            .sold_out_btn 売り切れました
+          - elsif user_signed_in? && current_user.id == @item.user_id 
             = link_to '商品の編集', '#', class: "item-red-btn"
             = link_to '商品を削除', item_path(@item), method: :delete, class: "item-destroy"
-          - elsif user_signed_in? && @item.purchase.present?
-            .sold_out_btn 売り切れました
           - elsif user_signed_in?
             = link_to '購入画面に進む', new_item_purchase_path(@item.id), class:"item-red-btn", method: :get
           - else
