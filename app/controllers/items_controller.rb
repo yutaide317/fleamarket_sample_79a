@@ -64,7 +64,7 @@ class ItemsController < ApplicationController
     params.require(:item).permit(
       :name, 
       :introduction, 
-      :category, 
+      :category_id, 
       :brand_id, 
       :item_condition, 
       :postage_payer, 
