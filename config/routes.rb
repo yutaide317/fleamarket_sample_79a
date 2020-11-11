@@ -6,5 +6,4 @@ Rails.application.routes.draw do
   resources :items do
     resources :purchases, only: [:new, :create]
   end
-  resources :transactions, only: [:index]
 end
