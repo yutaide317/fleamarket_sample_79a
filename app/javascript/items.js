@@ -13,6 +13,14 @@ $(document).on('turbolinks:load', ()=> {
     return html;
   }
 
+  //ラベルの調整
+  function setLabel() {
+    //プレビューボックスのwidthを取得し、maxから引くことでラベルのwidthを決定
+    var prevContent = $('.inputArea').prev();
+    labelWidth = (640 - $(prevContent).css('width').replace(/[^0-9]/g, ''));
+    $('.inputArea').css('width', labelWidth);
+  }
+
   let fileIndex = [1,2,3,4,5,6,7,8,9,10];
   lastIndex = $('.js-file_group:last').data('index');
   fileIndex.splice(0, lastIndex);
@@ -24,10 +32,16 @@ $(document).on('turbolinks:load', ()=> {
     const file = e.target.files[0];
     const blobUrl = window.URL.createObjectURL(file);
 
+    setLabel();
+
+    // fileIndexの0番目=1〜５を活用
+    $('.label-box').attr({id: `label-box--${fileIndex[0]}`,for: `item_images_attributes_${fileIndex[0]}_src`});
+    $('.js-file').hide
+
     if (img = $(`img[data-index="${targetIndex}"]`)[0]) {
       img.setAttribute('src', blobUrl);
     } else {
-      $('#previews').append(buildImg(targetIndex, blobUrl));
+      $('.previewArea').append(buildImg(targetIndex, blobUrl));
       $('#image-box').append(buildFileField(fileIndex[0]));
       fileIndex.shift();
       fileIndex.push(fileIndex[fileIndex.length - 1] + 1);
