@@ -43,31 +43,30 @@ $base_color: #ffffff;
               color: #4E4E4E;
             }
             .ProductFileContainer{
-              height: 150px;
-              margin: 20px 0;
-              background-color: whitesmoke;
-              border: 1px dashed $border_color;
-              cursor: pointer;
-              .UploadArea{
-                place-content: center;
-                background-color: whitesmoke;
-                border: 1px dashed $border_color;
-                cursor: pointer;
+              .imagesArea{
                 display: flex;
-                height: 100%;
-                flex-wrap: wrap;
-                .ImageDropSpot{
-                  display: none;
+                margin: 20px 0;
+                .previewArea{
+                  display: flex;
                 }
-                .fa-camera{
-                  height: 15px;
-                  font-size: 20px;
-                } 
-                .description{
-                  font-size: 12px;
-                  line-height: 1.4em;
-                  text-align: center;
-                  width: 100%;
+                .inputArea{
+                  width: 640px;
+                  height: 150px;
+                  background-color: whitesmoke;
+                  border: 1px dashed #cccccc;
+                  cursor: pointer;
+                  .label-box{
+                    display: block;
+                    height: 100%;
+                    width: 100%;
+                    .js-file{
+                      // display: none;
+                    }
+                  }
+                  .previewimages{
+                    display: flex;
+                    background-color: yellow;
+                  }
                 }
               }
             }

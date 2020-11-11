@@ -13,14 +13,19 @@
                 必須
             %p.description
               最大10枚までアップロードできます
+            
             #image-box.ProductFileContainer
-              #previews
+              .imagesArea
+                .previewArea
                 - if @item.persisted?
                   = @item.images.each_with_index do |image, i|
-                    = image_tag image.src.url, data: { index: i }, width: "100", height: '100'
-              = f.fields_for :images, class: "UploadArea" do |image|
-                .js-file_group{"data-index": "#{image.index}"}
-                  = image.file_field :src, class: "js-file"
+                    = image_tag image.src.url, data: { index: i }, width: "125", height: '125'
+                #previews.inputArea
+                  %label{for: "item_images_attributes_0_src", class: "label-box", id: "label-box--0"}
+                    %pre.label-box__text-visible クリックしてファイルをアップロード
+                    = f.fields_for :images, class: "UploadArea" do |image|
+                      .js-file_group{"data-index": "#{image.index}"}
+                        = image.file_field :src, class: "js-file"
                   %span.js-remove 削除
                 - if @item.persisted?
                   = image.check_box :_destroy, data:{ index: image.index }, class: 'hidden-destroy'
