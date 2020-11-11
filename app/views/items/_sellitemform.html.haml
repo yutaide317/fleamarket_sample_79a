@@ -23,15 +23,16 @@
                 #previews.inputArea
                   %label{for: "item_images_attributes_0_src", class: "label-box", id: "label-box--0"}
                     %pre.label-box__text-visible クリックしてファイルをアップロード
+
                     = f.fields_for :images, class: "UploadArea" do |image|
                       .js-file_group{"data-index": "#{image.index}"}
                         = image.file_field :src, class: "js-file"
-                  %span.js-remove 削除
-                - if @item.persisted?
-                  = image.check_box :_destroy, data:{ index: image.index }, class: 'hidden-destroy'
-              - if @item.persisted?
-                .js-file_group{"data-index": "#{@item.images.count}"}
-                  = file_field_tag :src, name: "item[images_attributes][#{@item.images.count}][src]", class: 'js-file'
+                        %span.js-remove 削除
+                      - if @item.persisted?
+                        = image.check_box :_destroy, data:{ index: image.index }, class: 'hidden-destroy'
+                    - if @item.persisted?
+                      .js-file_group{"data-index": "#{@item.images.count}"}
+                        = file_field_tag :src, name: "item[images_attributes][#{@item.images.count}][src]", class: 'js-file'
         .FormBlock
           .FormGroup
             .FormGroup__content
