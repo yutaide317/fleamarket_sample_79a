@@ -9,8 +9,16 @@ $(document).on('turbolinks:load', ()=> {
     return html;
   }
   const buildImg = (index, url)=> {
-    const html = `<img data-index="${index}" src="${url}" width="125px" height="125px">`;
+    const html = `<img data-index="${index}"
+                  class="preview-box"
+                  src="${url}"
+                  width="125px" height="125px">`;
     return html;
+  }
+
+  var count = $('.preview-box').length;
+  if (count == 0) {
+    $('.js-remove').hide();
   }
 
   //ラベルの調整
