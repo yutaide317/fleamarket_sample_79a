@@ -16,10 +16,10 @@ $(document).on('turbolinks:load', ()=> {
     return html;
   }
 
-  var count = $('.preview-box').length;
-  if (count == 0) {
-    $('.js-remove').hide();
-  }
+  // var count = $('.preview-box').length;
+  // if (count == 0) {
+  //   $('.js-remove').hide();
+  // }
 
   //ラベルの調整
   function setLabel() {
@@ -33,7 +33,7 @@ $(document).on('turbolinks:load', ()=> {
   lastIndex = $('.js-file_group:last').data('index');
   fileIndex.splice(0, lastIndex);
 
-  $('.hidden-destroy').hide();
+  // $('.hidden-destroy').hide();
 
   $('#image-box').on('change', '.js-file', function(e) {
     const targetIndex = $(this).parent().data('index');
@@ -44,7 +44,7 @@ $(document).on('turbolinks:load', ()=> {
 
     // fileIndexの0番目=1〜５を活用
     $('.label-box').attr({id: `label-box--${fileIndex[0]}`,for: `item_images_attributes_${fileIndex[0]}_src`});
-    $('.js-file').hide
+    // $('.js-file').hide
 
     if (img = $(`img[data-index="${targetIndex}"]`)[0]) {
       img.setAttribute('src', blobUrl);

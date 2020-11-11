@@ -43,11 +43,11 @@ $base_color: #ffffff;
               color: #4E4E4E;
             }
             .ProductFileContainer{
-              .js-file_group{
-                .js-file{
-                  display: none;
-                }
-              }
+              // .js-file_group{
+              //   .js-file{
+              //     display: none;
+              //   }
+              // }
               .imagesArea{
                 display: flex;
                 margin: 20px 0;
@@ -65,9 +65,9 @@ $base_color: #ffffff;
                     display: block;
                     height: 100%;
                     width: 100%;
-                    .js-file{
-                      display: none;
-                    }
+                    // .js-file{
+                    //   display: none;
+                    // }
                   }
                   .previewimages{
                     display: flex;
