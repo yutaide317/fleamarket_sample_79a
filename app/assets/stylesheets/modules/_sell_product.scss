@@ -43,12 +43,17 @@ $base_color: #ffffff;
               color: #4E4E4E;
             }
             .ProductFileContainer{
+              .js-file_group{
+                .js-file{
+                  display: none;
+                }
+              }
               .imagesArea{
                 display: flex;
                 margin: 20px 0;
                 .previewArea{
                   display: flex;
-                  
+
                 }
                 .inputArea{
                   width: 640px;
@@ -61,7 +66,7 @@ $base_color: #ffffff;
                     height: 100%;
                     width: 100%;
                     .js-file{
-                      // display: none;
+                      display: none;
                     }
                   }
                   .previewimages{
