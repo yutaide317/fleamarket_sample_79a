@@ -29,6 +29,9 @@ class ItemsController < ApplicationController
 
   def show
     @item = Item.find(params[:id])
+    @grandchild = Category.find(@item.category_id)
+    @child = @grandchild.parent
+    @parent = @child.parent
     # @itemcategory = Itemcategory.find(@item.category)
     @itemcondition = Itemcondition.find(@item.item_condition)
     @postage = Postage.find(@item.postage_payer)
