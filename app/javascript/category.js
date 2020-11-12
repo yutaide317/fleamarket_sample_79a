@@ -72,7 +72,6 @@ $(document).on('DOMContentLoaded', function(){
           dataType: 'json'
         })
         .done(function(grandchildren){
-          // console.log(grandchildren)
           if (grandchildren.length != 0) {
             $('#grandchildren_wrapper').remove(); //子が変更された時、孫以下を削除する
             var insertHTML = '';
@@ -83,7 +82,6 @@ $(document).on('DOMContentLoaded', function(){
           }
         })
         .fail(function(grandchildren){
-          // console.log(grandchildren)
           alert('カテゴリー取得に失敗しました');
         })
       }else{
