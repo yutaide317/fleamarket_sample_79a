@@ -33,7 +33,7 @@ $(document).on('turbolinks:load', ()=> {
   lastIndex = $('.js-file_group:last').data('index');
   fileIndex.splice(0, lastIndex);
 
-  // $('.hidden-destroy').hide();
+  $('.hidden-destroy').hide();
 
   $('#image-box').on('change', '.js-file', function(e) {
     const targetIndex = $(this).parent().data('index');
@@ -64,6 +64,11 @@ $(document).on('turbolinks:load', ()=> {
     $(this).parent().remove();
     $(`img[data-index="${targetIndex}"]`).remove();
 
-    if ($('.js-file').length == 0) $('#image-box').append(buildFileField(fileIndex[0]));
+    if ($('.js-file').length == 0) 
+    var fileIndex2 = [1,2,3,4,5,6,7,8,9,10];
+    var resetIndex = fileIndex2[0];
+    $('#image-box').append(buildFileField(resetIndex));
+    $('label-box').attr('id', 'label-box--#{resetIndex}');
+      
   });
 });
