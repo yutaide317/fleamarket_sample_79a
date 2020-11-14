@@ -3,9 +3,10 @@
     %figure
     = image_tag "https://static.mercdn.net/images/member_photo_noimage_thumb.png", alt: '', height: '60px', width: '60px', class: 'member photo'
     .MainContents__userArea--userName
-      山田太郎
+      = current_user.nickname
     .MainContents__userArea--userInfo
       .reviews
         評価 0
       .exihibitedItem
-        出品数 0
+        出品数
+        = current_user.items.length
