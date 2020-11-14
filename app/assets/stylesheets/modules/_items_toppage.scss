@@ -238,6 +238,9 @@ body{
       }
       &__box {
         display: flex;
+        width: 780px;
+        margin: 26px auto;
+        justify-content: space-between;
       }
       .itemBlock{
         .itemHead{
