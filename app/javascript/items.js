@@ -29,7 +29,7 @@ $(document).on('DOMContentLoaded', ()=> {
     $('.inputArea').css('width', labelWidth);
   }
 
-  labelIndex = $('.js-file_group').last().data('index');
+  let labelIndex = $('.js-file_group').last().data('index');
   console.log(labelIndex);
   // fileIndexの0番目=1〜５を活用
   $('.label-box').attr({id: `label-box--${labelIndex}`,for: `item_images_attributes_${labelIndex}_src`});
@@ -48,6 +48,14 @@ $(document).on('DOMContentLoaded', ()=> {
     const blobUrl = window.URL.createObjectURL(file);
 
     setLabel();
+
+    let labelIndex = $('.js-file_group').last().data('index');
+    newlabelIndex = labelIndex + 1
+    console.log(newlabelIndex);
+    // fileIndexの0番目=1〜５を活用
+    $('.label-box').attr({id: `label-box--${newlabelIndex}`,for: `item_images_attributes_${newlabelIndex}_src`});
+    // $('.js-file').hide
+  
 
     if (img = $(`img[data-index="${targetIndex}"]`)[0]) {
       img.setAttribute('src', blobUrl);
