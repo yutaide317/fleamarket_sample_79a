@@ -1,4 +1,6 @@
 class ItemsController < ApplicationController
+
+  before_action :user_check, only: [:new, :create]
   before_action :set_item, except: [:index, :new, :create, :show, :get_category_children, :get_category_grandchildren]
 
   def index
@@ -89,5 +91,10 @@ class ItemsController < ApplicationController
   def set_item
     @item = Item.find(params[:id])
   end
-  
+
+  def user_check
+    unless user_signed_in?
+      redirect_to new_user_session_path, alert: "ログインしてください"
+    end
+  end
 end
