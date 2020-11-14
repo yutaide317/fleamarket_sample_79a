@@ -1,6 +1,9 @@
 class Item < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
-  belongs_to_active_hash :itemcategory
+
+  belongs_to :category
+
+  # belongs_to_active_hash :itemcategory
   belongs_to_active_hash :itemcondition
   belongs_to_active_hash :postage
   belongs_to_active_hash :district
@@ -9,7 +12,7 @@ class Item < ApplicationRecord
   belongs_to :user, optional: true
   has_many :images, dependent: :destroy
   accepts_nested_attributes_for :images, allow_destroy: true
-  has_one :purchase
+  has_one :purchase  
 
   validates :images, presence: { message: 'を１枚以上アップロードしてください' }
   validates :name, presence: true, length: { maximum: 40, message: 'を40文字以内で設定してください' }
