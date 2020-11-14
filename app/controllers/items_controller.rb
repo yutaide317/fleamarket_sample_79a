@@ -1,5 +1,6 @@
 class ItemsController < ApplicationController
   before_action :set_item, except: [:index, :new, :create, :show]
+  before_action :user_check, only: [:new, :create]
 
   def index
     @items = Item.includes(:images).order('created_at DESC')
@@ -70,4 +71,9 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
   end
 
+  def user_check
+    unless user_signed_in?
+      redirect_to new_user_session_path, alert: "ログインしてください"
+    end
+  end
 end
