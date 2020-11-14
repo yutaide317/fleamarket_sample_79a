@@ -1,0 +1,38 @@
+.item_info_box {
+  padding: 30px;
+  .item_info {
+    display: flex;
+    width: 343px;
+    padding: 20px 0;
+    margin-left: 150px;
+    &__image {
+      height: 100px;
+      width: 150px;
+      .image-src {
+        border-radius: 4px;
+        height: 100%;
+        width: 100%;
+      }
+    }
+    &__status {
+      width: 100%;
+      margin-left: 16px;
+      &__name {
+        font-size: 14px;
+        line-height: 1.4em;
+        margin-bottom: 8px;
+      }
+      &__price {
+        text-align: right;
+        .tax {
+          font-size: 12px;
+        }
+        .price {
+          font-size: 15px;
+          font-weight: 600;
+          margin-left: 8px;
+        }
+      }
+    }
+  }
+}

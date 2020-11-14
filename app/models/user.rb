@@ -8,6 +8,8 @@ class User < ApplicationRecord
   validates :password, length: { minimum: 7 }
   has_one :profile
   accepts_nested_attributes_for :profile
+
+  has_one :credit_card, dependent: :destroy
   has_many :items, dependent: :destroy
   has_one :purchase
 end

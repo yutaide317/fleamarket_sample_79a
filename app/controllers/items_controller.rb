@@ -1,16 +1,44 @@
 class ItemsController < ApplicationController
-  before_action :set_item, except: [:index, :new, :create, :show]
+
+  before_action :user_check, only: [:new, :create]
+  before_action :set_item, except: [:index, :new, :create, :show, :get_category_children, :get_category_grandchildren]
 
   def index
-    @items = Item.includes(:images).where(user_id: current_user).order('created_at DESC')
+    @items = Item.includes(:images).order('created_at DESC')
   end
 
   def new
     @item = Item.new
     @item.images.new
+
+    #セレクトボックスの初期値設定
+    @category_parent_array = ["---"]
+    #データベースから、親カテゴリーのみ抽出し、配列化
+    @category_parent_array = Category.where(ancestry: nil)
+  end
+
+  # 親カテゴリーが選択された後に動くアクション
+  def get_category_children
+    #選択された親カテゴリーに紐付く子カテゴリーの配列を取得
+    @category_children = Category.find(params[:parent_id]).children
+  end
+
+  # 子カテゴリーが選択された後に動くアクション
+  def get_category_grandchildren
+    #選択された子カテゴリーに紐付く孫カテゴリーの配列を取得
+    @category_grandchildren = Category.find(params[:child_id]).children
   end
 
   def show
+    @item = Item.find(params[:id])
+    @grandchild = Category.find(@item.category_id)
+    @child = @grandchild.parent
+    @parent = @child.parent
+    # @itemcategory = Itemcategory.find(@item.category)
+    @itemcondition = Itemcondition.find(@item.item_condition)
+    @postage = Postage.find(@item.postage_payer)
+    @preparation = Preparation.find(@item.preparation_period)
+    @district = District.find(@item.prefecture)
   end
 
   def create
@@ -48,7 +76,7 @@ class ItemsController < ApplicationController
     params.require(:item).permit(
       :name, 
       :introduction, 
-      :category, 
+      :category_id, 
       :brand_id, 
       :item_condition, 
       :postage_payer, 
@@ -64,4 +92,9 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
   end
 
+  def user_check
+    unless user_signed_in?
+      redirect_to new_user_session_path, alert: "ログインしてください"
+    end
+  end
 end

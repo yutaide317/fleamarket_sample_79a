@@ -1,0 +1,26 @@
+.AccountPage
+  = render "/devise/registrations/head_logo"
+  .show
+    = render "users/side_bar"
+    .show__frame
+      .show__frame--title
+        登録クレジットカード情報
+      .credit_card__list
+        .credit_card__list--frame
+          .credit_card_info
+            .credit_card_info__brand
+              = image_tag "#{@card_src}", class: "credit_card_info__brand--img", alt: @card_brand
+            .credit_card_info__numbers
+              .number
+                = "**** **** **** " + @customer_card.last4
+              .expiration_date
+                .expiration_date__title
+                  有効期限
+                .expiration_date__info
+                  = @exp_month + " / " + @exp_year
+          .destroy__function
+            .destroy__function--link
+              = link_to credit_card_path, method: :delete, class: "destroy_btn" do 
+                削除する
+  .AccountPage__etc
+    = render "/devise/registrations/foot_logo"
