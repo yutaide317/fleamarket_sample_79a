@@ -57,7 +57,7 @@
               カテゴリー
               %span.MustDescription
                 必須
-            = f.collection_select :category, Itemcategory.all, :id, :name, prompt: "--"
+            = f.collection_select :category_id, Category.where(ancestry: nil), :id, :name, {prompt: '---'}, {id: 'parent_category'}
             .FormGroup__content
               ブランド
               %span.FreeDescription
