@@ -33,7 +33,7 @@ $(document).on('DOMContentLoaded', ()=> {
   console.log(labelIndex);
   // fileIndexの0番目=1〜５を活用
   $('.label-box').attr({id: `label-box--${labelIndex}`,for: `item_images_attributes_${labelIndex}_src`});
-  // $('.js-file').hide
+  // $('.js-file').hide();
   
 
   let fileIndex = [1,2,3,4,5,6,7,8,9,10];
@@ -55,6 +55,8 @@ $(document).on('DOMContentLoaded', ()=> {
     // fileIndexの0番目=1〜５を活用
     $('.label-box').attr({id: `label-box--${newlabelIndex}`,for: `item_images_attributes_${newlabelIndex}_src`});
     // $('.js-file').hide
+
+    $('.js-file_group').hide();
   
 
     if (img = $(`img[data-index="${targetIndex}"]`)[0]) {
@@ -76,5 +78,6 @@ $(document).on('DOMContentLoaded', ()=> {
     $(`img[data-index="${targetIndex}"]`).remove();
 
     if ($('.js-file').length == 0) $('.label-box').append(buildFileField(fileIndex[0]));
+
   });
 });
