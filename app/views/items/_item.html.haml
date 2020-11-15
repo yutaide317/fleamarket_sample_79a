@@ -2,6 +2,10 @@
   = link_to item_path(item.id), method: :get do
     .SellingItemArea__src
       = image_tag (item.images[0].src.url), class: "SellingItemArea__src__box"
+      - if item.purchase.present?
+        .photo_sold
+          .photo_sold__inner
+            SOLD
       .SellingItemArea__src__price
         ¥
         = item.price

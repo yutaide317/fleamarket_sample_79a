@@ -18,6 +18,25 @@
       width: 100%;
       position: absolute;
     }
+    .photo_sold {
+      width: 0;
+      height: 0;
+      border-top: 40px solid #ea352d;
+      border-right: 40px solid transparent;
+      border-bottom: 40px solid transparent;
+      border-left: 40px solid #ea352d;
+      z-index: 40;
+      position: absolute;
+      top: 0;
+      &__inner {
+        transform: rotate(-45deg);
+        font-size: 15px;
+        margin:-20px 0px 0px -37px;
+        color: #fff;
+        letter-spacing: 3px;
+        font-weight: 700;
+      }
+    }
     &__price {
       align-items: center;
       background: rgba(0,0,0,.4);

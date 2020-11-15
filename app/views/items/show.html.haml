@@ -82,6 +82,7 @@
           - elsif user_signed_in?
             = link_to '購入画面に進む', new_item_purchase_path(@item.id), class:"item-red-btn", method: :get
           - else
+            = link_to '購入画面に進む', new_user_session_path, class:"item-red-btn"
 
         .commentBox
           = form_for '#' do |f|
