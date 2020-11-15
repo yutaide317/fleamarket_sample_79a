@@ -43,21 +43,34 @@ $base_color: #ffffff;
               color: #4E4E4E;
             }
             .ProductFileContainer{
-              // .js-file_group{
-              //   .js-file{
-              //     display: none;
-              //   }
-              // }
+              width: 100%;
               .imagesArea{
                 display: flex;
                 margin: 20px 0;
                 .previewArea{
                   display: flex;
+                  .preview-block{
+                    height: 160px;
+                    background-color: rgb(245, 245, 245);
+                    margin-right: 1px;
+                    .preview-box{
+                      border-color: rgb(204, 204, 204);
+                    }
+                    .js-remove{
+                      color: rgb(0, 149, 238);
+                      cursor: pointer;
+                      height: 32px;
+                      display: flex;
+                      justify-content: center;
+                      align-items: center;
+                      font-size: 15px;
+                    }
+                  }
 
                 }
                 .inputArea{
                   width: 640px;
-                  height: 150px;
+                  height: 160px;
                   background-color: whitesmoke;
                   border: 1px dashed #cccccc;
                   cursor: pointer;
@@ -68,10 +81,6 @@ $base_color: #ffffff;
                     // .js-file{
                     //   display: none;
                     // }
-                  }
-                  .previewimages{
-                    display: flex;
-                    background-color: yellow;
                   }
                 }
               }
