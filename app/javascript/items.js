@@ -17,7 +17,6 @@ $(document).on('DOMContentLoaded', ()=> {
     return html;
   }
 
-
   //ラベルの調整
   function setLabel() {
     //プレビューボックスのwidthを取得し、maxから引くことでラベルのwidthを決定
@@ -79,6 +78,7 @@ $(document).on('DOMContentLoaded', ()=> {
     $(`img[data-index="${targetIndex}"]`).remove();
     $(`input[id="item_images_attributes_${targetIndex}_src"]`).remove();
 
+    if ($('.preview-block').count >= 5) $('.inputArea').hide();
 
     if ($('.js-file').length == 0) 
       $('.label-box').append(buildFileField(fileIndex[0]));

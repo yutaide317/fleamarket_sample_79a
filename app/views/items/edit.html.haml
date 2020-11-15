@@ -14,7 +14,7 @@
               %span.MustDescription
                 必須
             %p.description
-              最大10枚までアップロードできます
+              最大5枚までアップロードできます
             
             #image-box.ProductFileContainer
               .imagesArea
@@ -28,7 +28,7 @@
 
                 #previews.inputArea
                   = f.label :"images_attributes_#{@item.images.length}_src", class: "label-box", id: "label-box--#{@item.images.length}" do
-                    %pre.label-box__text-visible クリックしてファイルをアップロード
+                    -# %pre.label-box__text-visible クリックしてファイルをアップロード
 
                     = f.fields_for :images, class: "UploadArea" do |image|
                       .js-file_group{"data-index": "#{image.index}"}
