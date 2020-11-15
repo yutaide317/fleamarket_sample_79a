@@ -238,9 +238,10 @@ body{
       }
       &__box {
         display: flex;
-        width: 780px;
-        margin: auto;
+        max-width: 1040px;
+        margin: 0 auto;
         padding-bottom: 80px;
+        flex-wrap: wrap;
       }
       .itemBlock{
         .itemHead{

@@ -84,7 +84,7 @@
             お支払いは、クレジットカードだけでなく、ポイントや売上金など多彩な方法があります。
     %section.pickupField
       %h2.head 現在出品中の商品
-      .pickupField__box
+      %ul.pickupField__box
         = render @items
     %section.pickupField
       %h2.head ピックアップカテゴリー
@@ -92,14 +92,14 @@
         .itemHead
           = link_to '#' do
             %h3.title 新規投稿商品
-        .pickupField__box
-          = render @items
+        %ul.pickupField__box
+          = render @new_items
     %section.pickupField
-      %h2.head ピックアップブランド
+      %h2.head ピックアップカテゴリー
       .itemBlock
         .itemHead
           = link_to '#' do
-            %h3.title シュプリーム
-        .pickupField__box
-          = render @items
+            %h3.title レディース新着アイテム
+        %ul.pickupField__box
+          = render @categories
   = render "footer"
