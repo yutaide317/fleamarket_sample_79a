@@ -29,7 +29,7 @@ $(document).on('DOMContentLoaded', ()=> {
   console.log(labelIndex);
   // fileIndexの0番目=1〜５を活用
   $('.label-box').attr({id: `label-box--${labelIndex}`,for: `item_images_attributes_${labelIndex}_src`});
-  // $('.js-file').hide();
+  $('.js-file').hide();
   
 
   let fileIndex = [1,2,3,4,5,6,7,8,9,10];
@@ -61,6 +61,7 @@ $(document).on('DOMContentLoaded', ()=> {
       $('.previewArea').append(buildImg(targetIndex, blobUrl));
       $('.inputArea').append(buildFileField(fileIndex[0]));
       $('.label-box').attr({id: `label-box--${fileIndex[0]}`,for: `item_images_attributes_${fileIndex[0]}_src`});
+      $('.js-file_group').hide();
       // console.log(fileIndex[0]);
       fileIndex.shift();
       fileIndex.push(fileIndex[fileIndex.length - 1] + 1);
@@ -73,9 +74,10 @@ $(document).on('DOMContentLoaded', ()=> {
     const hiddenCheck = $(`input[data-index="${targetIndex}"].hidden-destroy`);
     if (hiddenCheck) hiddenCheck.prop('checked', true);
 
-    // $(this).parent().remove();
+    $(this).remove();
     $(`img[data-index="${targetIndex}"]`).remove();
     $(`input[id="item_images_attributes_${targetIndex}_src"]`).remove();
+
 
     if ($('.js-file').length == 0) 
       $('.label-box').append(buildFileField(fileIndex[0]));

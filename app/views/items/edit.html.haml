@@ -1,3 +1,5 @@
+-# = render partial: '_sellitemform.html'
+
 .SellProductPage
   = render "devise/registrations/head_logo"
   .SellProductPage__container
@@ -20,6 +22,9 @@
                   - if @item.persisted?
                     - @item.images.each_with_index do |image, i|
                       = image_tag image.src.url, data: { index: i }, width: "125", height: '125', class: "preview-box"
+                      .js-remove
+                        削除
+
                 #previews.inputArea
                   = f.label :"images_attributes_#{@item.images.length}_src", class: "label-box", id: "label-box--#{@item.images.length}" do
                     %pre.label-box__text-visible クリックしてファイルをアップロード
