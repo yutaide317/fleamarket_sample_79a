@@ -4,7 +4,6 @@ $(document).on('DOMContentLoaded', ()=> {
                     <input class="js-file" type="file"
                     name="item[images_attributes][${num}][src]"
                     id="item_images_attributes_${num}_src"><br>
-                    <div class="js-remove">削除</div>
                   </div>`;
     return html;
   }
@@ -12,14 +11,11 @@ $(document).on('DOMContentLoaded', ()=> {
     const html = `<img data-index="${index}"
                   class="preview-box"
                   src="${url}"
-                  width="125px" height="125px">`;
+                  width="125px" height="125px">
+                  <div class="js-remove">削除</div>`;
     return html;
   }
 
-  // var count = $('.preview-box').length;
-  // if (count == 0) {
-  //   $('.js-remove').hide();
-  // }
 
   //ラベルの調整
   function setLabel() {
@@ -49,35 +45,41 @@ $(document).on('DOMContentLoaded', ()=> {
 
     setLabel();
 
-    let labelIndex = $('.js-file_group').last().data('index');
-    newlabelIndex = labelIndex + 1
-    console.log(newlabelIndex);
+    // let labelIndex = $('.js-file_group').last().data('index');
+    // newlabelIndex = labelIndex + 1
+    // console.log(newlabelIndex);
     // fileIndexの0番目=1〜５を活用
-    $('.label-box').attr({id: `label-box--${newlabelIndex}`,for: `item_images_attributes_${newlabelIndex}_src`});
+    // $('.label-box').attr({id: `label-box--${newlabelIndex}`,for: `item_images_attributes_${newlabelIndex}_src`});
     // $('.js-file').hide
 
-    $('.js-file_group').hide();
+    // $('.js-file_group').hide();
   
 
     if (img = $(`img[data-index="${targetIndex}"]`)[0]) {
       img.setAttribute('src', blobUrl);
     } else {
       $('.previewArea').append(buildImg(targetIndex, blobUrl));
-      $('.label-box').append(buildFileField(fileIndex[0]));
+      $('.inputArea').append(buildFileField(fileIndex[0]));
+      $('.label-box').attr({id: `label-box--${fileIndex[0]}`,for: `item_images_attributes_${fileIndex[0]}_src`});
+      // console.log(fileIndex[0]);
       fileIndex.shift();
       fileIndex.push(fileIndex[fileIndex.length - 1] + 1);
     }
   });
 
-  $('#image-box').on('click', '.js-remove', function() {
-    const targetIndex = $(this).parent().data('index');
+  $('.previewArea').on('click', '.js-remove', function() {
+    const targetIndex = $(this).prev().data('index');
+    // console.log(targetIndex)
     const hiddenCheck = $(`input[data-index="${targetIndex}"].hidden-destroy`);
     if (hiddenCheck) hiddenCheck.prop('checked', true);
 
-    $(this).parent().remove();
+    // $(this).parent().remove();
     $(`img[data-index="${targetIndex}"]`).remove();
+    $(`input[id="item_images_attributes_${targetIndex}_src"]`).remove();
 
-    if ($('.js-file').length == 0) $('.label-box').append(buildFileField(fileIndex[0]));
+    if ($('.js-file').length == 0) 
+      $('.label-box').append(buildFileField(fileIndex[0]));
+      // $('.label-box').attr({id: `label-box--${fileIndex[0]}`,for: `item_images_attributes_${fileIndex[0]}_src`});
 
   });
-});
+}); 

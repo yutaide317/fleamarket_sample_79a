@@ -27,15 +27,15 @@
                     = f.fields_for :images, class: "UploadArea" do |image|
                       .js-file_group{"data-index": "#{image.index}"}
                         = image.file_field :src, class: "js-file"
-                        .js-remove
-                          削除
+                        -# .js-remove
+                        -#   削除
                       - if @item.persisted?
                         = image.check_box :_destroy, data:{ index: image.index }, class: 'hidden-destroy'
                     - if @item.persisted?
                       .js-file_group{"data-index": "#{@item.images.count}"}
                         = file_field_tag :src, name: "item[images_attributes][#{@item.images.count}][src]", id: "item_images_attributes_#{@item.images.count}_src", class: 'js-file'
-                        .js-remove
-                          削除
+                        -# .js-remove
+                        -#   削除
         .FormBlock
           .FormGroup
             .FormGroup__content
