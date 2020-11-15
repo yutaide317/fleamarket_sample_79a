@@ -8,11 +8,12 @@ $(document).on('DOMContentLoaded', ()=> {
     return html;
   }
   const buildImg = (index, url)=> {
-    const html = `<img data-index="${index}"
-                  class="preview-box"
-                  src="${url}"
-                  width="125px" height="125px">
-                  <div class="js-remove">削除</div>`;
+    const html = `<div class="preview-block">
+                    <img data-index="${index}"
+                    class="preview-box"
+                    src="${url}"
+                    width="125px" height="125px">
+                    <div class="js-remove">削除</div>`;
     return html;
   }
 
