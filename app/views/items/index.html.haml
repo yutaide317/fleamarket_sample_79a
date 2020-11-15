@@ -82,7 +82,7 @@
           %h3.feature__subtitle 様々な支払いに対応
           %p.feature__detail
             お支払いは、クレジットカードだけでなく、ポイントや売上金など多彩な方法があります。
-    -if user_signed_in?
+    - if user_signed_in? 
       %section.pickupField
         %h2.head 現在出品中の商品
         %ul.pickupField__box
