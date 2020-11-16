@@ -1,0 +1,76 @@
+.SellingItemArea {
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0,0,0,.18);
+  -webkit-flex-direction: column-reverse;
+  flex-direction: column-reverse;
+  margin: 10px;
+  overflow: hidden;
+  z-index: 0;
+  height: 252px;
+  width: 188px;
+  border-radius: 4px;
+  &__src {
+    height: 188px;
+    width: 188px;
+    position: relative;
+    &__box {
+      height: 100%;
+      width: 100%;
+      position: absolute;
+    }
+    .photo_sold {
+      width: 0;
+      height: 0;
+      border-top: 40px solid #ea352d;
+      border-right: 40px solid transparent;
+      border-bottom: 40px solid transparent;
+      border-left: 40px solid #ea352d;
+      z-index: 40;
+      position: absolute;
+      top: 0;
+      &__inner {
+        transform: rotate(-45deg);
+        font-size: 15px;
+        margin:-20px 0px 0px -37px;
+        color: #fff;
+        letter-spacing: 3px;
+        font-weight: 700;
+      }
+    }
+    &__price {
+      align-items: center;
+      background: rgba(0,0,0,.4);
+      border-radius: 0 14px 14px 0;
+      bottom: 8px;
+      box-sizing: border-box;
+      color: #fff;
+      display: -webkit-inline-flex;
+      display: inline-flex;
+      font-size: 17px;
+      height: 32px;
+      height: 28px;
+      letter-spacing: .02em;
+      margin: 0;
+      padding: 0 12px;
+      position: absolute;
+      z-index: 2;
+    }
+  }
+  &__name {
+    height: 64px;
+    width: 100%;
+    box-sizing: border-box;
+    color: #222;
+    font-size: 14px;
+    line-height: 1.4em;
+    padding: 12px;
+    white-space: normal;
+    word-break: break-word;
+    &__box {
+      display: inline-block;
+      height: 2.8em;
+      overflow: hidden;
+      position: relative;
+    }
+  }
+}
