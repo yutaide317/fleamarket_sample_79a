@@ -79,9 +79,8 @@
           - elsif user_signed_in? && current_user.id == @item.user_id 
             = link_to '商品の編集', '#', class: "item-red-btn"
             = link_to '商品を削除', item_path(@item), method: :delete, class: "item-destroy"
-          - elsif user_signed_in?
-            = link_to '購入画面に進む', new_item_purchase_path(@item.id), class:"item-red-btn", method: :get
           - else
+            = link_to '購入画面に進む', new_item_purchase_path(@item.id), class:"item-red-btn", method: :get
 
         .commentBox
           = form_for '#' do |f|
