@@ -101,7 +101,7 @@
             .FormGroupB__inputArea
               %p.unit
                 ¥
-              = f.number_field :price, class: "FormGroupB__inputArea--contents"
+              = f.number_field :price, class: "FormGroupB__inputArea--contents", min:300 , max:9999999
       .FormArea__footer
         .SubmitArea
           = f.submit '出品する', class: 'SellBtn'
