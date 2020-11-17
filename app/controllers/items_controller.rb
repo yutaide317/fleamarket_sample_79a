@@ -55,6 +55,18 @@ class ItemsController < ApplicationController
   end
 
   def edit
+    @item = Item.find(params[:id])
+    # カテゴリーデータ取得
+    @grandchild = Category.find(@item.category_id)
+    @child = @grandchild.parent
+    @parent = @child.parent
+
+    #カテゴリー一覧を作成
+    @category = Category.where(ancestry: nil)
+    # 紐づく孫カテゴリーの親（子カテゴリー）の一覧を配列で取得
+    @category_children = @item.category.parent.parent.children
+    # 紐づく孫カテゴリーの一覧を配列で取得
+    @category_grandchildren = @item.category.parent.children
   end
 
   def update
@@ -100,4 +112,10 @@ class ItemsController < ApplicationController
       redirect_to new_user_session_path, alert: "ログインしてください"
     end
   end
+
+  #親カテゴリー
+  def set_category  
+    @category_parent_array = Category.where(ancestry: nil)
+  end
+
 end
