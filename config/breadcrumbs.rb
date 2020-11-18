@@ -1,5 +1,9 @@
 crumb :root do
-  link "Home", root_path
+  link "トップページ", root_path
+end
+
+crumb :category_index do
+  link "カテゴリー一覧", categories_path
 end
 
 # crumb :projects do
