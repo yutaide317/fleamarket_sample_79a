@@ -64,7 +64,7 @@
               %span.MustDescription
                 必須
             -# 親カテゴリー用
-            = f.select :category_id, options_for_select(@category_parent_array.map{|c|[c, {}]}, @item.category.parent.parent.name), {}, {class: 'select', id: 'parent_category'}
+            = f.select :category_id, options_for_select(@category_parent_array.map{|c|[c, {}]}, @item.category.parent.parent.name), {class: 'select', id: 'parent_category'}
             -# = f.collection_select :category_id, @category, :id, :name, {}, {selected: @parent, id: "parent_category", name: "item[category_id]"}
 
             -# 子カテゴリー用

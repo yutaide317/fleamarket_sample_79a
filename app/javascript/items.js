@@ -26,7 +26,7 @@ $(document).on('DOMContentLoaded', ()=> {
   }
 
   let labelIndex = $('.js-file_group').last().data('index');
-  console.log(labelIndex);
+  // console.log(labelIndex);
   // fileIndexの0番目=1〜５を活用
   $('.label-box').attr({id: `label-box--${labelIndex}`,for: `item_images_attributes_${labelIndex}_src`});
   $('.js-file').hide();
