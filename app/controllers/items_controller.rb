@@ -61,7 +61,7 @@ class ItemsController < ApplicationController
     @child = @grandchild.parent
     @parent = @child.parent
 
-    # #カテゴリー一覧を作成
+    #カテゴリー一覧を作成
     @category = Category.where(ancestry: nil)
     # 紐づく孫カテゴリーの親（子カテゴリー）の一覧を配列で取得
     @category_children = @item.category.parent.parent.children
