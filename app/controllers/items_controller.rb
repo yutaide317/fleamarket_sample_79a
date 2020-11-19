@@ -57,9 +57,9 @@ class ItemsController < ApplicationController
   def edit
     @item = Item.find(params[:id])
     # # カテゴリーデータ取得
-    # @grandchild = Category.find(@item.category_id)
-    # @child = @grandchild.parent
-    # @parent = @child.parent
+    @grandchild = Category.find(@item.category_id)
+    @child = @grandchild.parent
+    @parent = @child.parent
 
     # 親セレクトボックスの初期値(配列)
     @category_parent_array = []
@@ -77,7 +77,7 @@ class ItemsController < ApplicationController
     # #カテゴリー一覧を作成
     # @category = Category.where(ancestry: nil)
     # # 紐づく孫カテゴリーの親（子カテゴリー）の一覧を配列で取得
-    # @category_children = @item.category.parent.parent.children
+    @category_children = @item.category.parent.parent.children
     # # 紐づく孫カテゴリーの一覧を配列で取得
     # @category_grandchildren = @item.category.parent.children
   end
