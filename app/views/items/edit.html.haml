@@ -78,8 +78,8 @@
             -# 孫カテゴリー用
             #grandchildren_wrapper.FormGroup__content__category__added
               .FormGroup__content__category2
-                = f.select :category_id, options_for_select(@category_grandchild_array.map{|c|[c[:name], c[:id], {'data-category': c[:id], 'id': c[:id]}]}, @item.category.id), {}, {class: 'FormGroup__content__category__box--select', id: 'grandchild_category', name: 'item[category_id]'}
-                  
+                -# = f.select :category_id, options_for_select(@category_grandchild_array.map{|c|[c[:name], c[:id], {'data-category': c[:id], 'id': c[:id]}]}, @item.category.id), {}, {class: 'FormGroup__content__category__box--select', id: 'grandchild_category', name: 'item[category_id]'}
+                = f.collection_select :category_id, @category_grandchildren, :id, :name, {selected: @grandchild.id}, {class: 'FormGroup__content__category__box--select', id: 'grandchild_category', name: 'item[category_id]'}
 
 
             .FormGroup__content

@@ -79,7 +79,7 @@ class ItemsController < ApplicationController
     # # 紐づく孫カテゴリーの親（子カテゴリー）の一覧を配列で取得
     @category_children = @item.category.parent.parent.children
     # # 紐づく孫カテゴリーの一覧を配列で取得
-    # @category_grandchildren = @item.category.parent.children
+    @category_grandchildren = @item.category.parent.children
   end
 
   def update
