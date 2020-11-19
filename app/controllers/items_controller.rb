@@ -56,17 +56,30 @@ class ItemsController < ApplicationController
 
   def edit
     @item = Item.find(params[:id])
-    # カテゴリーデータ取得
-    @grandchild = Category.find(@item.category_id)
-    @child = @grandchild.parent
-    @parent = @child.parent
+    # # カテゴリーデータ取得
+    # @grandchild = Category.find(@item.category_id)
+    # @child = @grandchild.parent
+    # @parent = @child.parent
 
-    #カテゴリー一覧を作成
-    @category = Category.where(ancestry: nil)
-    # 紐づく孫カテゴリーの親（子カテゴリー）の一覧を配列で取得
-    @category_children = @item.category.parent.parent.children
-    # 紐づく孫カテゴリーの一覧を配列で取得
-    @category_grandchildren = @item.category.parent.children
+    # 親セレクトボックスの初期値(配列)
+    @category_parent_array = []
+    # categoriesテーブルから親カテゴリーのみを抽出、配列に格納
+    Category.where(ancestry: nil).each do |parent|
+      @category_parent_array << parent.name
+    end
+
+    # itemに紐づいていいる孫カテゴリーの親である子カテゴリが属している子カテゴリーの一覧を配列で取得
+    @category_child_array = @item.category.parent.parent.children
+
+    # itemに紐づいていいる孫カテゴリーが属している孫カテゴリーの一覧を配列で取得
+    @category_grandchild_array = @item.category.parent.children
+
+    # #カテゴリー一覧を作成
+    # @category = Category.where(ancestry: nil)
+    # # 紐づく孫カテゴリーの親（子カテゴリー）の一覧を配列で取得
+    # @category_children = @item.category.parent.parent.children
+    # # 紐づく孫カテゴリーの一覧を配列で取得
+    # @category_grandchildren = @item.category.parent.children
   end
 
   def update

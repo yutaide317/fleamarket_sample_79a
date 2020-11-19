@@ -64,18 +64,20 @@
               %span.MustDescription
                 必須
             -# 親カテゴリー用
-            = f.collection_select :category_id, @category, :id, :name, {}, {selected: @parent, id: "parent_category", name: "item[category_id]"}
+            = f.select :category_id, options_for_select(@category_parent_array.map{|c|[c, {}]}, @item.category.parent.parent.name), {}, {class: 'select', id: 'parent_category'}
+            -# = f.collection_select :category_id, @category, :id, :name, {}, {selected: @parent, id: "parent_category", name: "item[category_id]"}
 
             -# 子カテゴリー用
             #children_wrapper.FormGroup__content__category__added
               .FormGroup__content__category1
-                = f.collection_select :category_id, @category_children, :id, :name, {}, {selected: @child, id: "child_category", name: "item[category_id]", class: "FormGroup__content__category--select"}
-
+                = f.select :category_id, options_for_select(@category_child_array.map{|c|[c[:name], c[:id], {'data-category'=>c[:id], 'id'=>c[:id]}]}, @item.category.parent.id), {}, {class: 'FormGroup__content__category--select', id: 'child_category'}
+                -# = f.collection_select :category_id, @category_children, :id, :name, {}, {selected: @child, id: "child_category", name: "item[category_id]", class: "FormGroup__content__category--select"}
 
             -# 孫カテゴリー用
             #grandchildren_wrapper.FormGroup__content__category__added
               .FormGroup__content__category2
-                = f.collection_select :category_id, @category_grandchildren, :id, :name, {}, {selected: @grandchild, id: "grandchild_category", name: "item[category_id]", class: "FormGroup__content__category__box--select"}
+                = f.select :category_id, options_for_select(@category_grandchild_array.map{|c|[c[:name], c[:id], {'data-category'=>c[:id], 'id'=>c[:id]}]}, @item.category.id), {}, {class: 'FormGroup__content__category__box--select', id: 'grandchild_category'}
+                -# = f.collection_select :category_id, @category_grandchildren, :id, :name, {}, {selected: @grandchild, id: "grandchild_category", name: "item[category_id]", class: "FormGroup__content__category__box--select"}
                   
 
 
