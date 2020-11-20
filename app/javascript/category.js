@@ -32,6 +32,7 @@ $(document).on('DOMContentLoaded', function(){
                               </div>`;
       $('.FormGroup__content__category').append(grandchildSelectHtml);
     }
+
     // 親カテゴリー選択後のイベント
     $('#parent_category').on('change', function(){
       const parent_category_id = document.getElementById('parent_category').value; //選択された親カテゴリーの名前を取得
@@ -63,8 +64,7 @@ $(document).on('DOMContentLoaded', function(){
 
     // 子カテゴリー選択後のイベント
     $('.FormGroup__content__category').on('change', '#child_category', function(){
-      const child_category_id = $('#child_category option:selected').data('category'); //選択された子カテゴリーのidを取得
-      console.log(child_category_id);
+      const child_category_id = $('#child_category option:selected').val(); //選択された子カテゴリーのidを取得
       if (child_category_id != "---"){ //子カテゴリーが初期値でないことを確認
         $.ajax({
           url: '/items/category/get_category_grandchildren',
