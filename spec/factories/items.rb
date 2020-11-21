@@ -8,12 +8,7 @@ FactoryBot.define do
     preparation_period  { 1 }
     price               { 5000 }
     after(:build) do |item|
-      item.images << build(:image, item: item)
-
-      parent = create(:category, name: "親", parent_id: nil)
-      child = create(:category, name: "子", parent_id: parent.id)
-      grand_child = create(:category, name: "孫", parent_id: child.id)
-      item.category_id = grand_child.id
+      item.images << build(:image)
     end
   end
 end
