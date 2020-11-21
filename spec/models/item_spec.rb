@@ -11,7 +11,7 @@ describe Item do
     it "is invalid without images" do
       item = Item.new(name: "ハンチョウ全巻",
                       introduction: "漫画『ハンチョウ』全巻です",
-                      category: 5,
+                      category_id: 5,
                       item_condition: 2,
                       postage_payer: 2,
                       prefecture: 1,
@@ -56,9 +56,9 @@ describe Item do
     end
     # 7. categoryが空では登録できないこと
     it "is invalid without a category" do
-      item = build(:item, category: nil)
+      item = build(:item, category_id: nil)
       item.valid?
-      expect(item.errors[:category]).to include("を選択してください")
+      expect(item.errors[:category_id]).to include("を選択してください")
     end
     # 8. item_conditionが空では登録できないこと
     it "is invalid without an item_condition" do
