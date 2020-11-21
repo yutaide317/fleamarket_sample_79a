@@ -4,7 +4,10 @@ class ItemsController < ApplicationController
   before_action :set_item, except: [:index, :new, :create, :show, :get_category_children, :get_category_grandchildren]
 
   def index
-    @items = Item.includes(:images).order('created_at DESC')
+    @items = Item.includes(:images).where(user: current_user).order('created_at DESC')
+    @categories = Item.includes(:images).where(category_id: 1..195).order('created_at DESC')
+    @new_items = Item.includes(:images).order('created_at DESC')
+
   end
 
   def new

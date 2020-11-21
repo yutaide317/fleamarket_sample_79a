@@ -1,6 +1,7 @@
 class PurchasesController < ApplicationController
   require "payjp"
   before_action :set_purchase, only: [:new, :create]
+  before_action :user_check, only: [:new ]
   def new
     
     if current_user.credit_card.present?
@@ -54,6 +55,11 @@ class PurchasesController < ApplicationController
 
   def set_purchase
     @item = Item.find(params[:item_id])
+  end
+  def user_check
+    unless user_signed_in?
+      redirect_to new_user_session_path, alert: "ログインしてください"
+    end
   end
 
 end
