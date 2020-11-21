@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   devise_for :users, controllers: { registrations: 'users/registrations' }
   resources :users, only: [:index, :show]
   resources :credit_cards, only: [:new, :create, :show, :destroy]
+  resources :user_item_lists, only: [:index, :show]
   root 'items#index'
   resources :items do
     collection do
