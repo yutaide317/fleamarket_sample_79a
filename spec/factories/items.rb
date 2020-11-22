@@ -9,6 +9,9 @@ FactoryBot.define do
     price               { 5000 }
     after(:build) do |item|
       item.images << build(:image)
+      category = create(:category)
+      item.category_id = category.id
+    
     end
   end
 end

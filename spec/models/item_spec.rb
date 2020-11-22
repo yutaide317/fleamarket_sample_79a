@@ -57,6 +57,8 @@ describe Item do
     # 7. categoryが空では登録できないこと
     it "is invalid without a category" do
       item = build(:item, category_id: nil)
+
+      
       item.valid?
       expect(item.errors[:category_id]).to include("を選択してください")
     end
