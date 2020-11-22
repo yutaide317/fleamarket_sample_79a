@@ -84,7 +84,7 @@
               商品の状態
               %span.MustDescription
                 必須
-            = f.collection_select :item_condition, Itemcondition.all, :id, :name, prompt: "--"
+            = f.collection_select :item_condition, Itemcondition.all, :id, :name, prompt: "---"
 
         .FormBlock
           .FormBlock__title
@@ -94,21 +94,21 @@
               配送料の負担
               %span.MustDescription
                 必須
-            = f.collection_select :postage_payer, Postage.all, :id, :name, prompt: "--"
+            = f.collection_select :postage_payer, Postage.all, :id, :name, prompt: "---"
 
           .FormGroup
             .FormGroup__content
               発送元の地域
               %span.MustDescription
                 必須
-            = f.collection_select :prefecture, District.all, :id, :name, prompt: "--"
+            = f.collection_select :prefecture, District.all, :id, :name, prompt: "---"
 
           .FormGroup
             .FormGroup__content
               発送までの日数
               %span.MustDescription
                 必須
-            = f.collection_select :preparation_period, Preparation.all, :id, :name, prompt: "--"
+            = f.collection_select :preparation_period, Preparation.all, :id, :name, prompt: "---"
         .FormBlock
           .FormBlock__title
             価格（¥300〜9,999,999）
