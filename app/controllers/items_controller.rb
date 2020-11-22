@@ -64,9 +64,9 @@ class ItemsController < ApplicationController
     #カテゴリー一覧を作成
     @category = Category.where(ancestry: nil)
     # 紐づく孫カテゴリーの親（子カテゴリー）の一覧を配列で取得
-    @category_children = @item.category.parent.parent.children
+    @category_children = @child.parent.children
     # 紐づく孫カテゴリーの一覧を配列で取得
-    @category_grandchildren = @item.category.parent.children
+    @category_grandchildren = @grandchild.parent.children
   end
 
   def update
@@ -75,8 +75,8 @@ class ItemsController < ApplicationController
     @child = @grandchild.parent
     @parent = @child.parent
     @category = Category.where(ancestry: nil)
-    @category_children = @item.category.parent.parent.children
-    @category_grandchildren = @item.category.parent.children
+    @category_children = @child.parent.children
+    @category_grandchildren = @grandchild.parent.children
     if @item.update(item_params)
       redirect_to root_path
     else
