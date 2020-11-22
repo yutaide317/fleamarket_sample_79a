@@ -26,7 +26,6 @@ $(document).on('DOMContentLoaded', ()=> {
   }
 
   let labelIndex = $('.js-file_group').last().data('index');
-  // console.log(labelIndex);
   // fileIndexの0番目=1〜５を活用
   $('.label-box').attr({id: `label-box--${labelIndex}`,for: `item_images_attributes_${labelIndex}_src`});
   $('.js-file').hide();
@@ -45,16 +44,6 @@ $(document).on('DOMContentLoaded', ()=> {
 
     setLabel();
 
-    // let labelIndex = $('.js-file_group').last().data('index');
-    // newlabelIndex = labelIndex + 1
-    // console.log(newlabelIndex);
-    // fileIndexの0番目=1〜５を活用
-    // $('.label-box').attr({id: `label-box--${newlabelIndex}`,for: `item_images_attributes_${newlabelIndex}_src`});
-    // $('.js-file').hide
-
-    // $('.js-file_group').hide();
-  
-
     if (img = $(`img[data-index="${targetIndex}"]`)[0]) {
       img.setAttribute('src', blobUrl);
     } else {
@@ -62,7 +51,6 @@ $(document).on('DOMContentLoaded', ()=> {
       $('.inputArea').append(buildFileField(fileIndex[0]));
       $('.label-box').attr({id: `label-box--${fileIndex[0]}`,for: `item_images_attributes_${fileIndex[0]}_src`});
       $('.js-file_group').hide();
-      // console.log(fileIndex[0]);
       fileIndex.shift();
       fileIndex.push(fileIndex[fileIndex.length - 1] + 1);
     }
@@ -70,7 +58,6 @@ $(document).on('DOMContentLoaded', ()=> {
 
   $('.previewArea').on('click', '.js-remove', function() {
     const targetIndex = $(this).prev().data('index');
-    // console.log(targetIndex)
     const hiddenCheck = $(`input[data-index="${targetIndex}"].hidden-destroy`);
     if (hiddenCheck) hiddenCheck.prop('checked', true);
 
@@ -82,7 +69,5 @@ $(document).on('DOMContentLoaded', ()=> {
 
     if ($('.js-file').length == 0) 
       $('.label-box').append(buildFileField(fileIndex[0]));
-      // $('.label-box').attr({id: `label-box--${fileIndex[0]}`,for: `item_images_attributes_${fileIndex[0]}_src`});
-
   });
 }); 
