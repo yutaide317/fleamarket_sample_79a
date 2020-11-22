@@ -15,6 +15,8 @@
                 必須
             %p.description
               最大5枚までアップロードできます
+              <br>
+              ※下枠をクリックしてアップロード
             
             #image-box.ProductFileContainer
               .imagesArea
@@ -28,20 +30,16 @@
 
                 #previews.inputArea
                   = f.label :"images_attributes_#{@item.images.length}_src", class: "label-box", id: "label-box--#{@item.images.length}" do
-                    -# %pre.label-box__text-visible クリックしてファイルをアップロード
 
                     = f.fields_for :images, class: "UploadArea" do |image|
                       .js-file_group{"data-index": "#{image.index}"}
                         = image.file_field :src, class: "js-file"
-                        -# .js-remove
-                        -#   削除
+
                       - if @item.persisted?
                         = image.check_box :_destroy, data:{ index: image.index }, class: 'hidden-destroy'
                     - if @item.persisted?
                       .js-file_group{"data-index": "#{@item.images.count}"}
                         = file_field_tag :src, name: "item[images_attributes][#{@item.images.count}][src]", id: "item_images_attributes_#{@item.images.count}_src", class: 'js-file'
-                        -# .js-remove
-                        -#   削除
         .FormBlock
           .FormGroup
             .FormGroup__content
@@ -65,22 +63,17 @@
                 必須
             -# 親カテゴリー用
             .FormGroup__content__category
-              -# = f.select :category_id, options_for_select(@category_parent_array.map{|c|[c, {}]}, @item.category.parent.parent.id), {id: 'parent_category'}
-              -# = f.select :category_id, options_for_select(@category_parent_array.map{|c|[c, {}]}, @item.category.parent.parent.name),{}, {id: 'parent_category'}
               = f.collection_select :category, Category.where(ancestry: nil), :id, :name, {selected: @parent.id}, {id: 'parent_category'} 
 
               -# 子カテゴリー用
               #children_wrapper.FormGroup__content__category__added
                 .FormGroup__content__category1
-                  -# = f.select :category_id, options_for_select(@category_child_array.map{|c|[c[:name], c[:id], {'data-category': c[:id], 'id': c[:id]}]}, @item.category.parent.id), {}, {class: 'FormGroup__content__category--select', id: 'child_category', name: "item[category_id]"}
                   = f.collection_select :category, @category_children, :id, :name, {selected: @child.id}, {class: 'FormGroup__content__category--select', id: 'child_category', name: 'item[category_id]'} 
 
               -# 孫カテゴリー用
               #grandchildren_wrapper.FormGroup__content__category__added
                 .FormGroup__content__category2
-                  -# = f.select :category_id, options_for_select(@category_grandchild_array.map{|c|[c[:name], c[:id], {'data-category': c[:id], 'id': c[:id]}]}, @item.category.id), {}, {class: 'FormGroup__content__category__box--select', id: 'grandchild_category', name: 'item[category_id]'}
                   = f.collection_select :category, @category_grandchildren, :id, :name, {selected: @grandchild.id}, {class: 'FormGroup__content__category__box--select', id: 'grandchild_category', name: 'item[category_id]'}
-
 
             .FormGroup__content
               ブランド
