@@ -17,7 +17,7 @@ class Item < ApplicationRecord
   validates :images, presence: { message: 'を１枚以上アップロードしてください' }
   validates :name, presence: true, length: { maximum: 40, message: 'を40文字以内で設定してください' }
   validates :introduction, presence: true, length: { maximum: 1000, message: 'を1000文字以内で設定してください' }
-  validates :category, presence: { message: 'を選択してください' }
+  validates :category, presence: { message: 'を３つ選択してください' }
   validates :item_condition, presence: { message: 'を選択してください' }
   validates :postage_payer, presence: { message: 'を選択してください' }
   validates :prefecture, presence: { message: 'を選択してください' }

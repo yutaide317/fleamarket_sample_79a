@@ -1,1 +1,130 @@
-= render "sellitemform"
+-# = render partial: '_sellitemform.html'
+
+.SellProductPage
+  = render "devise/registrations/head_logo"
+  .SellProductPage__container
+    = form_with model: @item, class: "FormArea", local: true  do |f|
+      = render "devise/shared/error_messages", model: f.object
+
+      .FormArea__content 
+        .FormBlock
+          .ImageUploadArea
+            .ImageUploadArea__content
+              出品画像
+              %span.MustDescription
+                必須
+            %p.description
+              最大5枚までアップロードできます
+              <br>
+              ※下枠をクリックしてアップロード
+            
+            #image-box.ProductFileContainer
+              .imagesArea
+                .previewArea
+                  - if @item.persisted?
+                    - @item.images.each_with_index do |image, i|
+                      .preview-block
+                        = image_tag image.src.url, data: { index: i }, width: "125", height: '125', class: "preview-box"
+                        .js-remove
+                          削除
+
+                #previews.inputArea
+                  = f.label :"images_attributes_#{@item.images.length}_src", class: "label-box", id: "label-box--#{@item.images.length}" do
+
+                    = f.fields_for :images, class: "UploadArea" do |image|
+                      .js-file_group{"data-index": "#{image.index}"}
+                        = image.file_field :src, class: "js-file"
+
+                      - if @item.persisted?
+                        = image.check_box :_destroy, data:{ index: image.index }, class: 'hidden-destroy'
+                    - if @item.persisted?
+                      .js-file_group{"data-index": "#{@item.images.count}"}
+                        = file_field_tag :src, name: "item[images_attributes][#{@item.images.count}][src]", id: "item_images_attributes_#{@item.images.count}_src", class: 'js-file'
+        .FormBlock
+          .FormGroup
+            .FormGroup__content
+              商品名
+              %span.MustDescription
+                必須
+            = f.text_field :name, class: "FormGroup__input", placeholder:"40文字まで"
+          .FormGroup
+            .FormGroup__content
+              商品の説明
+              %span.MustDescription
+                必須
+            = f.text_area :introduction, class: "textarea", placeholder:"商品の説明（必須1,000文字以内）（色、素材、重さ、定価、注意点など）", cols: "40", rows: "7" 
+        .FormBlock
+          .FormBlock__title
+            商品の詳細
+          .FormGroup
+            .FormGroup__content
+              カテゴリー
+              %span.MustDescription
+                必須
+            -# 親カテゴリー用
+            .FormGroup__content__category
+              = f.collection_select :category, Category.where(ancestry: nil), :id, :name, {selected: @parent.id}, {id: 'parent_category'} 
+
+              -# 子カテゴリー用
+              #children_wrapper.FormGroup__content__category__added
+                .FormGroup__content__category1
+                  = f.collection_select :category, @category_children, :id, :name, {selected: @child.id}, {class: 'FormGroup__content__category--select', id: 'child_category', name: 'item[category_id]'} 
+
+              -# 孫カテゴリー用
+              #grandchildren_wrapper.FormGroup__content__category__added
+                .FormGroup__content__category2
+                  = f.collection_select :category, @category_grandchildren, :id, :name, {selected: @grandchild.id}, {class: 'FormGroup__content__category__box--select', id: 'grandchild_category', name: 'item[category_id]'}
+
+            .FormGroup__content
+              ブランド
+              %span.FreeDescription
+                任意
+            = f.text_field :brand_id, class: "FormGroup__input", placeholder:"例）Supreme（20文字まで）"
+            .FormGroup__content
+              商品の状態
+              %span.MustDescription
+                必須
+            = f.collection_select :item_condition, Itemcondition.all, :id, :name, prompt: "---"
+
+        .FormBlock
+          .FormBlock__title
+            配送について
+          .FormGroup
+            .FormGroup__content
+              配送料の負担
+              %span.MustDescription
+                必須
+            = f.collection_select :postage_payer, Postage.all, :id, :name, prompt: "---"
+
+          .FormGroup
+            .FormGroup__content
+              発送元の地域
+              %span.MustDescription
+                必須
+            = f.collection_select :prefecture, District.all, :id, :name, prompt: "---"
+
+          .FormGroup
+            .FormGroup__content
+              発送までの日数
+              %span.MustDescription
+                必須
+            = f.collection_select :preparation_period, Preparation.all, :id, :name, prompt: "---"
+        .FormBlock
+          .FormBlock__title
+            価格（¥300〜9,999,999）
+          .FormGroupB
+            .FormGroupB__content
+              販売価格
+              %span.MustDescription
+                必須
+            .FormGroupB__inputArea
+              %p.unit
+                ¥
+              = f.number_field :price, class: "FormGroupB__inputArea--contents", min:300 , max:9999999
+      .FormArea__footer
+        .SubmitArea
+          = f.submit '商品編集を完了する', class: 'SellBtn'
+        .BackLinkArea
+          = link_to "もどる", items_path, class: "BackToIndex"
+  .AccountPage__etc
+    = render "devise/registrations/foot_logo"
