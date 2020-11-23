@@ -1,10 +1,42 @@
+# トップページ
 crumb :root do
   link "トップページ", root_path
 end
 
-crumb :category_index do
-  link "カテゴリー一覧", categories_path
+# マイページ
+crumb :mypage do
+  link "マイページ", users_path
 end
+
+# クレジットカード情報入力
+crumb :new_credit_card do
+  link "クレジットカード情報入力", new_credit_card_path
+  parent :mypage
+end
+
+# ログアウトページ
+crumb :logout do
+  link "ログアウト", users_path
+  parent :mypage
+end
+
+# ログイン
+crumb :user_session do
+  link "ログイン", user_session_path
+  parent :root
+end
+
+# 新規会員登録
+crumb :new_user_registration do
+  link "新規会員登録", new_user_registration_path
+  parent :root
+end
+
+
+
+# crumb :category_index do
+#   link "カテゴリー一覧", categories_path
+# end
 
 # crumb :projects do
 #   link "Projects", projects_path
