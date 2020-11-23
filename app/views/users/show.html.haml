@@ -1,5 +1,9 @@
 .AccountPage
   = render "/devise/registrations/head_logo"
+  -# config/breadcrumbs.rbに定義したmypageを呼び出し
+  - breadcrumb :logout
+  -# 下記を記述した箇所にパンくずリストが表示される。
+  = render "layouts/breadcrumbs"
   .wrapper
     = render "side_bar"
     .logoutBord
