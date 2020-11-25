@@ -1,4 +1,16 @@
 .AccountPage
   = render "/devise/registrations/head_logo"
+  .SellingItemArea
+  = link_to item_path(item.id), method: :get do
+    .SellingItemArea__title
+      出品中の商品一覧
+    .SellingItemArea__src
+      = image_tag (item.images[0].src.url), class: "SellingItemArea__src__box"
+      .SellingItemArea__src__price
+        ¥
+        = item.price
+    .SellingItemArea__name
+      .SellingItemArea__name__box
+        = item.name
   .AccountPage__etc
   = render "/devise/registrations/foot_logo"
