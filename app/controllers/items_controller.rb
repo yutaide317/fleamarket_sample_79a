@@ -4,7 +4,10 @@ class ItemsController < ApplicationController
   before_action :set_item, except: [:index, :new, :create, :show, :get_category_children, :get_category_grandchildren]
 
   def index
-    @items = Item.includes(:images).order('created_at DESC')
+    @items = Item.includes(:images).where(user: current_user).order('created_at DESC')
+    @categories = Item.includes(:images).where(category_id: 1..195).order('created_at DESC')
+    @new_items = Item.includes(:images).order('created_at DESC')
+
   end
 
   def new
@@ -52,9 +55,28 @@ class ItemsController < ApplicationController
   end
 
   def edit
+    @item = Item.find(params[:id])
+    # # カテゴリーデータ取得
+    @grandchild = @item.category
+    @child = @grandchild.parent
+    @parent = @child.parent
+
+    #カテゴリー一覧を作成
+    @category = Category.where(ancestry: nil)
+    # 紐づく孫カテゴリーの親（子カテゴリー）の一覧を配列で取得
+    @category_children = @child.parent.children
+    # 紐づく孫カテゴリーの一覧を配列で取得
+    @category_grandchildren = @grandchild.parent.children
   end
 
   def update
+    @item = Item.find(params[:id])
+    @grandchild = @item.category
+    @child = @grandchild.parent
+    @parent = @child.parent
+    @category = Category.where(ancestry: nil)
+    @category_children = @child.parent.children
+    @category_grandchildren = @grandchild.parent.children
     if @item.update(item_params)
       redirect_to root_path
     else
@@ -97,4 +119,10 @@ class ItemsController < ApplicationController
       redirect_to new_user_session_path, alert: "ログインしてください"
     end
   end
+
+  #親カテゴリー
+  def set_category  
+    @category_parent_array = Category.where(ancestry: nil)
+  end
+
 end

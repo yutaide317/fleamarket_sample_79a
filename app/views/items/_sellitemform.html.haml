@@ -12,21 +12,27 @@
               %span.MustDescription
                 必須
             %p.description
-              最大10枚までアップロードできます
+              最大5枚までアップロードできます
+              <br>
+              ※下枠をクリックしてアップロード
+            
             #image-box.ProductFileContainer
-              #previews
+              .imagesArea
+                .previewArea
                 - if @item.persisted?
                   = @item.images.each_with_index do |image, i|
-                    = image_tag image.src.url, data: { index: i }, width: "100", height: '100'
-              = f.fields_for :images, class: "UploadArea" do |image|
-                .js-file_group{"data-index": "#{image.index}"}
-                  = image.file_field :src, class: "js-file"
-                  %span.js-remove 削除
-                - if @item.persisted?
-                  = image.check_box :_destroy, data:{ index: image.index }, class: 'hidden-destroy'
-              - if @item.persisted?
-                .js-file_group{"data-index": "#{@item.images.count}"}
-                  = file_field_tag :src, name: "item[images_attributes][#{@item.images.count}][src]", class: 'js-file'
+                    = image_tag image.src.url, data: { index: i }, width: "125", height: '125'
+                #previews.inputArea
+                  %label{for: "item_images_attributes_i_src", class: "label-box", id: "label-box--i"}
+
+                    = f.fields_for :images, class: "UploadArea" do |image|
+                      .js-file_group{"data-index": "#{image.index}"}
+                        = image.file_field :src, class: "js-file"
+                      - if @item.persisted?
+                        = image.check_box :_destroy, data:{ index: image.index }, class: 'hidden-destroy'
+                    - if @item.persisted?
+                      .js-file_group{"data-index": "#{@item.images.count}"}
+                        = file_field_tag :src, name: "item[images_attributes][#{@item.images.count}][src]", class: 'js-file'
         .FormBlock
           .FormGroup
             .FormGroup__content
@@ -59,7 +65,7 @@
               商品の状態
               %span.MustDescription
                 必須
-            = f.collection_select :item_condition, Itemcondition.all, :id, :name, prompt: "--"
+            = f.collection_select :item_condition, Itemcondition.all, :id, :name, prompt: "---"
 
         .FormBlock
           .FormBlock__title
@@ -69,21 +75,21 @@
               配送料の負担
               %span.MustDescription
                 必須
-            = f.collection_select :postage_payer, Postage.all, :id, :name, prompt: "--"
+            = f.collection_select :postage_payer, Postage.all, :id, :name, prompt: "---"
 
           .FormGroup
             .FormGroup__content
               発送元の地域
               %span.MustDescription
                 必須
-            = f.collection_select :prefecture, District.all, :id, :name, prompt: "--"
+            = f.collection_select :prefecture, District.all, :id, :name, prompt: "---"
 
           .FormGroup
             .FormGroup__content
               発送までの日数
               %span.MustDescription
                 必須
-            = f.collection_select :preparation_period, Preparation.all, :id, :name, prompt: "--"
+            = f.collection_select :preparation_period, Preparation.all, :id, :name, prompt: "---"
         .FormBlock
           .FormBlock__title
             価格（¥300〜9,999,999）
@@ -95,7 +101,7 @@
             .FormGroupB__inputArea
               %p.unit
                 ¥
-              = f.number_field :price, class: "FormGroupB__inputArea--contents"
+              = f.number_field :price, class: "FormGroupB__inputArea--contents", min:300 , max:9999999
       .FormArea__footer
         .SubmitArea
           = f.submit '出品する', class: 'SellBtn'
