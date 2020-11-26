@@ -1,0 +1,18 @@
+.header
+  = render "items/header"
+  - breadcrumb :categories
+  = render "layouts/breadcrumbs"
+.mainContents
+  .parentList
+    %h1 カテゴリー一覧
+    %ul.categories
+    - @parents.each do |parent|
+      %li.parents= link_to "#{parent.name}"
+
+      %ul.categories__children
+        - parent.children.each do |child|
+          %li.childern= link_to "#{child.name}"
+
+          %ul.categories__grandchildren
+            - child.children.each do |grandchild|
+              %li= link_to "#{grandchild.name}"

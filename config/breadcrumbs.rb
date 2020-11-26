@@ -32,7 +32,11 @@ crumb :new_user_registration do
   parent :root
 end
 
-
+# カテゴリー
+crumb :categories do
+  link "カテゴリー一覧", categories_path
+  parent :root
+end
 
 # crumb :category_index do
 #   link "カテゴリー一覧", categories_path
