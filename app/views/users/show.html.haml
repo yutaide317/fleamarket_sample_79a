@@ -1,5 +1,7 @@
 .AccountPage
   = render "/devise/registrations/head_logo"
+  - breadcrumb :logout
+  = render "layouts/breadcrumbs"
   .wrapper
     = render "side_bar"
     .logoutBord

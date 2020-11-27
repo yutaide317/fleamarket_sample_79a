@@ -334,5 +334,4 @@ others_9 = others.children.create(name: "その他")
 others_9.children.create([{name: "すべて"}])
 
 # カテゴリー一覧
-
-# categories = Category.create(name: "カテゴリー一覧")
+categories = Category.create(name: "カテゴリー一覧")

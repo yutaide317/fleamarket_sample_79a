@@ -1,5 +1,7 @@
 .AccountPage
   = render "devise/registrations/head_logo"
+  - breadcrumb :user_session
+  = render "layouts/breadcrumbs"
   .AccountPage__SignInMain
     .SignInForm
       .SignInForm__title
