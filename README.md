@@ -16,9 +16,9 @@ Things you may want to cover:
 ## usersテーブル
 |Column|Type|Options|
 |------|----|-------|
-|nickname|string|null: false, add_index: true|
+|nickname|string|null: false, unique: true, add_index: true|
 |email|string|null: false, unique: true|
-|password|string|null: false|
+|password|string|null: false, unique: true|
 |password_confirmation|string|null: false|
 ### Association
 - has_many :items
