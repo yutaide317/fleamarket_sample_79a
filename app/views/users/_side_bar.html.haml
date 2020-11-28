@@ -1,12 +1,14 @@
 .SideBar
   .SideMenu
-    出品する
+    = link_to '出品する', "/items/new", class: "sell-link"
     = icon('fas', 'angle-right')
   .SideMenu
     出品した商品-出品中
+    -# = link_to '出品した商品-出品中', "/user_item_lists", class: "under-exhibition-link"
     = icon('fas', 'angle-right')
   .SideMenu
     出品した商品-売却済み
+    -# = link_to '出品した商品-売却済み', "/users/sold_items", class: "sold-item-link"
     = icon('fas', 'angle-right')
   .SideMenu
     購入した商品-過去の取引
