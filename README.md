@@ -69,13 +69,13 @@ Things you may want to cover:
 |postage_payer|integer|null: false|
 |prefecture|integer|null: false|
 |preparation_period|integer|null: false|
-|shipping_method|integer|	
 |user_id|references|null: false, foreign_key: true|
 |purchase|integer|
 ### Association
 - belongs to :user
 - belongs to :category
 - has_many :images
+- has_one :purchase
 
 ## categories テーブル		
 |Column|Type|Options|
@@ -86,7 +86,6 @@ Things you may want to cover:
 - has_many :items
 - has_ancestry
 
-
 ## imagesテーブル
 |Column|Type|Options|
 |------|----|-------|
@@ -95,6 +94,15 @@ Things you may want to cover:
 ### Association
 - belongs_to :item
 
+## purchasesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|item_id|references|foreign_key: true|
+|user_id|references|foreign_key: true|
+### Association
+- belongs_to :item
+- belongs_to :user
+
 * Database initialization
 
 * How to run the test suite
@@ -102,4 +110,3 @@ Things you may want to cover:
 * Services (job queues, cache servers, search engines, etc.)
 
 * Deployment instructions
-
