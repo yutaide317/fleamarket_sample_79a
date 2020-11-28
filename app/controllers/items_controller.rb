@@ -55,9 +55,28 @@ class ItemsController < ApplicationController
   end
 
   def edit
+    @item = Item.find(params[:id])
+    # # カテゴリーデータ取得
+    @grandchild = @item.category
+    @child = @grandchild.parent
+    @parent = @child.parent
+
+    #カテゴリー一覧を作成
+    @category = Category.where(ancestry: nil)
+    # 紐づく孫カテゴリーの親（子カテゴリー）の一覧を配列で取得
+    @category_children = @child.parent.children
+    # 紐づく孫カテゴリーの一覧を配列で取得
+    @category_grandchildren = @grandchild.parent.children
   end
 
   def update
+    @item = Item.find(params[:id])
+    @grandchild = @item.category
+    @child = @grandchild.parent
+    @parent = @child.parent
+    @category = Category.where(ancestry: nil)
+    @category_children = @child.parent.children
+    @category_grandchildren = @grandchild.parent.children
     if @item.update(item_params)
       redirect_to root_path
     else
@@ -100,4 +119,10 @@ class ItemsController < ApplicationController
       redirect_to new_user_session_path, alert: "ログインしてください"
     end
   end
+
+  #親カテゴリー
+  def set_category  
+    @category_parent_array = Category.where(ancestry: nil)
+  end
+
 end

@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   end
   resources :credit_cards, only: [:new, :create, :show, :destroy]
   resources :user_item_lists, only: [:index, :show]
+  resources :categories, only:[:index]
   root 'items#index'
   resources :items do
     collection do
