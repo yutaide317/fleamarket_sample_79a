@@ -22,6 +22,8 @@ Things you may want to cover:
 |password_confirmation|string|null: false|
 ### Association
 - has_many :items
+- has_one :profile
+- has_one :purchase
 
 ## profiles テーブル
 |Column|Type|Options|
