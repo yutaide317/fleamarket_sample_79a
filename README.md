@@ -13,17 +13,6 @@ Things you may want to cover:
 
 * Database creation
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-# Flea Market app DB設計
 ## usersテーブル
 |Column|Type|Options|
 |------|----|-------|
@@ -32,7 +21,6 @@ Things you may want to cover:
 |password|string|null: false|
 |password_confirmation|string|null: false|
 ### Association
-- has_many :comments
 - has_many :items
 
 ## profiles テーブル
@@ -46,6 +34,10 @@ Things you may want to cover:
 |introduction|text|	
 |profile_image|string|
 |user_id|references|null: false, foreign_key: true|
+|destination_family_name|null: false|
+|destination_first_name|null: false|
+|destination_family_name_kana|null: false|
+|destination_first_name_kana|null: false|
 |post_code|string|null: false|
 |prefecture|string|null: false|
 |city|string|null: false|
@@ -64,15 +56,6 @@ Things you may want to cover:
 ### Association
 - belongs_to :user
 
-## commentsテーブル
-|Column|Type|Options|
-|------|----|-------|
-|comment|text|null: false|
-|user|references|null: false, foreign_key: true|
-|item|references|null: false, foreign_key: true|
-### Association
-- belongs_to :user
-- belongs_to :item
 
 ## items テーブル		
 |Column|Type|Options|
@@ -80,41 +63,43 @@ Things you may want to cover:
 |name|string|null: false|
 |price|integer|null: false|
 |introduction|text|null: false|
-|category|references|null: false, foreign_key: true|
-|brand_id|references|null: false, foreign_key: true|
+|category_id|references|null: false, foreign_key: true|
+|brand_id|string|
 |item_condition|integer|null: false|
 |postage_payer|integer|null: false|
 |prefecture|integer|null: false|
 |preparation_period|integer|null: false|
 |shipping_method|integer|	
 |user_id|references|null: false, foreign_key: true|
-|buyer|references|foreign_key: true|
+|purchase|integer|
 ### Association
 - belongs to :user
-- has_many :categories
-- has_many :item_images
-- belongs to :brand
+- belongs to :category
+- has_many :images
 
 ## categories テーブル		
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
-|ancestry|string||
+|ancestry|string|
 ### Association
 - has_many :items
 - has_ancestry
 
-## brands テーブル		
-|Column|Type|Options|
-|------|----|-------|
-|name|string|null: false|
-### Association
-- has_many :items
 
-## item_imagesテーブル
+## imagesテーブル
 |Column|Type|Options|
 |------|----|-------|
 |item_id|references|null: false, foreign_key: true|
-|item_image_url|string|null: false|
+|src|string|null: false|
 ### Association
 - belongs_to :item
+
+* Database initialization
+
+* How to run the test suite
+
+* Services (job queues, cache servers, search engines, etc.)
+
+* Deployment instructions
+
