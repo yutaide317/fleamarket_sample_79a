@@ -2,8 +2,6 @@ class Item < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
 
   belongs_to :category
-
-  # belongs_to_active_hash :itemcategory
   belongs_to_active_hash :itemcondition
   belongs_to_active_hash :postage
   belongs_to_active_hash :district
