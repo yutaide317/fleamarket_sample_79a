@@ -63,7 +63,7 @@
                 必須
             -# 親カテゴリー用
             .FormGroup__content__category
-              = f.collection_select :category, Category.where(ancestry: nil), :id, :name, {selected: @parent.id}, {id: 'parent_category'} 
+              = f.collection_select :category, Category.where(ancestry: nil), :id, :name, {include_blank: "---", selected: @parent.id}, {id: 'parent_category'} 
 
               -# 子カテゴリー用
               #children_wrapper.FormGroup__content__category__added
