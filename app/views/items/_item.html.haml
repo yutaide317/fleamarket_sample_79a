@@ -12,3 +12,4 @@
     .SellingItemArea__name
       .SellingItemArea__name__box
         = item.name
+      = link_to "削除", item_path(item), method: :delete
